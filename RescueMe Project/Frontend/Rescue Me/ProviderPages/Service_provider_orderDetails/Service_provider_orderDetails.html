@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>تفاصيل طلب الخدمة</title>
+
+    <!-- Map CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="Service_provider_orderDetails.css">
+</head>
+
+<body>
+    <div class="page">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div>
+                    <img style="width: 32px;" src="/assets/logo (9).png" alt="">
+                    <span class="brand">المنقذ للسيارات</span>
+                </div>
+                <span class="date-small">لوحة التحكم للسائقين</span>
+            </div>
+
+            <div class="profile-card">
+                <div class="avatar">
+                    <img src="/assets/service provider assets/profileimg.png" alt="">
+                </div>
+                <div class="profile-info">
+                    <div class="welcome">مرحباً بك</div>
+                    <div class="rank">عضو متميز</div>
+                </div>
+            </div>
+
+            <nav class="side-menu">
+                <button class="menu-item">
+                    <img src="/assets/service provider assets/dashboardicon.png" alt="">
+                    <span><a href="/ProviderPages/Service_provider_home/Service_provider_home.html">لوحة التحكم</a></span>
+                </button>
+                <button class="menu-item">
+                    <img src="/assets/service provider assets/requestsicon.png" alt="">
+                    <span><a href="/ProviderPages/Service_provider_orders/Service_provider_orders.html">طلباتي</a></span>
+                </button>
+                <button class="menu-item">
+                    <img src="/assets/service provider assets/settingsicon.png" alt="">
+                    <span><a href="/ProviderPages/Service_provider_settings/Service_provider_settings.html">الإعدادات</a></span>
+                </button>
+            </nav>
+
+            <!-- logout -->
+            <div class="logout">
+                <a id="logoutBtn" style="color: red; text-decoration: none;" href="#">تسجيل الخروج</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main">
+
+            <!-- Search Bar -->
+            <div class="top-search">
+                <img src="/assets/service provider assets/searchicon.png" alt="">
+                <input class="search-box" placeholder="ابحث عن طلب...">
+            </div>
+
+            <!-- Page Header -->
+            <div class="header-row container">
+                <div class="header-title">
+                    <div>
+                        <h1>تفاصيل طلب الخدمة</h1>
+                        <div class="sub">جاري التحميل...</div>
+                    </div>
+                </div>
+                <div class="status-chip">—</div>
+            </div>
+
+            <!-- Top Content: Client Info + Payment + Description -->
+            <div class="content-top container">
+
+                <div class="middle-top">
+                    <div>
+
+                        <!-- Client Card -->
+                        <div class="client-card">
+                            <div class="client-header">
+                                <div class="client-name">
+                                    <img style="width: 40px; margin-left: 8px;"
+                                        src="/assets/service provider assets/profileicon.png" alt="">
+                                    <span id="clientName">—</span>
+                                </div>
+                                <div class="client-phone" id="clientPhone">—</div>
+                            </div>
+                            <div class="gap-3">
+                                <h5>نوع المركبة:</h5>
+                                <span id="clientCarName">—</span>
+                            </div>
+                            <div class="gap-3">
+                                <h5>رقم اللوحة:</h5>
+                                <span id="clientPlate">—</span>
+                            </div>
+                        </div>
+
+                        <!-- Problem Description -->
+                        <div class="desc-card">
+                            <div class="desc-label">وصف المشكلة</div>
+                            <div id="problemDescription">—</div>
+                        </div>
+
+                        <!-- User Rating -->
+                        <div class="desc-card" id="ratingSection">
+                            <div class="d-flex justify-content-center my-2">
+                                <img style="width: 50px;" src="/assets/service provider assets/userimg.png" alt="">
+                            </div>
+                            <div class="d-flex justify-content-center my-3 gap-2">
+                                <img style="width: 100px;" src="/assets/service provider assets/5stars.png" alt="">
+                                <span id="rateNumber">5.0</span>
+                            </div>
+                            <div>تعليق السائق:</div>
+                            <div id="userComment"
+                                style="border:1px solid #fff; padding:16px; margin-top:8px; border-radius:16px; background-color:#c1c7d16d;">
+                                —
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Payment Summary -->
+                    <div class="row-top-inner">
+                        <div class="payment-summary">
+                            <h3>تفاصيل الدفع</h3>
+                            <div class="pay-row">
+                                <span>رسوم الخدمة الأساسية</span>
+                                <span id="payBase">—</span>
+                            </div>
+                            <div class="pay-row">
+                                <span>رسوم إضافية (كم)</span>
+                                <span id="payExtra">0 جنيه</span>
+                            </div>
+                            <div class="pay-row">
+                                <span>ضريبة القيمة المضافة (15%)</span>
+                                <span id="payTax">—</span>
+                            </div>
+                            <div class="pay-total">
+                                <span>الإجمالي</span>
+                                <span id="payTotal">—</span>
+                            </div>
+                            <div class="pay-method">
+                                طريقة الدفع: <span>كاش</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Actions -->
+                <div class="left-col">
+                    <div class="card">
+                        <div class="card-title">إجراءات الطلب</div>
+                        <div class="accordion-head">
+                            <span>قيد التنفيذ</span>
+                            <span>▼</span>
+                        </div>
+                        <button class="main-btn">
+                            <a href="/ProviderPages/Service_provider_home/Service_provider_home.html">اتمام الطلب</a>
+                        </button>
+                        <button class="secondary-btn">
+                            <a href="/ProviderPages/Service_provider_home/Service_provider_home.html">إلغاء الطلب</a>
+                        </button>
+                        <div class="steps">
+                            <div class="step">
+                                <div class="step-right">
+                                    <div>تم استلام الطلب</div>
+                                </div>
+                                <div class="dot"></div>
+                            </div>
+                            <div class="step">
+                                <div class="step-right">
+                                    <div>تم تعيين المزود</div>
+                                </div>
+                                <div class="dot"></div>
+                            </div>
+                            <div class="step">
+                                <div class="step-right">
+                                    <div>المزود في الطريق</div>
+                                </div>
+                                <div class="dot"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="status-card">
+                        <h6 style="text-align:start;">تأمين رحلة الإنقاذ</h6>
+                        <span>هذا الطلب مغطى بالكامل بتأمين الإنقاذ الشامل</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Content: Map -->
+            <div class="bottom-row container">
+                <div class="map-wrapper">
+                    <div class="map-header">
+                        <span>تفاصيل الموقع والوجهة</span>
+                    </div>
+                    <div class="map-inner">
+                        <div id="providerMap"></div>
+                        <div class="map-info-col">
+                            <div class="info-box">
+                                <div class="info-label">موقع العميل</div>
+                                <div id="clientAddress">جاري تحميل العنوان...</div>
+                                <div id="clientCity" style="font-size:11px; color:#6b7280;"></div>
+                            </div>
+                            <div class="info-box">
+                                <div class="info-label">الإحداثيات</div>
+                                <div id="clientLat"></div>
+                                <div id="clientLng" style="font-size:11px; color:#6b7280;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+
+        </main>
+    </div>
+    
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <h6>المُنقِذ للسيارات</h6>
+                <div class="footer-links">
+                    <a href="/UserPages/ContactUs/Contactus.html">تواصل معنا</a>
+                    <a href="#">مركز المساعدة</a>
+                    <a href="#">الشروط والأحكام</a>
+                    <a href="#">سياسة الخصوصية</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة لدى المنقذ للسيارات © ٢٠٢٤</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Map JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Page JS -->
+    <script src="Service_provider_orderdetails.js"></script>
+
+</body>
+</html>

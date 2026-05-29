@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>نظرة عامة - لوحة التحكم</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="Service_provider_home.css" />
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Leaflet Map CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="page">
+
+        <!-- ==================== SIDEBAR ==================== -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div>
+                    <img style="width:32px" src="/assets/logo (9).png" alt="">
+                    <span class="brand">المنقذ للسيارات</span>
+                </div>
+                <span class="date-small">لوحة التحكم للسائقين</span>
+            </div>
+
+            <div class="profile-card">
+                <div class="avatar">
+                    <img src="/assets/service provider assets/profileimg.png" alt="">
+                </div>
+                <div class="profile-info">
+                    <div class="welcome">مرحباً بك</div>
+                    <div class="rank">عضو متميز</div>
+                </div>
+            </div>
+
+            <nav class="side-menu">
+                <button class="menu-item active">
+                    <img src="/assets/service provider assets/dashboardactiveicon.png" alt="">
+                    <span><a href="./Service_provider_home.html">لوحة التحكم</a></span>
+                </button>
+                <button class="menu-item">
+                    <img src="/assets/service provider assets/requestsicon.png" alt="">
+                    <span><a href="../Service_provider_orders/Service_provider_orders.html">طلباتي</a></span>
+                </button>
+                <button class="menu-item">
+                    <img src="/assets/service provider assets/settingsicon.png" alt="">
+                    <span><a href="../Service_provider_settings/Service_provider_settings.html">الإعدادات</a></span>
+                </button>
+            </nav>
+
+            <div class="logout">
+                <a id="logoutBtn" style="color:red;text-decoration:none;" href="#">تسجيل الخروج</a>
+            </div>
+        </aside>
+
+        <!-- ==================== MAIN CONTENT ==================== -->
+        <main class="main">
+            <header class="top-bar">
+                <div class="top-bar-left">
+                    <h1 class="page-title">نظرة عامة</h1>
+                    <div class="page-subtitle">مزود الخدمة</div>
+                </div>
+            </header>
+
+            <!-- Top Statistics Cards -->
+            <section class="top-cards">
+                <div class="top-card">
+                    <div class="label">إجمالي الطلبات</div>
+                    <div class="value large" id="ordersCount">0</div>
+                </div>
+                <div class="top-card">
+                    <div class="label">حالة التوفر</div>
+                    <div class="value large">متصل</div>
+                </div>
+            </section>
+
+            <!-- Middle Section -->
+            <section class="middle">
+                <!-- Map -->
+                <div class="location-box">
+                    <div class="location-header">
+                        <h4>الخريطة</h4>
+                    </div>
+                    <div id="egyptMap" style="height:400px;border-radius:20px;"></div>
+                </div>
+
+                <!-- Active Orders -->
+                <div class="orders">
+                    <div class="section-header">
+                        <h2>طلبات المساعدة النشطة</h2>
+                    </div>
+                    <div id="ordersContainer"></div>
+                </div>
+            </section>
+        </main>
+
+    </div>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <h6>المُنقِذ للسيارات</h6>
+                <div class="footer-links">
+                    <a href="/UserPages/ContactUs/Contactus.html">تواصل معنا</a>
+                    <a href="#">مركز المساعدة</a>
+                    <a href="#">الشروط والأحكام</a>
+                    <a href="#">سياسة الخصوصية</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة لدى المنقذ للسيارات © ٢٠٢٤</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Leaflet Map Script -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="Service_provider_home.js"></script>
+
+
+
+</body>
+
+</html>

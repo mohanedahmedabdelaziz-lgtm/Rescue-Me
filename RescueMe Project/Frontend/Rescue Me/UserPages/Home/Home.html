@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>خدمة المساعدة على الطريق - المنقذ للسيارات</title>
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+          rel="stylesheet" 
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
+          crossorigin="anonymous">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="Home.css">
+</head>
+<body>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <div class="navbar">
+        <div class="logo">
+            <img style="width: 32px; margin-left: 8px;" src="/assets/logo (9).png" alt="Logo">
+            المنقذ للسيارات
+        </div>
+        
+        <div class="nav-links">
+            <div class="link-3">
+                <a class="text-wrapper-3 text-center" 
+                   style="text-decoration: none; color: #0d3b66; border-bottom: 1px solid navy;"
+                   href="/UserPages/Home/Home.html">الرئيسية</a>
+            </div>
+            <div class="link-2">
+                <a class="text-wrapper-3 text-center" 
+                   style="text-decoration: none; color: #0d3b66;"
+                   href="/UserPages/RequestService/Requestservice.html">الخدمات</a>
+            </div>
+            <div class="text-wrapper-2">
+                <a class="text-wrapper-3 text-center" 
+                   style="text-decoration: none; color: #0d3b66;"
+                   href="/UserPages/OrdersHistory/myOrders.html">طلباتي</a>
+            </div>
+            <div class="text-wrapper-2">
+                <a class="text-wrapper-3 text-center" 
+                   style="text-decoration: none; color: #0d3b66;"
+                   href="/UserPages/ContactUs/Contactus.html">تواصل معنا</a>
+            </div>
+        </div>
+
+        <div class="nav-right d-flex gap-3">
+            <a href="/UserPages/Login/login.html" class="btn btn-outline btnloginhome">تسجيل الدخول</a>
+            <a href="/UserPages/RequestService/Requestservice.html" class="btn btn-primary">اطلب المساعدة</a>
+        </div>
+    </div>
+
+    
+
+   
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero">
+        <div class="container hero-inner">
+            
+
+            <!-- Hero Content -->
+            <div class="hero-content">
+                <p class="hero-eyebrow">خدمة المساعدة على الطريق</p>
+                <h1 class="hero-title">
+                    تعطلت سيارتك؟<br>
+                    نحن بجانبك دائمًا.
+                </h1>
+                <p class="hero-text">
+                    أكبر شبكة لإنقاذ السيارات في المملكة. نصل إليك أينما كنت في أقل من ٢٠ دقيقة في المتوسط.
+                </p>
+                
+                <div class="hero-actions">
+                    <a href="../RequestService/Requestservice.html" class="btn btn-primary">اطلب مساعدة الآن *</a>
+                </div>
+                
+                <p class="hero-footnote">
+                    * أكثر من ١٠٠ ألف عملية إنقاذ ناجحة
+                </p>
+            </div>
+
+            <!-- Hero Image -->
+            <div class="hero-card-image">
+                <img src="/assets/Gemini_Generated_Image_pl1s2cpl1s2cpl1s 1.png" 
+                     alt="تعطل سيارة على الطريق">
+                <div class="hero-badge">
+                    متوسط وقت الوصول
+                    <strong>١٥ دقيقة</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+     <!-- ==================== SERVICES SECTION ==================== -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">خدماتنا المتكاملة</h2>
+                <p class="section-sub">
+                    نوفر لك كافة حلول الطوارئ لسيارتك بأحدث المعدات وفريق من الخبراء المتخصصين.
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Tow Service -->
+                <div class="service-card">
+                    <div class="service-icon">⛓</div>
+                    <h3 class="service-title">ونش (Tow)</h3>
+                    <p class="service-text">
+                        سحب ونقل السيارات بكافة أنواعها إلى الورش المعتمدة، الطوارئ، ونقل السيارات الجديدة بأمان تام.
+                    </p>
+                    <a href="/UserPages/RequestService/Requestservice.html" class="service-link">اطلب الآن</a>
+                </div>
+
+                <!-- Mechanic Service -->
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3 class="service-title">ميكانيكي (Mechanic)</h3>
+                    <p class="service-text">
+                        إصلاح الأعطال الميكانيكية السريعة في الموقع، تبديل الإطارات، وفحص مبدئي للمحرك.
+                    </p>
+                    <a href="/UserPages/RequestService/Requestservice.html" class="service-link">اطلب الآن</a>
+                </div>
+
+                <!-- Electrician Service -->
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3 class="service-title">كهربائي (Electrician)</h3>
+                    <p class="service-text">
+                        شحن وتبديل البطارية، فحص كمبيوتر، وحل مشكلات الدوائر الكهربائية.
+                    </p>
+                    <a href="/UserPages/RequestService/Requestservice.html" class="service-link">اطلب الآن</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== STATS SECTION ==================== -->
+    <section class="stats">
+        <div class="container stats-grid">
+            <div>
+                <div class="stat-number">+٥٠٠</div>
+                <p class="stat-label">ونش متاح</p>
+            </div>
+            <div>
+                <div class="stat-number">٢٤/٧</div>
+                <p class="stat-label">خدمة متواصلة</p>
+            </div>
+            <div>
+                <div class="stat-number">٪١٠٠</div>
+                <p class="stat-label">ضمان الخدمة</p>
+            </div>
+            <div>
+                <div class="stat-number">+٥٠</div>
+                <p class="stat-label">مدينة تغطية</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <h6>المُنقِذ للسيارات</h6>
+                <div class="footer-links">
+                    <a href="/UserPages/ContactUs/Contactus.html">تواصل معنا</a>
+                    <a href="#">مركز المساعدة</a>
+                    <a href="#">الشروط والأحكام</a>
+                    <a href="#">سياسة الخصوصية</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة لدى المنقذ للسيارات © ٢٠٢٤</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="home.js"></script>
+</body>
+</html>

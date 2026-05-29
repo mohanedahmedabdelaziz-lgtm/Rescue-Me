@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>إنشاء حساب - المنقذ للسيارات</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <div class="navbar">
+        <div class="logo">
+            <img style="width: 32px;margin-left: 8px;margin-bottom: 8px;" src="/assets/logo (9).png" alt="">
+            <h2 style="color:#0f4c75;font-weight:800;display: inline;">المنقذ للسيارات</h2>
+        </div>
+        <div class="nav-links">
+            <a href="../Home/Home.html">الرئيسية</a>
+            <a href="/UserPages/RequestService/Requestservice.html">خدماتنا</a>
+            <div class="text-wrapper-2">
+                <a href="/UserPages/OrdersHistory/myOrders.html">طلباتي</a>
+            </div>
+            <a href="/UserPages/ContactUs/Contactus.html">تواصل معنا</a>
+        </div>
+        <a class="login-btn" href="../Login/login.html">تسجيل الدخول</a>
+    </div>
+
+    <!-- ==================== MAIN SECTION ==================== -->
+    <div class="main">
+
+        <!-- RIGHT SIDE - Signup Form -->
+        <div class="right">
+            <h2>إنشاء حساب جديد</h2>
+            <div class="subtitle">أدخل تفاصيلك أدناه للبدء في استخدام خدمات المنقذ للسيارات.</div>
+
+            <!-- Role Selection -->
+            <div class="role-select">
+                <div class="role active" data-role="driver">
+                    <img style="width: 20px;" src="/assets/driverlogo.png">
+                    <h6>سائق</h6>
+                </div>
+
+                <div class="role" data-role="provider">
+                    <img style="width: 20px;" src="/assets/providerlogo.png">
+                    <h6>مزود الخدمة</h6>
+                </div>
+            </div>
+
+            <!-- Full Name -->
+            <div class="form-group">
+                <label>الاسم بالكامل</label>
+                <div class="input-wrapper">
+                    <img src="/assets/namelogo.png" alt="">
+                    <input class="nameInput" type="text" placeholder="أدخل اسمك الثلاثي">
+                </div>
+            </div>
+
+            <!-- Email (for Driver) -->
+            <div class="form-group email-group">
+                <label>البريد الإلكتروني (اختياري)</label>
+                <div class="input-wrapper">
+                    <img src="/assets/email.png" alt="">
+                    <input class="emailInput" type="email" placeholder="example@domain.com">
+                </div>
+            </div>
+
+            <!-- Password -->
+            <div class="row">
+                <div class="form-group">
+                    <label>كلمة المرور</label>
+                    <div class="input-wrapper">
+                        <img src="/assets/password.png" alt="">
+                        <input class="passwordInput" type="password" placeholder="********">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>تأكيد كلمة المرور</label>
+                    <div class="input-wrapper">
+                        <img src="/assets/repassword.png" alt="">
+                        <input class="repasswordInput" type="password" placeholder="********">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Provider Extra Fields -->
+            <div class="provider-fields" style="display: none;">
+                <div class="form-group">
+                    <label>رقم الهاتف</label>
+                    <div class="input-wrapper">
+                        <input class="phoneInput" type="text" placeholder="010xxxxxxxx">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>نوع الخدمة</label>
+                    <select class="typeInput form-control">
+                        <option value="0">سحب (Tow)</option>
+                        <option value="1">ميكانيكي</option>
+                        <option value="2">كهربائي</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="submit-btn">إنشاء حساب</button>
+
+            <div class="divider">أو سجل عبر</div>
+
+            <div class="d-flex justify-content-between gap-3">
+                <button
+                    class="py-2 border border-1 gap-2 btn w-75 d-flex text-center align-items-center justify-content-center">
+                    Google <img style="width: 30px;" src="/assets/googlelogo.png" alt="">
+                </button>
+                <button
+                    class="py-2 border border-1 gap-2 btn w-75 d-flex text-center align-items-center justify-content-center">
+                    Apple <img style="width: 30px;" src="/assets/applelogo.png" alt="">
+                </button>
+            </div>
+
+            <div class="login-link">
+                لديك حساب بالفعل؟ <a href="../Login/login.html">تسجيل الدخول</a>
+            </div>
+        </div>
+
+        <!-- LEFT SIDE - Promotional -->
+        <div class="left">
+            <h1>أمانك على الطريق يبدأ بخطوة واحدة.</h1>
+            <p>
+                انضم إلى أكبر شبكة لخدمات المساعدة على الطريق في المنطقة.
+                سواء كنت تبحث عن المساعدة أو تقدمها، المنقذ للسيارات هو شريكك الموثوق.
+            </p>
+
+            <div class="info-box">
+                <div class="d-flex align-items-center gap-3 mb-3">
+                    <img style="width: 30px;" src="/assets/trustedservice.png" alt="">
+                    <h3 class="my-auto">خدمة موثوقة وآمنة</h3>
+                </div>
+                <p>
+                    نحن نضمن جودة الخدمات المقدمة من خلال التحقق المستمر
+                    من جميع مزودي الخدمة في شبكتنا.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <h6>المُنقِذ للسيارات</h6>
+                <div class="footer-links">
+                    <a href="/UserPages/ContactUs/Contactus.html">تواصل معنا</a>
+                    <a href="#">مركز المساعدة</a>
+                    <a href="#">الشروط والأحكام</a>
+                    <a href="#">سياسة الخصوصية</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة لدى المنقذ للسيارات © ٢٠٢٤</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="signup.js"></script>
+</body>
+
+</html>

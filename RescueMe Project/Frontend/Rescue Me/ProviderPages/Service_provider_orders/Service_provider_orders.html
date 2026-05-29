@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>طلباتي</title>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="Service_provider_orders.css">
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div>
+                    <img style="width: 32px;" src="/assets/logo (9).png" alt="">
+                    <span class="brand">المنقذ للسيارات</span>
+                </div>
+                <span class="date-small">لوحة التحكم للسائقين</span>
+            </div>
+
+            <div class="profile-card">
+                <div class="avatar">
+                    <img src="/assets/service provider assets/profileimg.png" alt="">
+                </div>
+                <div class="profile-info">
+                    <div class="welcome">مرحباً بك</div>
+                    <div class="rank">عضو متميز</div>
+                </div>
+            </div>
+
+            <nav class="side-menu">
+                <button class="menu-item">
+                    <img src="/assets/service provider assets/dashboardicon.png" alt="">
+                    <span><a href="/ProviderPages/Service_provider_home/Service_provider_home.html">لوحة التحكم</a></span>
+                </button>
+                <button class="menu-item active">
+                    <img src="/assets/service provider assets/ordersiconactive.png" alt="">
+                    <span><a href="/ProviderPages/Service_provider_orders/Service_provider_orders.html">طلباتي</a></span>
+                </button>
+                <button class="menu-item">
+                    <img src="/assets/service provider assets/settingsicon.png" alt="">
+                    <span><a href="/ProviderPages/Service_provider_settings/Service_provider_settings.html">الإعدادات</a></span>
+                </button>
+            </nav>
+
+            <div class="logout">
+                <a id="logoutBtn" style="color:red; text-decoration:none;" href="#">تسجيل الخروج</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main">
+
+            <!-- Search Bar -->
+            <div class="top-search">
+                <img src="/assets/service provider assets/searchicon.png" alt="">
+                <input class="search-box" placeholder="ابحث عن طلب...">
+            </div>
+
+            <!-- Page Header -->
+            <div class="header container">
+                <h1>طلباتي</h1>
+                <p>إدارة ومراجعة كافة طلبات المساعدة الخاصة بك</p>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats container">
+                <div class="stat-card">
+                    <img style="width:20px;" src="/assets/service provider assets/completeordersicon.png" alt="">
+                    <div class="stat-label">الطلبات المكتملة</div>
+                    <div class="stat-value-main" id="stat-completed">—</div>
+                </div>
+                <div class="stat-card">
+                    <img style="width:20px;" src="/assets/service provider assets/moneyicon.png" alt="">
+                    <div class="stat-label">إجمالي الأرباح</div>
+                    <div class="stat-value-main" id="stat-earnings">—</div>
+                </div>
+                <div class="stat-card">
+                    <img style="width:20px;" src="/assets/service provider assets/staricon.png" alt="">
+                    <div class="stat-label">تقييم الخدمة</div>
+                    <div class="stat-value-main" id="stat-rating">—</div>
+                </div>
+                <div class="stat-card">
+                    <img style="width:20px;" src="/assets/service provider assets/timeicon.png" alt="">
+                    <div class="stat-label">متوسط الاستجابة</div>
+                    <div class="stat-value-main">١٨ دقيقة</div>
+                </div>
+            </div>
+
+            <!-- Orders Table -->
+            <div class="container">
+                <div class="table-card">
+                    <div class="table-header">
+                        <div class="th">رقم الطلب</div>
+                        <div class="th">نوع الخدمة</div>
+                        <div class="th">التاريخ</div>
+                        <div class="th">الحالة</div>
+                        <div class="th">الأرباح</div>
+                        <div class="th">التفاصيل</div>
+                    </div>
+                    <div id="ordersTableBody"></div>
+                    <div class="paginate" id="pagination"></div>
+                </div>
+            </div>
+
+            <!-- Daily Tip -->
+            <div class="container">
+                <div class="tip-card">
+                    <div class="tip-title">نصيحة اليوم</div>
+                    <div>الاستجابة للطلبات في أقل من ١٥ دقيقة تزيد من فرص حصولك على تقييم ٥ نجوم بنسبة ٤٤٪.</div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <h6>المُنقِذ للسيارات</h6>
+                <div class="footer-links">
+                    <a href="/UserPages/ContactUs/Contactus.html">تواصل معنا</a>
+                    <a href="#">مركز المساعدة</a>
+                    <a href="#">الشروط والأحكام</a>
+                    <a href="#">سياسة الخصوصية</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة لدى المُنقِذ للسيارات © ٢٠٢٤</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Page JS -->
+    <script src="Service_provider_orders_dynamic.js"></script>
+
+</body>
+</html>

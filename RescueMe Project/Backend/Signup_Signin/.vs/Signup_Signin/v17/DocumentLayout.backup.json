@@ -1,0 +1,101 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\MG13\\Desktop\\Rescue me Main Folder with api\\Rescue_Me\\RescueMe Project\\Backend\\Signup_Signin\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{87C8E775-F376-41DA-B61D-EE8B973A6118}|Signup_Signin\\Signup_Signin.csproj|c:\\users\\mg13\\desktop\\rescue me main folder with api\\rescue_me\\rescueme project\\backend\\signup_signin\\signup_signin\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87C8E775-F376-41DA-B61D-EE8B973A6118}|Signup_Signin\\Signup_Signin.csproj|solutionrelative:signup_signin\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87C8E775-F376-41DA-B61D-EE8B973A6118}|Signup_Signin\\Signup_Signin.csproj|c:\\users\\mg13\\desktop\\rescue me main folder with api\\rescue_me\\rescueme project\\backend\\signup_signin\\signup_signin\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87C8E775-F376-41DA-B61D-EE8B973A6118}|Signup_Signin\\Signup_Signin.csproj|solutionrelative:signup_signin\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87C8E775-F376-41DA-B61D-EE8B973A6118}|Signup_Signin\\Signup_Signin.csproj|c:\\users\\mg13\\desktop\\rescue me main folder with api\\rescue_me\\rescueme project\\backend\\signup_signin\\signup_signin\\data\\repositories\\orderrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87C8E775-F376-41DA-B61D-EE8B973A6118}|Signup_Signin\\Signup_Signin.csproj|solutionrelative:signup_signin\\data\\repositories\\orderrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87C8E775-F376-41DA-B61D-EE8B973A6118}|Signup_Signin\\Signup_Signin.csproj|c:\\users\\mg13\\desktop\\rescue me main folder with api\\rescue_me\\rescueme project\\backend\\signup_signin\\signup_signin\\data\\entities\\maincontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87C8E775-F376-41DA-B61D-EE8B973A6118}|Signup_Signin\\Signup_Signin.csproj|solutionrelative:signup_signin\\data\\entities\\maincontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87C8E775-F376-41DA-B61D-EE8B973A6118}|Signup_Signin\\Signup_Signin.csproj|c:\\users\\mg13\\desktop\\rescue me main folder with api\\rescue_me\\rescueme project\\backend\\signup_signin\\signup_signin\\data\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87C8E775-F376-41DA-B61D-EE8B973A6118}|Signup_Signin\\Signup_Signin.csproj|solutionrelative:signup_signin\\data\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\MG13\\Desktop\\Rescue me Main Folder with api\\Rescue_Me\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Data\\Entities\\Order.cs",
+              "RelativeDocumentMoniker": "Signup_Signin\\Data\\Entities\\Order.cs",
+              "ToolTip": "C:\\Users\\MG13\\Desktop\\Rescue me Main Folder with api\\Rescue_Me\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Data\\Entities\\Order.cs",
+              "RelativeToolTip": "Signup_Signin\\Data\\Entities\\Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-25T04:03:45.758Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainContext.cs",
+              "DocumentMoniker": "C:\\Users\\MG13\\Desktop\\Rescue me Main Folder with api\\Rescue_Me\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Data\\Entities\\MainContext.cs",
+              "RelativeDocumentMoniker": "Signup_Signin\\Data\\Entities\\MainContext.cs",
+              "ToolTip": "C:\\Users\\MG13\\Desktop\\Rescue me Main Folder with api\\Rescue_Me\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Data\\Entities\\MainContext.cs",
+              "RelativeToolTip": "Signup_Signin\\Data\\Entities\\MainContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-25T04:06:15.609Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrderRepo.cs",
+              "DocumentMoniker": "C:\\Users\\MG13\\Desktop\\Rescue me Main Folder with api\\Rescue_Me\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Data\\Repositories\\OrderRepo.cs",
+              "RelativeDocumentMoniker": "Signup_Signin\\Data\\Repositories\\OrderRepo.cs",
+              "ToolTip": "C:\\Users\\MG13\\Desktop\\Rescue me Main Folder with api\\Rescue_Me\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Data\\Repositories\\OrderRepo.cs",
+              "RelativeToolTip": "Signup_Signin\\Data\\Repositories\\OrderRepo.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBUAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-25T04:06:05.621Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OrdersController.cs",
+              "DocumentMoniker": "C:\\Users\\MG13\\Desktop\\Rescue me Main Folder with api\\Rescue_Me\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Controllers\\OrdersController.cs",
+              "RelativeDocumentMoniker": "Signup_Signin\\Controllers\\OrdersController.cs",
+              "ToolTip": "C:\\Users\\MG13\\Desktop\\Rescue me Main Folder with api\\Rescue_Me\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Controllers\\OrdersController.cs",
+              "RelativeToolTip": "Signup_Signin\\Controllers\\OrdersController.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAowEcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-25T04:03:09.238Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\MG13\\Desktop\\Rescue me Main Folder with api\\Rescue_Me\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Program.cs",
+              "RelativeDocumentMoniker": "Signup_Signin\\Program.cs",
+              "ToolTip": "C:\\Users\\MG13\\Desktop\\Rescue me Main Folder with api\\Rescue_Me\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Program.cs",
+              "RelativeToolTip": "Signup_Signin\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-25T04:06:52.532Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

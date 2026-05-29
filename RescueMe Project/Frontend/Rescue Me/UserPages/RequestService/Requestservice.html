@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>طلب خدمة</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="Requestservice.css">
+</head>
+<body>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar">
+        <div class="logo">
+            <img style="width: 32px;margin-left: 8px;" src="/assets/logo (9).png" alt="">
+            المنقذ للسيارات
+        </div>
+
+        <div class="nav-links">
+            <a href="../Home/Home.html">الرئيسية</a>
+
+            <a href="../RequestService/Requestservice.html" class="active">
+                الخدمات
+            </a>
+            <div class="text-wrapper-2">
+                <a class="text-wrapper-3 text-center" style="text-decoration: none;color: #0d3b66;"
+                    href="/UserPages/OrdersHistory/myOrders.html">طلباتي</a>
+            </div>
+            <a href="../ContactUs/Contactus.html">
+                تواصل معنا
+            </a>
+        </div>
+
+        <div class="nav-icons">
+            <img src="/assets/Notificationlogo.png">
+            <img src="/assets/Profilelogo.png">
+        </div>
+    </nav>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <section class="container main">
+
+        <div class="header">
+            <h1>طلب خدمة جديدة</h1>
+            <p>
+                اختر نوع الخدمة التي تحتاجها وموقعك الحالي
+                لنصل إليك بأسرع وقت
+            </p>
+        </div>
+
+        <!-- ==================== SERVICES SECTION ==================== -->
+        <div class="service-selection">
+
+            <!-- Tow Service Card -->
+            <div class="tow-service">
+                <div class="background">
+                    <img class="icon" src="/assets/towlogo.png" />
+                </div>
+
+                <div class="heading">
+                    <div class="text-2">ونش</div>
+                </div>
+
+                <div class="text-wrapper">
+                    <p class="p">
+                        سحب ونقل سيارتك إلى أقرب مركز صيانة
+                        أو الموقع الذي تختاره بآمان تام.
+                    </p>
+                </div>
+
+                <div class="d-flex flex-start">
+                    <div class="text-3" onclick="selectService('ونش', '/assets/towlogo.png', '1000', 'سحب مركبة (سطحة)', 0)">
+                        اختيار الخدمة
+                        <img style="width:10px;margin-right:10px;" src="/assets/arrowleft.png">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mechanic Service Card -->
+            <div class="mechanic-service">
+                <div class="container-wrapper">
+                    <img class="icon-2" src="/assets/Mechanical.png" />
+                </div>
+
+                <div class="heading">
+                    <div class="text-2">ميكانيكي</div>
+                </div>
+
+                <div class="text-wrapper">
+                    <p class="p">
+                        إصلاح الأعطال الميكانيكية المفاجئة
+                        في موقعك.
+                    </p>
+                </div>
+
+                <div class="d-flex flex-start">
+                    <div class="text-3" onclick="selectService('ميكانيكي', '/assets/Mechanical.png', '200', 'إصلاح ميكانيكي', 1)">
+                        اختيار الخدمة
+                        <img style="width:10px;margin-right:10px;" src="/assets/arrowleft.png">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Electrician Service Card -->
+            <div class="electrician-service">
+                <div class="background-2">
+                    <img class="icon-3" src="/assets/Electrical.png" />
+                </div>
+
+                <div class="heading">
+                    <div class="text-2">كهربائي سيارات</div>
+                </div>
+
+                <div class="text-wrapper">
+                    <p class="p">
+                        فحص وإصلاح مشاكل البطارية والأسلاك
+                        والأنظمة الكهربائية.
+                    </p>
+                </div>
+
+                <div class="d-flex flex-start">
+                    <div class="text-3" onclick="selectService('كهربائي سيارات', '/assets/Electrical.png', '200', 'كشف أعطال كهرباء', 2)">
+                        اختيار الخدمة
+                        <img style="width:10px;margin-right:10px;" src="/assets/arrowleft.png">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ==================== LOCATION SECTION ==================== -->
+        <div class="location-box">
+            <div class="location-header">
+                <h4>حدد موقعك</h4>
+                <button class="gps-btn">تحديد تلقائي</button>
+            </div>
+            <div id="egyptMap"></div>
+        </div>
+
+        <!-- ==================== PROBLEM DESCRIPTION ==================== -->
+        <div class="location-box" style="margin-top: 20px;">
+            <div class="location-header">
+                <h4>وصف المشكلة</h4>
+            </div>
+            <textarea id="problemDescription" class="form-control" rows="3"
+                placeholder="اكتب وصفاً مختصراً للمشكلة... مثال: السيارة لا تشتغل"
+                style="border-radius:12px; padding:12px; font-family:'Cairo',sans-serif;">
+            </textarea>
+        </div>
+
+        <!-- ==================== CAR INFORMATION ==================== -->
+        <div class="location-box" style="margin-top: 20px;">
+            <div class="location-header">
+                <h4>بيانات السيارة</h4>
+            </div>
+            <div class="row g-3" style="padding: 0 12px;">
+                <div class="col-6">
+                    <label style="font-family:'Cairo',sans-serif; font-weight:600; margin-bottom:6px; display:block;">
+                        نوع السيارة
+                    </label>
+                    <input id="carName" type="text" class="form-control" placeholder="مثال: Toyota Camry"
+                        style="border-radius:12px; padding:12px; font-family:'Cairo',sans-serif;">
+                </div>
+                <div class="col-6">
+                    <label style="font-family:'Cairo',sans-serif; font-weight:600; margin-bottom:6px; display:block;">
+                        رقم اللوحة
+                    </label>
+                    <input id="plateNumber" type="text" class="form-control" placeholder="مثال: ABC 1234"
+                        style="border-radius:12px; padding:12px; font-family:'Cairo',sans-serif;">
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <h6>المُنقِذ للسيارات</h6>
+                <div class="footer-links">
+                    <a href="/UserPages/ContactUs/Contactus.html">تواصل معنا</a>
+                    <a href="#">مركز المساعدة</a>
+                    <a href="#">الشروط والأحكام</a>
+                    <a href="#">سياسة الخصوصية</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة لدى المنقذ للسيارات © ٢٠٢٤</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Leaflet Script -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="RequestService.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

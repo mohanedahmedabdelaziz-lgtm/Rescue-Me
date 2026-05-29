@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تتبع الطلب</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="RequestStatus.css">
+</head>
+<body>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <div class="navbar">
+        <div class="logo">
+            <img style="width:32px;margin-left:8px;" src="/assets/logo (9).png" alt="">
+            المنقذ للسيارات
+        </div>
+        <div class="nav-links">
+            <div class="link-3">
+                <a style="text-decoration:none;color:#0d3b66;" href="../Home/Home.html">الرئيسية</a>
+            </div>
+            <div class="link-2">
+                <a style="text-decoration:none;color:#0d3b66;" href="../RequestService/Requestservice.html">الخدمات</a>
+            </div>
+            <div class="text-wrapper-2">
+                <a class="text-wrapper-3 text-center" style="text-decoration: none;color: #0d3b66;"
+                    href="/UserPages/OrdersHistory/myOrders.html">طلباتي</a>
+            </div>
+            <div class="text-wrapper-2">
+                <a style="text-decoration:none;color:#0d3b66;" href="../ContactUs/Contactus.html">تواصل معنا</a>
+            </div>
+        </div>
+        <div class="nav-icons">
+            <img style="width:30px;" src="/assets/Notificationlogo.png" />
+            <img style="width:30px;" src="/assets/Profilelogo.png" />
+        </div>
+    </div>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <div class="container d-flex justify-content-between my-5">
+
+        <!-- Map + Timeline -->
+        <div class="w-75">
+            <div class="map-card">
+                <div id="trackingMap"></div>
+                <div class="live-badge"><span></span> يتم الآن تتبع المزود</div>
+                <div class="eta-box" id="etaText">الوقت المتوقع للوصول 15 دقيقة</div>
+            </div>
+
+            <div class="timeline">
+                <div class="steps">
+                    <div class="step">
+                        <div class="circle" id="step-confirmed">✔</div>
+                        <span>تم تأكيد الطلب</span>
+                    </div>
+                    <div class="step-line" id="line-1"></div>
+                    <div class="step">
+                        <div class="circle" id="step-onway">🚚</div>
+                        <span>في الطريق إليك</span>
+                    </div>
+                    <div class="step-line" id="line-2"></div>
+                    <div class="step">
+                        <div class="circle" id="step-done">🧰</div>
+                        <span>تم تقديم الخدمة</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Order Details Sidebar -->
+        <div class="leftdiv">
+            <div class="d-flex justify-content-between align-items-center">
+                <p>حالة الطلب</p>
+                <div class="status-badge" id="requestStatus">قيد الانتظار</div>
+            </div>
+
+            <div class="provider">
+                <img src="/assets/Profilelogo.png">
+                <h3 id="providerName">في انتظار المزود...</h3>
+                <div class="d-flex flex-column">
+                    <span id="providerJob"></span>
+                    <div class="rating" id="providerRate"></div>
+                </div>
+            </div>
+
+            <div class="details">
+                <b>نوع الخدمة</b><span id="serviceName"></span><br><br>
+                <b>نوع السيارة</b><span id="carName"></span><br><br>
+                <b>رقم اللوحة</b><span id="plateNumber"></span><br><br>
+                <b>رقم الطلب</b><span id="orderNumber"></span><br><br>
+                <b>رقم المزود</b>
+                <span id="providerPhone" style="color:#888;">في انتظار القبول...</span><br><br>
+
+                <b>إجمالي التكلفة</b>
+                <span id="totalPrice" style="color:#0f4c75;font-weight:700;">—</span><br><br>
+                
+                <b>العنوان الحالي</b><span id="userAddress">جاري التحميل...</span>
+            </div>
+
+            <button class="btn btn-primary">
+                <img style="width:20px;margin-left:10px;" src="/assets/calllogo.png">
+                اتصال بالمزود
+            </button>
+            <button class="btn btn-success">
+                <a style="text-decoration:none;color:white;" href="../RateService/RateService.html">انهاء وتقييم</a>
+            </button>
+            <button class="btn my-5" style="background-color:red;">
+                <a style="text-decoration:none;color:white;" href="../RequestService/Requestservice.html">
+                    <img style="width:20px;margin-left:10px;" src="/assets/cancellogo.png">
+                    إلغاء الطلب
+                </a>
+            </button>
+        </div>
+    </div>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <h6>المُنقِذ للسيارات</h6>
+                <div class="footer-links">
+                    <a href="/UserPages/ContactUs/Contactus.html">تواصل معنا</a>
+                    <a href="#">مركز المساعدة</a>
+                    <a href="#">الشروط والأحكام</a>
+                    <a href="#">سياسة الخصوصية</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة لدى المنقذ للسيارات © ٢٠٢٤</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="RequestStatus.js"></script>
+</body>
+</html>

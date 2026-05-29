@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول - المنقذ للسيارات</title>
+    
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+          rel="stylesheet" 
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
+          crossorigin="anonymous">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <div class="login-container">
+
+        <!-- Right Side - Login Form -->
+        <div class="right">
+            <div class="form-box">
+
+                <!-- Logo -->
+                <div class="logo">
+                    <img style="width: 32px; margin-left: 8px; margin-bottom: 8px;" 
+                         src="/assets/logo (9).png" alt="Logo">
+                    <h2 style="color: #004471; display: inline;">المنقذ للسيارات</h2>
+                </div>
+
+                <p>سجل دخولك لمتابعة رحلتك بأمان</p>
+
+                <!-- Role Selection (Driver / Provider) -->
+                <div class="role-select">
+                    <div class="role active" data-role="driver">
+                        <img style="width: 20px;" src="/assets/driverlogo.png" alt="">
+                        <h6>سائق</h6>
+                    </div>
+
+                    <div class="role" data-role="provider">
+                        <img style="width: 20px;" src="/assets/providerlogo.png" alt="">
+                        <h6>مزود الخدمة</h6>
+                    </div>
+                </div>
+
+                <!-- Email / Username Field -->
+                <div class="input-group emailgroup">
+                    <label class="input-label" for="emailInput">البريد الإلكتروني أو رقم الجوال</label>
+                    <input id="emailInput" class="emailinput" type="text" 
+                           placeholder="example@mail.com">
+                </div>
+
+                <!-- Password Field -->
+                <div class="input-group">
+                    <div class="d-flex justify-content-between">
+                        <label for="passwordInput">كلمة المرور</label>
+                       
+                    </div>
+                    <input id="passwordInput" class="passwordinput" type="password" 
+                           placeholder="كلمة المرور">
+                </div>
+                 <label style="color: #004471; cursor: pointer;">نسيت كلمة المرور؟</label>
+                <!-- Login Button -->
+                <button class="btn loginbtn">تسجيل الدخول</button>
+
+                <p class="text-center my-4">أو تابع عبر</p>
+
+                <!-- Social Login -->
+                <div class="d-flex justify-content-between gap-3">
+                    <button class="social-btn">
+                        Google 
+                        <img src="/assets/googlelogo.png" alt="Google">
+                    </button>
+                    <button class="social-btn">
+                        Apple 
+                        <img src="/assets/applelogo.png" alt="Apple">
+                    </button>
+                </div>
+
+                <!-- Signup Link -->
+                <div class="footer">
+                    ليس لديك حساب؟ 
+                    <a href="/UserPages/Sign up/Signup.html" style="color: #004471;">أنشئ حساباً جديداً</a>
+                </div>
+
+                <p class="text-center mt-5" style="color: #777; font-size: 13px;">
+                    جميع الحقوق محفوظة لدى المنقذ للسيارات © ٢٠٢٤
+                </p>
+            </div>
+        </div>
+
+        <!-- Left Side - Promotional Content -->
+        <div class="left">
+            <h1>أمانك هو أولويتنا القصوى</h1>
+            <p>انضم إلى شبكة المنقذ، الحل الأسرع والأكثر احترافية لخدمات المساعدة على الطريق</p>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <img src="/assets/logo1.png" alt="">
+                    <h6>استجابة فائقة</h6>
+                    <p>متوسط وصول ١٥ دقيقة فقط</p>
+                </div>
+                
+                <div class="feature-card">
+                    <img src="/assets/logo2.png" alt="">
+                    <h6>فنيون معتمدون</h6>
+                    <p>نخبة من خبراء ميكانيكا السيارات</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="login.js"></script>
+</body>
+</html>

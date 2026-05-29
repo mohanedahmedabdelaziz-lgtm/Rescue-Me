@@ -1,0 +1,222 @@
+/* ========== BASE STYLES ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    background: #f3f5f7;
+    color: #1f2d3d;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+    background: #ffffff;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 800;
+    color: #0d3b66;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+    font-weight: 600;
+    color: #4a5568;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+}
+
+/* ========== MAP CARD ========== */
+.map-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.live-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #fff;
+    padding: 10px 18px;
+    border-radius: 12px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.live-badge span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #16a34a;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.eta-box {
+    position: absolute;
+    bottom: 30px;
+    right: 50%;
+    transform: translateX(50%);
+    background: #0d3b66;
+    color: #fff;
+    padding: 20px 40px;
+    border-radius: 16px;
+    font-size: 18px;
+    font-weight: 700;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ========== TIMELINE ========== */
+.timeline {
+    margin-top: 24px;
+    padding: 20px;
+    background: white;
+    border-radius: 16px;
+}
+
+.steps {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    flex: 0;
+}
+
+.step span {
+    font-size: 12px;
+    color: #6b7280;
+    white-space: nowrap;
+}
+
+.step-line {
+    flex: 1;
+    height: 4px;
+    background: #e5e7eb;
+    border-radius: 2px;
+    margin: 0 8px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.step-line.active {
+    background: #16a34a;
+}
+
+.circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    border: 3px solid #e5e7eb;
+    background: #f9fafb;
+    transition: all 0.4s ease;
+}
+
+/* ========== SIDEBAR ========== */
+.leftdiv {
+    width: 400px;
+    border: 1px solid rgba(0, 0, 0, 0.058);
+    border-radius: 16px;
+    padding: 32px;
+    margin-right: 50px;
+}
+
+.status-badge {
+    display: inline-block;
+    background: #e3efff;
+    color: #0d3b66;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.provider {
+    text-align: center;
+    background: #f7f9fb;
+    padding: 25px;
+    border-radius: 16px;
+    width: 300px;
+}
+
+.provider img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.details {
+    margin-top: 20px;
+    line-height: 2;
+    font-size: 15px;
+}
+
+.details b {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* ========== FOOTER ========== */
+footer {
+    background: #ffffff;
+    border-top: 1px solid #e1e5eb;
+    padding: 26px 0 12px;
+    font-size: 11px;
+    color: #7a8699;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 16px;
+}
+
+.footer-links a {
+    color: #7a8699;
+}

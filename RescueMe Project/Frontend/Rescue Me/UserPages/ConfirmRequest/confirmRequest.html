@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <!-- Basic meta tags (encoding + responsive layout on mobile) -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>تأكيد طلب المساعدة - المنقذ للسيارات</title>
+
+    <!-- Leaflet map library styles -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Google Font used across the page -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Bootstrap (utility classes like container, spacing, flex, etc.) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Page-specific styles -->
+    <link rel="stylesheet" href="confirmRequest.css" />
+</head>
+
+<body>
+    <!-- =========================
+         NAVBAR (Top Navigation)
+         ========================= -->
+    <div class="navbar">
+        <!-- Brand / Logo -->
+        <div class="logo">
+            <img src="/assets/logo (9).png" alt="" style="width: 32px; margin-left: 8px" />
+            المنقذ للسيارات
+        </div>
+
+        <!-- Main navigation links -->
+        <div class="nav-links">
+            <div class="link-3">
+                <a href="/UserPages/Home/Home.html" style="text-decoration: none; color: #0d3b66">الرئيسية</a>
+            </div>
+
+            <div class="link-2">
+                <a href="/UserPages/RequestService/Requestservice.html"
+                    style="text-decoration: none; color: #0d3b66">الخدمات</a>
+            </div>
+
+            <div class="text-wrapper-2">
+                <a class="text-wrapper-3 text-center" href="/UserPages/OrdersHistory/myOrders.html"
+                    style="text-decoration: none; color: #0d3b66">طلباتي</a>
+            </div>
+
+            <div class="text-wrapper-2">
+                <a href="/UserPages/ContactUs/Contactus.html" style="text-decoration: none; color: #0d3b66">تواصل
+                    معنا</a>
+            </div>
+        </div>
+
+        <!-- Icons area (notification + profile) -->
+        <div class="nav-icons">
+            <img src="/assets/Notificationlogo.png" style="width: 30px" />
+            <img src="/assets/Profilelogo.png" style="width: 30px" />
+        </div>
+    </div>
+
+    <main class="container">
+        <!-- =========================
+           Page title / description
+           ========================= -->
+        <div class="page-title d-flex flex-start my-5">
+            <div>
+                <h1>تأكيد طلب المساعدة</h1>
+                <p>يرجى مراجعة تفاصيل طلبك قبل التأكيد النهائي</p>
+            </div>
+        </div>
+
+        <!-- =========================
+           Main grid:
+           Left = Map, Right = Service info
+           ========================= -->
+        <div class="content-grid container">
+            <!-- Left column: Map -->
+            <div class="left-col">
+                <div class="map-container">
+                    <!-- Small header overlay above the map -->
+                    <div class="map-header">
+                        <i class="fa-solid fa-location-dot"></i>
+                        موقع التعطل الحالي
+                    </div>
+
+                    <!-- Leaflet will render the map inside this div -->
+                    <div id="confirmMap"></div>
+
+                    <!-- Footer overlay (address + change location link) -->
+                    <div class="map-footer">
+                        <div class="address-details">
+                            <div class="address-text">
+                                <h4>العنوان التقريبي</h4>
+                                <!-- This text is filled by JS after reverse geocoding -->
+                                <p id="confirmAddress">جاري تحميل الموقع...</p>
+                            </div>
+
+                            <div>
+                                <a class="change-location" href="/UserPages/RequestService/Requestservice.html"
+                                    style="text-decoration: none">تغيير الموقع</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right column: Selected service info -->
+            <div class="right-col">
+                <div class="service-info">
+                    <!-- Service icon/image (set from localStorage via JS) -->
+                    <div class="icon-box">
+                        <img id="serviceImage" style="width: 60px" />
+                    </div>
+
+                    <h3>نوع الخدمة المختارة</h3>
+
+                    <!-- Service title (filled by JS) -->
+                    <h2 id="serviceTitle"></h2>
+
+                    <!-- Car info (filled by JS) -->
+                    <h6 class="mb-4" id="carInfo"></h6>
+                </div>
+
+                <!-- ETA card (static UI in this page) -->
+                <div class="time-card">
+                    <div class="time-info">
+                        <h4>الوقت المتوقع للوصول</h4>
+                        <span>١٥ - ٢٠ دقيقة</span>
+                    </div>
+                    <div class="time-icon">
+                        <i class="fa-regular fa-clock"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =========================
+           Cost + Payment section
+           ========================= -->
+        <div class="details-section">
+            <!-- Payment method (currently static UI) -->
+            <div class="payment-method">
+                <div class="section-header">
+                    وسيلة الدفع
+                    <i class="fa-regular fa-credit-card"></i>
+                </div>
+
+                <div class="payment-card">
+                    <div class="card-info">
+                        <span>كاش</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cost details (filled by JS: base, tax, total) -->
+            <div class="cost-details">
+                <div class="section-header">
+                    <i class="fa-solid fa-receipt"></i>
+                    تفاصيل التكلفة
+                </div>
+
+                <div class="cost-row">
+                    <span>رسوم الخدمة الأساسية</span>
+                    <span id="cost-base">—</span>
+                </div>
+
+                <div class="cost-row">
+                    <span>ضريبة القيمة المضافة (١٥٪)</span>
+                    <span id="cost-tax">—</span>
+                </div>
+
+                <div class="cost-row total">
+                    <span>المجموع الكلي</span>
+                    <span class="total-price" id="cost-total">—</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- =========================
+           Page actions (Back / Confirm)
+           ========================= -->
+        <div class="action-area my-5">
+            <button class="back-btn">
+                <a href="/UserPages/RequestService/Requestservice.html"
+                    style="text-decoration: none; color: #0b4a7c">رجوع</a>
+            </button>
+
+            <!-- confirmRequest() is defined in ConfirmRequest.js -->
+            <button class="confirm-btn" onclick="confirmRequest()">
+                <i class="fa-solid fa-check"></i>
+                تأكيد الطلب
+            </button>
+        </div>
+    </main>
+
+    <!-- =========================
+         Footer
+         ========================= -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <h6>المُنقِذ للسيارات</h6>
+                <div class="footer-links">
+                    <a href="/UserPages/ContactUs/Contactus.html">تواصل معنا</a>
+                    <a href="#">مركز المساعدة</a>
+                    <a href="#">الشروط والأحكام</a>
+                    <a href="#">سياسة الخصوصية</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة لدى المنقذ للسيارات © ٢٠٢٤</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Leaflet JS (required to create the map) -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Page script: reads localStorage, renders map, fills UI, handles confirm -->
+    <script src="ConfirmRequest.js"></script>
+</body>
+
+</html>

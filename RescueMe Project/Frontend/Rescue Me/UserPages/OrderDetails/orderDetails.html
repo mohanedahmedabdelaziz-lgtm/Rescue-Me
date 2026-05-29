@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل الطلب - المنقذ للسيارات</title>
+
+    <!-- Fonts & Bootstrap -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+          rel="stylesheet" 
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
+          crossorigin="anonymous">
+    
+    <!-- Leaflet CSS (Map) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="orderDetails.css">
+</head>
+<body>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <div class="navbar">
+        <div class="logo">
+            <img style="width: 32px; margin-left: 8px;" src="/assets/logo (9).png" alt="Logo">
+            المنقذ للسيارات
+        </div>
+        
+        <div class="nav-links">
+            <div class="link-3">
+                <a class="text-wrapper-3 text-center" 
+                   style="text-decoration: none; color: #0d3b66;"
+                   href="/UserPages/Home/Home.html">الرئيسية</a>
+            </div>
+            <div class="link-2">
+                <a class="text-wrapper-3 text-center" 
+                   style="text-decoration: none; color: #0d3b66;"
+                   href="/UserPages/RequestService/Requestservice.html">الخدمات</a>
+            </div>
+            <div class="text-wrapper-2">
+                <a class="text-wrapper-3 text-center" 
+                   style="text-decoration: none; color: #0d3b66;"
+                   href="/UserPages/OrdersHistory/myOrders.html">طلباتي</a>
+            </div>
+            <div class="text-wrapper-2">
+                <a class="text-wrapper-3 text-center" 
+                   style="text-decoration: none; color: #0d3b66;"
+                   href="/UserPages/ContactUs/Contactus.html">تواصل معنا</a>
+            </div>
+        </div>
+
+        <div class="nav-icons">
+            <img style="width: 30px;" src="/assets/Notificationlogo.png" alt="Notifications">
+            <img style="width: 30px;" src="/assets/Profilelogo.png" alt="Profile">
+        </div>
+    </div>
+
+    <!-- ==================== PAGE HEADER ==================== -->
+    <div class="header">
+        <div class="order-title">
+            <h1 id="orderNumber">طلب رقم</h1>
+            <p id="orderDate">تاريخ الطلب</p>
+        </div>
+    </div>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <div class="containerv">
+        
+        <!-- Right Column: Service Info + Map -->
+        <div class="right-col">
+            
+            <!-- Service Card -->
+            <div class="service-card">
+                <div class="service-header">
+                    <div>
+                        <span class="status" id="orderStatus">قيد الانتظار</span>
+                        <div class="service-title" id="serviceTitle"></div>
+                    </div>
+                </div>
+                
+                <div class="service-desc" id="serviceDescription"></div>
+
+                <div class="service-details">
+                    <div class="detail-box">
+                        <strong>مزود الخدمة</strong><br>
+                        <span id="providerName"></span><br>
+                        <span id="providerPhone"></span>
+                    </div>
+                    
+                    <div class="detail-box">
+                        <strong>تفاصيل المركبة</strong><br>
+                        <span id="carName"></span><br>
+                        <span id="plateNumber"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map -->
+            <div id="map" class="map-box"></div>
+        </div>
+
+        <!-- Left Column: Cost Summary + Help -->
+        <div class="left-col">
+            
+            <!-- Cost Summary Card -->
+            <div class="card">
+                <h3>ملخص التكلفة</h3>
+                <div class="cost-row">
+                    <span>قيمة الخدمة الأساسية</span>
+                    <span id="costBase">—</span>
+                </div>
+                <div class="cost-row">
+                    <span>رسوم المسافة الإضافية</span>
+                    <span id="costExtra">0 جنيه</span>
+                </div>
+                <div class="cost-row">
+                    <span>ضريبة القيمة المضافة (15%)</span>
+                    <span id="costTax">—</span>
+                </div>
+                <div class="total" id="totalPrice"></div>
+            </div>
+
+            <!-- Help Box -->
+            <div class="help-box">
+                <h4>هل تحتاج لمساعدة؟</h4>
+                <p>إذا واجهتك أي مشكلة في الطلب أو لديك استفسار بخصوص التكلفة، فريقنا جاهز لمساعدتك.</p>
+                <div class="help-btn">تحدث مع الدعم الفني</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <h6>المُنقِذ للسيارات</h6>
+                <div class="footer-links">
+                    <a href="#">اتصل بنا</a>
+                    <a href="#">مركز المساعدة</a>
+                    <a href="#">الشروط والأحكام</a>
+                    <a href="#">سياسة الخصوصية</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة لدى المنقذ للسيارات © ٢٠٢٤</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="orderDetails.js"></script>
+</body>
+</html>

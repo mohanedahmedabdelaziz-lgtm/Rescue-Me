@@ -1,0 +1,494 @@
+/* ================================================ */
+/* BASE STYLES - Applied globally */
+/* ================================================ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Cairo", sans-serif;
+    background: #f4f7f7;
+    color: #111827;
+}
+
+a {
+    text-decoration: none;
+    color: #0b4c7c;
+}
+
+/* ================================================ */
+/* PAGE LAYOUT */
+/* ================================================ */
+.page {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ================================================ */
+/* SIDEBAR STYLES */
+/* ================================================ */
+.sidebar {
+    background: #ffffff;
+    border-left: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 20px;
+}
+
+.sidebar-header .brand {
+    font-weight: 700;
+    font-size: 20px;
+    color: #0b4c7c;
+}
+
+.date-small {
+    display: block;
+    margin-top: 4px;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.profile-card {
+    margin-top: 32px;
+    padding: 16px;
+    border-radius: 16px;
+    background: #f9fafb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    background: #111827;
+}
+
+.avatar img {
+    width: 100%;
+}
+
+.profile-info .welcome {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.profile-info .rank {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.side-menu {
+    margin-top: 32px;
+    flex: 1;
+    width: 200px;
+}
+
+.menu-item {
+    width: 100%;
+    border: none;
+    background: transparent;
+    text-align: right;
+    padding: 10px 8px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #374151;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.menu-item img {
+    width: 20px;
+}
+
+.menu-item.active {
+    background: #0b4c7c;
+    color: #ffffff;
+}
+
+.logout {
+    margin-top: auto;
+    padding-top: 24px;
+    border-top: 1px solid #e5e7eb;
+    font-size: 13px;
+    color: #b91c1c;
+    cursor: pointer;
+}
+
+/* ================================================ */
+/* MAIN CONTENT AREA */
+/* ================================================ */
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Top Search Bar */
+.top-search {
+    display: flex;
+    justify-content: flex-start;
+    background-color: #ffffff;
+    padding: 16px;
+    position: relative;
+}
+
+.top-search img {
+    position: absolute;
+    right: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    opacity: 0.6;
+}
+
+.search-box {
+    width: 320px;
+    background: #f3f3f3;
+    border-radius: 999px;
+    border: 1px solid #e5e7eb;
+    padding: 12px;
+    padding-right: 40px;
+    font-size: 13px;
+    color: #cecece;
+}
+
+/* Header Row */
+.header-row {
+    margin-top: 26px;
+    margin-bottom: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.header-title h1 {
+    font-size: 22px;
+}
+
+.header-title .sub {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.status-chip {
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: #dcfce7;
+    color: #15803d;
+    margin-left: 300px;
+}
+
+/* Content Top Section */
+.content-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 20px;
+}
+
+/* Left Column (Actions) */
+.left-col {
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+    padding: 16px 16px 14px;
+}
+
+.card-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+/* Steps */
+.steps {
+    border-top: 1px solid #e5e7eb;
+    margin-top: 10px;
+    padding-top: 10px;
+    font-size: 12px;
+}
+
+.step {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.step-right {
+    color: #6b7280;
+}
+
+.dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #16a34a;
+}
+
+/* Buttons */
+.accordion-head {
+    height: 34px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.main-btn {
+    height: 44px;
+    border-radius: 8px;
+    border: none;
+    background: #004a80;
+    color: #fff;
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.secondary-btn {
+    height: 36px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    background: #f9fafb;
+    width: 100%;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.status-card {
+    background: #e1f8e8;
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 12px;
+    color: #14532d;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Middle Top Section */
+.middle-top {
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+}
+
+.row-top-inner {
+    display: flex;
+    gap: 14px;
+}
+
+/* Client Card */
+.client-card {
+    display: flex;
+    gap: 20%;
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+    padding: 14px 16px 12px;
+    width: 600px;
+    align-items: center;
+}
+
+.client-header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+
+.client-name {
+    font-weight: 600;
+}
+
+.client-phone {
+    font-size: 13px;
+    color: #0b4c7c;
+    font-weight: 800;
+    margin-top: 8px;
+}
+
+/* Payment Summary */
+.payment-summary {
+    width: 300px;
+    background: #004a80;
+    color: #fff;
+    border-radius: 16px;
+    padding: 50px 16px;
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.payment-summary h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.pay-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+.pay-row span:last-child {
+    font-weight: 600;
+}
+
+.pay-total {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.pay-method {
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.pay-method span {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: #e5f3ff;
+    color: #0b4c7c;
+    margin-right: 6px;
+}
+
+/* Description Card */
+.desc-card {
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+    padding: 12px 14px;
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-top: 8px;
+    width: 500px;
+}
+
+.desc-label {
+    font-size: 16px;
+    color: #9ca3af;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+/* Map Section */
+.bottom-row {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+}
+
+.map-wrapper {
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+    padding: 12px 14px 16px;
+    margin-top: 4px;
+    width: 92%;
+}
+
+.map-header {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.map-inner {
+    margin-top: 10px;
+    display: flex;
+    gap: 14px;
+    flex-direction: row;
+}
+
+#providerMap {
+    flex: 2;
+    height: 500px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.map-info-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    font-size: 12px;
+}
+
+.info-box {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 16px;
+}
+
+.info-label {
+    font-size: 11px;
+    color: #9ca3af;
+    margin-bottom: 2px;
+}
+
+/* ================================================ */
+/* FOOTER */
+/* ================================================ */
+
+footer {
+    margin-top: 32px;
+    background: #ffffff;
+    border-top: 1px solid #e1e5eb;
+    padding: 26px 0 12px;
+    font-size: 11px;
+    color: #7a8699;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 16px;
+}
+
+.footer-links a {
+    color: #7a8699;
+}

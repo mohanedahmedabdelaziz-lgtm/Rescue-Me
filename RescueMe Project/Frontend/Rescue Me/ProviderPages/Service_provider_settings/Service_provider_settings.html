@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>الإعدادات</title>
+
+    <!-- font link -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- bootstrap css link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- page css file -->
+    <link rel="stylesheet" href="Service_provider_settings.css">
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- sidebar section -->
+        <aside class="sidebar">
+
+            <div class="sidebar-header">
+                <div>
+                    <img style="width: 32px;" src="/assets/logo (9).png" alt="website logo">
+
+                    <span class="brand">
+                        المنقذ للسيارات
+                    </span>
+                </div>
+
+                <span class="date-small">
+                    لوحة التحكم للسائقين
+                </span>
+            </div>
+
+            <!-- provider profile card -->
+            <div class="profile-card">
+
+                <div class="avatar">
+                    <img src="/assets/service provider assets/profileimg.png" alt="provider profile image">
+                </div>
+
+                <div class="profile-info">
+                    <div class="welcome">مرحباً بك</div>
+                    <div class="rank">عضو متميز</div>
+                </div>
+
+            </div>
+
+            <!-- sidebar navigation menu -->
+            <nav class="side-menu">
+
+                <button class="menu-item">
+                    <img src="/assets/service provider assets/dashboardicon.png" alt="dashboard icon">
+
+                    <span>
+                        <a href="/ProviderPages/Service_provider_home/Service_provider_home.html">
+                            لوحة التحكم
+                        </a>
+                    </span>
+                </button>
+
+                <button class="menu-item">
+                    <img src="/assets/service provider assets/requestsicon.png" alt="orders icon">
+
+                    <span>
+                        <a href="/ProviderPages/Service_provider_orders/Service_provider_orders.html">
+                            طلباتي
+                        </a>
+                    </span>
+                </button>
+
+                <button class="menu-item active">
+                    <img src="/assets/service provider assets/settingslogo.png" alt="settings icon">
+
+                    <span>
+                        <a href="/ProviderPages/Service_provider_settings/Service_provider_settings.html">
+                            الإعدادات
+                        </a>
+                    </span>
+                </button>
+
+            </nav>
+
+            <!-- logout button -->
+            <div class="logout">
+                <a id="logoutBtn" style="color:red;text-decoration:none;" href="#">
+                    تسجيل الخروج
+                </a>
+            </div>
+
+        </aside>
+
+        <!-- main page content -->
+        <main class="main">
+
+            <!-- top search bar -->
+            <div class="top-search">
+
+                <img src="/assets/service provider assets/searchicon.png" alt="search icon">
+
+                <input class="search-box" placeholder="ابحث عن طلب...">
+
+            </div>
+
+            <!-- page header -->
+            <div class="header container">
+
+                <h1>الإعدادات</h1>
+
+                <p>
+                    قم بإدارة ملفك الشخصي، الأمان وتفضيلات التنبيهات الخاصة بك.
+                </p>
+
+            </div>
+
+            <!-- page content layout -->
+            <div class="content-row container">
+
+                <!-- personal information section -->
+                <div class="middle-column">
+
+                    <div class="personal-card">
+
+                        <div class="personal-header">
+                            <h2>المعلومات الشخصية</h2>
+                        </div>
+
+                        <!-- provider basic info -->
+                        <div class="personal-row-top">
+
+                            <div class="photo-box">
+                                <img src="/assets/service provider assets/profileimg.png" alt="provider image">
+                            </div>
+
+                            <div class="field">
+                                <div class="field-label">
+                                    الاسم الكامل
+                                </div>
+
+                                <div class="value-box" id="providerName">
+                                    —
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <div class="field-label">
+                                    التخصص
+                                </div>
+
+                                <div class="value-box" id="providerType">
+                                    —
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- provider phone number -->
+                        <div class="field" style="margin-top:6px;">
+
+                            <div class="field-label">
+                                رقم الهاتف
+                            </div>
+
+                            <div class="value-box" id="providerPhone">
+                                —
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- account security section -->
+                <div class="account-security">
+
+                    <div class="card">
+
+                        <div class="card-title">
+                            أمان الحساب
+                        </div>
+
+                        <!-- current password -->
+                        <div class="field-label">
+                            كلمة المرور الحالية
+                        </div>
+
+                        <div class="input-like"></div>
+
+                        <!-- new password -->
+                        <div class="field-label">
+                            كلمة المرور الجديدة
+                        </div>
+
+                        <div class="input-like"></div>
+
+                        <!-- confirm password -->
+                        <div class="field-label">
+                            تأكيد كلمة المرور
+                        </div>
+
+                        <div class="input-like"></div>
+
+                        <!-- two factor authentication -->
+                        <div class="toggle-row">
+
+                            <span>
+                                التحقق بخطوتين يزيد أمان حسابك
+                            </span>
+
+                            <div class="toggle"></div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- help card -->
+                    <div class="help-card">
+
+                        <h3>هل تحتاج لمساعدة؟</h3>
+
+                        <div>
+                            فريق الدعم الفني متاح على مدار الساعة.
+                        </div>
+
+                        <button class="help-btn">
+                            <a style="color: white; text-decoration:none ;" href="/UserPages/ContactUs/Contactus.html"> اتصل بنا</a>
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- empty right space for layout balance -->
+                <div class="right-spacer"></div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- footer section -->
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-top">
+
+                <h6>المُنقِذ للسيارات</h6>
+
+                <div class="footer-links">
+
+                    <a href="/UserPages/ContactUs/Contactus.html">تواصل معنا</a>
+
+                    <a href="#">مركز المساعدة</a>
+
+                    <a href="#">الشروط والأحكام</a>
+
+                    <a href="#">سياسة الخصوصية</a>
+
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+
+                <p>
+                    جميع الحقوق محفوظة لدى المُنقِذ للسيارات © ٢٠٢٤
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- page javascript file -->
+    <script src="Service_provider_settings.js"></script>
+
+</body>
+
+</html>

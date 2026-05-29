@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>اتصل بنا - المنقذ للسيارات</title>
+
+    <!-- Google Font - Cairo -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="Contactus.css">
+</head>
+
+<body>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <div class="navbar">
+        <div class="logo">
+            <img style="width: 32px; margin-left: 8px;" src="/assets/logo (9).png" alt="Logo">
+            المنقذ للسيارات
+        </div>
+
+        <div class="nav-links">
+            <div class="link-3">
+                <a class="text-wrapper-3 text-center" style="text-decoration: none; color: #0d3b66;"
+                    href="/UserPages/Home/Home.html">الرئيسية</a>
+            </div>
+            <div class="link-2">
+                <a class="text-wrapper-3 text-center" style="text-decoration: none; color: #0d3b66;"
+                    href="/UserPages/RequestService/Requestservice.html">الخدمات</a>
+            </div>
+            <div class="text-wrapper-2">
+                <a class="text-wrapper-3 text-center" style="text-decoration: none; color: #0d3b66;"
+                    href="/UserPages/OrdersHistory/myOrders.html">طلباتي</a>
+            </div>
+            <div class="text-wrapper-2">
+                <a class="text-wrapper-3 text-center"
+                    style="text-decoration: none; color: #0d3b66; border-bottom: 1px solid navy;"
+                    href="/UserPages/Home/Home.html">تواصل معنا</a>
+            </div>
+        </div>
+
+        <div class="nav-icons">
+            <div>
+                <img style="width: 30px;" class="actions" src="/assets/Notificationlogo.png" alt="Notifications">
+                <img style="width: 30px;" class="actions" src="/assets/Profilelogo.png" alt="Profile">
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-title">اتصل بنا</div>
+            <div class="hero-text">
+                نحن هنا لضمان سلاماك على الطريق، وفريقنا المتخصص جاهز للرد على استفساراتكم وتقديم المساعدة في أي وقت.
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <section class="section">
+        <div class="section-inner">
+
+            <!-- Contact Form -->
+            <div class="form-card">
+                <div class="form-header">
+                    <div class="form-header-line"></div>
+                    <h2>أرسل لنا رسالة</h2>
+                </div>
+
+                <form id="contactForm">
+                    <div class="form-row">
+                        <div class="field">
+                            <div class="field-label">الاسم الكامل</div>
+                            <input id="from_name" class="input" type="text" placeholder="مثال: أحمد محمد">
+                        </div>
+                        <div class="field">
+                            <div class="field-label">البريد الإلكتروني</div>
+                            <input id="from_email" class="input" type="email" placeholder="name@example.com">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="field">
+                            <div class="field-label">الموضوع</div>
+                            <input id="subject" class="input" type="text" placeholder="كيف يمكننا مساعدتك؟">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="field">
+                            <div class="field-label">الرسالة</div>
+                            <textarea id="message" class="input textarea" placeholder="اكتب استفسارك هنا..."></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <span>إرسال الرسالة</span>
+                        <span>➤</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="contact-info-card">
+                <h3>معلومات التواصل</h3>
+
+                <div class="info-block">
+                    <span class="info-icon icon-blue">📞</span>
+                    <div class="info-label">الهاتف
+                        <span class="info-value">01119463672</span>
+                    </div>
+                </div>
+
+                <div class="info-block">
+                    <span class="info-icon icon-blue">✉️</span>
+                    <div class="info-label">البريد الإلكتروني
+                        <span class="info-value">rescuemebuisness@gmail.com</span>
+                    </div>
+                </div>
+
+                <div class="info-block">
+                    <span class="info-icon icon-blue">📍</span>
+                    <div class="info-label">المقر الرئيسي
+                        <span class="info-value">الهرم - المربوطية</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <h6>المُنقِذ للسيارات</h6>
+                <div class="footer-links">
+                    <a href="#">تواصل معنا</a>
+                    <a href="#">مركز المساعدة</a>
+                    <a href="#">الشروط والأحكام</a>
+                    <a href="#">سياسة الخصوصية</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة لدى المنقذ للسيارات © ٢٠٢٤</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- EmailJS Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="Contactus.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تقييم الخدمة - المنقذ للسيارات</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+          rel="stylesheet">
+    
+    <!-- Font Awesome for Stars -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="RateService.css">
+</head>
+<body>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <div class="navbar">
+        <div class="logo">
+            <img style="width: 32px; margin-left: 8px;" src="/assets/logo (9).png" alt="Logo">
+            المنقذ للسيارات
+        </div>
+        
+        <div class="nav-links">
+            <div class="link-3">
+                <a style="text-decoration: none; color: #0d3b66;" 
+                   href="../Home/Home.html">الرئيسية</a>
+            </div>
+            <div class="link-2">
+                <a style="text-decoration: none; color: #0d3b66;" 
+                   href="../RequestService/Requestservice.html">الخدمات</a>
+            </div>
+            <div class="text-wrapper-2">
+                <a style="text-decoration: none; color: #0d3b66;" 
+                   href="/UserPages/OrdersHistory/myOrders.html">طلباتي</a>
+            </div>
+            <div class="text-wrapper-2">
+                <a style="text-decoration: none; color: #0d3b66;" 
+                   href="../ContactUs/Contactus.html">تواصل معنا</a>
+            </div>
+        </div>
+
+        <div class="nav-icons">
+            <img style="width: 30px;" src="/assets/Notificationlogo.png" alt="Notifications">
+            <img style="width: 30px;" src="/assets/Profilelogo.png" alt="Profile">
+        </div>
+    </div>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <div class="main-content-canvas">
+        <div class="rating-card">
+
+            <!-- Success Icon -->
+            <div class="success-box">
+                <img src="/assets/ratelogo.png" width="40" alt="Success">
+            </div>
+
+            <h2 class="title">تمت الخدمة بنجاح</h2>
+            <p class="subtitle">يسعدنا أن نسمع رأيك حول تجربتك مع فريق المنقذ</p>
+
+            <!-- Service Summary -->
+            <div class="service-box">
+                <div class="service-left">
+                    <div class="service-icon">
+                        <img id="serviceImage" width="30" alt="Service Icon">
+                    </div>
+                    <div class="service-text">
+                        <small>نوع الخدمة</small>
+                        <strong id="serviceTitle"></strong>
+                        <div style="margin-top: 5px; color: #777;">
+                            <span id="providerName"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="price">
+                    <span id="servicePrice"></span> جنيه
+                </div>
+            </div>
+
+            <!-- Rating Stars -->
+            <div class="rating-title">تقييم الخدمة</div>
+            <div class="rating" id="starsContainer">
+                <i class="fa-solid fa-star" data-value="1"></i>
+                <i class="fa-solid fa-star" data-value="2"></i>
+                <i class="fa-solid fa-star" data-value="3"></i>
+                <i class="fa-solid fa-star" data-value="4"></i>
+                <i class="fa-solid fa-star" data-value="5"></i>
+            </div>
+
+            <!-- Comment -->
+            <div class="comment-box">
+                <label>أضف تعليقك (اختياري)</label>
+                <textarea id="commentInput" placeholder="أخبرنا المزيد عن تجربتك..."></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button class="submit-btn" onclick="submitRate()">إرسال التقييم</button>
+
+        </div>
+    </div>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <h6>المُنقِذ للسيارات</h6>
+                <div class="footer-links">
+                    <a href="/UserPages/ContactUs/Contactus.html">تواصل معنا</a>
+                    <a href="#">مركز المساعدة</a>
+                    <a href="#">الشروط والأحكام</a>
+                    <a href="#">سياسة الخصوصية</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة لدى المنقذ للسيارات © ٢٠٢٤</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="RateService.js"></script>
+</body>
+</html>
