@@ -13,13 +13,10 @@ if (!currentProvider) {
 
 // ==================== LOGOUT FUNCTION ====================
 document.getElementById("logoutBtn").addEventListener("click", () => {
-
-    // Remove only auth-related data
     localStorage.removeItem("currentProvider");
     localStorage.removeItem("providerType");
     localStorage.removeItem("isLoggedIn");
     localStorage.removeItem("role");
-
     window.location.href = "/UserPages/Login/login.html";
 });
 
@@ -27,7 +24,6 @@ document.getElementById("logoutBtn").addEventListener("click", () => {
 const API_BASE = "http://localhost:5065/api/Orders";
 
 // ==================== PROVIDER DATA ====================
-// Tow = 0, Mechanical = 1, Electrical = 2
 const currentProviderType = Number(
     localStorage.getItem("providerType") || 0
 );
@@ -50,9 +46,7 @@ const SERVICE_ICONS = {
 
 // ==================== LOAD PENDING ORDERS ====================
 async function loadOrders() {
-
     try {
-
         const res = await fetch(API_BASE);
 
         if (!res.ok) {
@@ -68,14 +62,21 @@ async function loadOrders() {
         );
 
         // Update counter
-        document.getElementById("ordersCount").innerText =
-            filteredOrders.length;
+        document.getElementById("ordersCount").innerText = filteredOrders.length;
 
         ordersContainer.innerHTML = "";
 
+        // Clear old markers from map
+        map.eachLayer(layer => {
+            if (layer instanceof L.Marker) {
+                map.removeLayer(layer);
+            }
+        });
+
+        const markers = [];
+
         // No orders
         if (filteredOrders.length === 0) {
-
             ordersContainer.innerHTML = `
                 <div style="
                     background:white;
@@ -87,91 +88,79 @@ async function loadOrders() {
                     لا توجد طلبات حالياً
                 </div>
             `;
-
             return;
         }
 
         // Render orders
         filteredOrders.forEach(order => {
-
-            const serviceIcon =
-                SERVICE_ICONS[order.providerType]
-                || "/assets/towlogo.png";
+            const serviceIcon = SERVICE_ICONS[order.providerType] || "/assets/towlogo.png";
 
             ordersContainer.innerHTML += `
                 <article class="order-card">
-
                     <div class="order-main">
-
                         <div class="order-title">
-
                             <img
                                 style="width:40px;margin-left:10px;"
                                 src="${serviceIcon}"
                                 alt="service icon"
                             >
-
                             ${order.serviceTitle || order.serviceName || "خدمة"}
-
                         </div>
-
                         <div class="order-sub">
-                            <span>
-                                العميل: ${order.userName || "عميل"}
-                            </span>
+                            <span>العميل: ${order.userName || "عميل"}</span>
                         </div>
-
                         <div class="price">
                             ${order.servicePrice || "—"} جنيه
                         </div>
-
                     </div>
-
                     <div class="order-meta">
-
                         <div class="meta-col">
                             <div class="meta-label">المركبة</div>
-                            <div class="meta-value">
-                                ${order.carName || "—"}
-                            </div>
+                            <div class="meta-value">${order.carName || "—"}</div>
                         </div>
-
                         <div class="meta-col">
                             <div class="meta-label">رقم اللوحة</div>
-                            <div class="meta-value">
-                                ${order.plateNumber || "—"}
-                            </div>
+                            <div class="meta-value">${order.plateNumber || "—"}</div>
                         </div>
-
                     </div>
-
                     <div class="order-actions">
-
                         <button
                             class="btn-outline"
                             onclick="rejectOrder(${order.id})"
                         >
                             رفض
                         </button>
-
                         <button
                             class="btn-primary"
                             onclick="acceptOrder(${order.id})"
                         >
                             قبول الطلب
                         </button>
-
                     </div>
-
                 </article>
             `;
+
+            // Add marker for each order that has a location
+            if (order.userLat && order.userLng) {
+                const marker = L.marker([order.userLat, order.userLng])
+                    .addTo(map)
+                    .bindPopup(`
+                        <b>${order.userName || "عميل"}</b><br>
+                        ${order.serviceTitle || order.serviceName || "خدمة"}<br>
+                        ${order.carName || "—"}
+                    `);
+                markers.push(marker);
+            }
         });
 
-    }
-    catch (err) {
+        // Fit map to show all markers
+        if (markers.length > 0) {
+            const group = L.featureGroup(markers);
+            map.fitBounds(group.getBounds().pad(0.3));
+        }
 
+    } catch (err) {
         console.error(err);
-
         ordersContainer.innerHTML = `
             <div style="
                 background:white;
@@ -189,9 +178,7 @@ async function loadOrders() {
 
 // ==================== ACCEPT ORDER ====================
 async function acceptOrder(orderId) {
-
     if (!currentProvider) {
-
         Swal.fire({
             icon: "error",
             title: "خطأ",
@@ -199,25 +186,19 @@ async function acceptOrder(orderId) {
             confirmButtonText: "حسناً",
             confirmButtonColor: "#004471"
         });
-
         return;
     }
 
     try {
-
         const url =
             `${API_BASE}/accept/${orderId}`
             + `?providerId=${currentProvider.id}`
             + `&providerName=${encodeURIComponent(currentProvider.name)}`
             + `&providerPhone=${encodeURIComponent(currentProvider.phone)}`;
 
-        const res = await fetch(url, {
-            method: "PUT"
-        });
+        const res = await fetch(url, { method: "PUT" });
 
-        if (!res.ok) {
-            throw new Error("Accept failed");
-        }
+        if (!res.ok) throw new Error("Accept failed");
 
         Swal.fire({
             title: "تم",
@@ -229,11 +210,8 @@ async function acceptOrder(orderId) {
 
         loadOrders();
 
-    }
-    catch (err) {
-
+    } catch (err) {
         console.error(err);
-
         Swal.fire({
             icon: "error",
             title: "خطأ",
@@ -246,19 +224,13 @@ async function acceptOrder(orderId) {
 
 // ==================== REJECT ORDER ====================
 async function rejectOrder(orderId) {
-
     try {
-
         const res = await fetch(
             `${API_BASE}/reject/${orderId}`,
-            {
-                method: "PUT"
-            }
+            { method: "PUT" }
         );
 
-        if (!res.ok) {
-            throw new Error("Reject failed");
-        }
+        if (!res.ok) throw new Error("Reject failed");
 
         Swal.fire({
             icon: "info",
@@ -270,11 +242,8 @@ async function rejectOrder(orderId) {
 
         loadOrders();
 
-    }
-    catch (err) {
-
+    } catch (err) {
         console.error(err);
-
         Swal.fire({
             icon: "error",
             title: "خطأ",

@@ -21,6 +21,7 @@ body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
+
 .logo {
     font-size: 26px;
     font-weight: 800;
@@ -34,6 +35,17 @@ body {
     gap: 40px;
     font-weight: 600;
     color: #4a5568;
+}
+.nav-links a {
+    color: #0d3b66;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: #ffffff !important;
+    background: #0b4a7c;
+    padding: 4px 8px;
+    border-radius: 6px;
 }
 
 .nav-right {

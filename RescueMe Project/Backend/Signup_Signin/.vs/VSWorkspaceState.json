@@ -4,8 +4,9 @@
     "\\Signup_Signin",
     "\\Signup_Signin\\Controllers",
     "\\Signup_Signin\\Data",
-    "\\Signup_Signin\\Data\\Entities"
+    "\\Signup_Signin\\Data\\Entities",
+    "\\Signup_Signin\\Migrations"
   ],
-  "SelectedNode": "\\Signup_Signin\\Data\\Entities\\Order.cs",
+  "SelectedNode": "\\Signup_Signin\\Migrations\\20260529211449_addorderstables.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -8,7 +8,6 @@
 
 body {
     height: 100vh;
-    overflow: hidden;
 }
 
 /* Main Container */
@@ -81,6 +80,7 @@ body {
 
 .logo {
     margin-bottom: 15px;
+    margin-top: 10px;
 }
 
 .form-box p {
@@ -97,7 +97,7 @@ body {
 
 .role {
     flex: 1;
-    padding: 20px 15px;
+    padding: 10px 10px;
     border: 2px solid #d1d5db;
     border-radius: 15px;
     text-align: center;
@@ -170,7 +170,7 @@ body {
 
 /* Footer */
 .footer {
-    margin-top: 20px;
+    margin-top: 10px;
     text-align: center;
     font-size: 14px;
 }

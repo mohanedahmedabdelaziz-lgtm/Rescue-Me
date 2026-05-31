@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MX0kRQsBVO4=",
+  "dgSpecHash": "2lLKZ8j9bmQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\DELL\\OneDrive\\Dokumente\\Level 4\\2nd Semester\\Project - 2\\IT\\Rescue_Me\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Signup_Signin.csproj",
+  "projectFilePath": "C:\\Users\\DELL\\OneDrive\\Desktop\\Rescue-Me Github\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Signup_Signin.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DELL\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

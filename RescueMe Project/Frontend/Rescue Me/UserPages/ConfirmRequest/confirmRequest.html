@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>تأكيد طلب المساعدة - المنقذ للسيارات</title>
+    <link rel="icon" type="image/png" href="/assets/logo (9).png">
 
     <!-- Leaflet map library styles -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -58,6 +59,8 @@
         <div class="nav-icons">
             <img src="/assets/Notificationlogo.png" style="width: 30px" />
             <img src="/assets/Profilelogo.png" style="width: 30px" />
+            <button class="btn btn-sm btn-danger" id="logoutBtn" style="display:none;" onclick="logoutUser()">تسجيل
+                الخروج</button>
         </div>
     </div>
 
@@ -202,7 +205,7 @@
     <footer>
         <div class="container">
             <div class="footer-top">
-                <h6>المُنقِذ للسيارات</h6>
+                <h6>المنقذ للسيارات</h6>
                 <div class="footer-links">
                     <a href="/UserPages/ContactUs/Contactus.html">تواصل معنا</a>
                     <a href="#">مركز المساعدة</a>
@@ -212,7 +215,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>جميع الحقوق محفوظة لدى المنقذ للسيارات © ٢٠٢٤</p>
+                <p>جميع الحقوق محفوظة لدى المنقذ للسيارات © ٢٠٢٦</p>
             </div>
         </div>
     </footer>
@@ -222,6 +225,7 @@
 
     <!-- Page script: reads localStorage, renders map, fills UI, handles confirm -->
     <script src="ConfirmRequest.js"></script>
+    <script src="/Userlogout.js"></script>
 </body>
 
 </html>

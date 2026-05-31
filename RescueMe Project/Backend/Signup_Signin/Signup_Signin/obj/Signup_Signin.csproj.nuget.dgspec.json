@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\DELL\\OneDrive\\Dokumente\\Level 4\\2nd Semester\\Project - 2\\IT\\Rescue_Me\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Signup_Signin.csproj": {}
+    "C:\\Users\\DELL\\OneDrive\\Desktop\\Rescue-Me Github\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Signup_Signin.csproj": {}
   },
   "projects": {
-    "C:\\Users\\DELL\\OneDrive\\Dokumente\\Level 4\\2nd Semester\\Project - 2\\IT\\Rescue_Me\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Signup_Signin.csproj": {
+    "C:\\Users\\DELL\\OneDrive\\Desktop\\Rescue-Me Github\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Signup_Signin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DELL\\OneDrive\\Dokumente\\Level 4\\2nd Semester\\Project - 2\\IT\\Rescue_Me\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Signup_Signin.csproj",
+        "projectUniqueName": "C:\\Users\\DELL\\OneDrive\\Desktop\\Rescue-Me Github\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Signup_Signin.csproj",
         "projectName": "Signup_Signin",
-        "projectPath": "C:\\Users\\DELL\\OneDrive\\Dokumente\\Level 4\\2nd Semester\\Project - 2\\IT\\Rescue_Me\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Signup_Signin.csproj",
+        "projectPath": "C:\\Users\\DELL\\OneDrive\\Desktop\\Rescue-Me Github\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Signup_Signin.csproj",
         "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DELL\\OneDrive\\Dokumente\\Level 4\\2nd Semester\\Project - 2\\IT\\Rescue_Me\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\obj\\",
+        "outputPath": "C:\\Users\\DELL\\OneDrive\\Desktop\\Rescue-Me Github\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -45,7 +45,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -90,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

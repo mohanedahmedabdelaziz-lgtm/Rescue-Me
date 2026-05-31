@@ -29,8 +29,15 @@ body {
 }
 
 .nav-links a {
+    color: #0d3b66;
     text-decoration: none;
-    color: #6b7280;
+}
+
+.nav-links a:hover {
+    color: #ffffff !important;
+    background: #0b4a7c;
+    padding: 4px 8px;
+    border-radius: 6px;
 }
 
 .login-btn {
@@ -144,7 +151,8 @@ label {
     font-weight: 700;
 }
 
-input, select {
+input,
+select {
     width: 100%;
     padding: 16px;
     border-radius: 12px;
@@ -194,8 +202,13 @@ input, select {
     background: #e5e7eb;
 }
 
-.divider::before { right: 0; }
-.divider::after { left: 0; }
+.divider::before {
+    right: 0;
+}
+
+.divider::after {
+    left: 0;
+}
 
 /* Input Icons */
 .input-wrapper {

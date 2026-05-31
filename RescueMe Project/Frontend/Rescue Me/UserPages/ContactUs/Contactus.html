@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>اتصل بنا - المنقذ للسيارات</title>
+    <link rel="icon" type="image/png" href="/assets/logo (9).png">
 
     <!-- Google Font - Cairo -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -46,10 +47,10 @@
         </div>
 
         <div class="nav-icons">
-            <div>
-                <img style="width: 30px;" class="actions" src="/assets/Notificationlogo.png" alt="Notifications">
-                <img style="width: 30px;" class="actions" src="/assets/Profilelogo.png" alt="Profile">
-            </div>
+            <img src="/assets/Notificationlogo.png" style="width: 30px" />
+            <img src="/assets/Profilelogo.png" style="width: 30px" />
+            <button class="btn btn-sm btn-danger" id="logoutBtn" style="display:none;" onclick="logoutUser()">تسجيل
+                الخروج</button>
         </div>
     </div>
 
@@ -140,7 +141,7 @@
     <footer>
         <div class="container">
             <div class="footer-top">
-                <h6>المُنقِذ للسيارات</h6>
+                <h6>المنقذ للسيارات</h6>
                 <div class="footer-links">
                     <a href="#">تواصل معنا</a>
                     <a href="#">مركز المساعدة</a>
@@ -150,7 +151,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>جميع الحقوق محفوظة لدى المنقذ للسيارات © ٢٠٢٤</p>
+                <p>جميع الحقوق محفوظة لدى المنقذ للسيارات © ٢٠٢٦</p>
             </div>
         </div>
     </footer>
@@ -159,7 +160,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <!-- Custom JavaScript -->
     <script src="Contactus.js"></script>
-
+<script src="/Userlogout.js"></script>
 </body>
 
 </html>

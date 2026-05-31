@@ -1,24 +1,15 @@
-// ================================================
-// Home Page - Login Button Visibility Logic
-// ================================================
-
 document.addEventListener("DOMContentLoaded", () => {
-    
     const btnLoginHome = document.querySelector('.btnloginhome');
+    const logoutBtn = document.getElementById("logoutBtn");
     
-    // Get login status from localStorage
-    let isLoggedIn = localStorage.getItem("isLoggedIn");
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+    const role = localStorage.getItem("role");
 
-    // If page opened directly (not from login), clear login status
-    if (document.referrer === "") {
-        localStorage.removeItem("isLoggedIn");
-        isLoggedIn = null;
-    }
-
-    // Show login button only if user is NOT logged in
-    if (!isLoggedIn) {
-        btnLoginHome.style.display = "block";
+    if (isLoggedIn && role === "driver") {
+        if (btnLoginHome) btnLoginHome.style.display = "none";
+        if (logoutBtn) logoutBtn.style.display = "inline-block";
     } else {
-        btnLoginHome.style.display = "none";
+        if (btnLoginHome) btnLoginHome.style.display = "inline-block";
+        if (logoutBtn) logoutBtn.style.display = "none";
     }
 });

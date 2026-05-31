@@ -36,6 +36,18 @@ body {
     color: #4a5568;
 }
 
+.nav-links a {
+    color: #0d3b66;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: #ffffff !important;
+    background: #0b4a7c;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
 .nav-icons {
     display: flex;
     gap: 20px;

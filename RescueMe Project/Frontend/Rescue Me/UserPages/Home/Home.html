@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <title>خدمة المساعدة على الطريق - المنقذ للسيارات</title>
-    
+    <link rel="icon" type="image/png" href="/assets/logo (9).png">
+
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
+
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
-          rel="stylesheet" 
-          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
-          crossorigin="anonymous">
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="Home.css">
 </head>
+
 <body>
 
     <!-- ==================== NAVBAR ==================== -->
@@ -24,44 +25,43 @@
             <img style="width: 32px; margin-left: 8px;" src="/assets/logo (9).png" alt="Logo">
             المنقذ للسيارات
         </div>
-        
+
         <div class="nav-links">
             <div class="link-3">
-                <a class="text-wrapper-3 text-center" 
-                   style="text-decoration: none; color: #0d3b66; border-bottom: 1px solid navy;"
-                   href="/UserPages/Home/Home.html">الرئيسية</a>
+                <a class=" ahover text-wrapper-3 text-center"
+                    style="text-decoration: none; color: #0d3b66; border-bottom: 1px solid navy;"
+                    href="/UserPages/Home/Home.html">الرئيسية</a>
             </div>
             <div class="link-2">
-                <a class="text-wrapper-3 text-center" 
-                   style="text-decoration: none; color: #0d3b66;"
-                   href="/UserPages/RequestService/Requestservice.html">الخدمات</a>
+                <a class="text-wrapper-3 text-center" style="text-decoration: none; color: #0d3b66;"
+                    href="/UserPages/RequestService/Requestservice.html">الخدمات</a>
             </div>
             <div class="text-wrapper-2">
-                <a class="text-wrapper-3 text-center" 
-                   style="text-decoration: none; color: #0d3b66;"
-                   href="/UserPages/OrdersHistory/myOrders.html">طلباتي</a>
+                <a class="text-wrapper-3 text-center" style="text-decoration: none; color: #0d3b66;"
+                    href="/UserPages/OrdersHistory/myOrders.html">طلباتي</a>
             </div>
             <div class="text-wrapper-2">
-                <a class="text-wrapper-3 text-center" 
-                   style="text-decoration: none; color: #0d3b66;"
-                   href="/UserPages/ContactUs/Contactus.html">تواصل معنا</a>
+                <a class="text-wrapper-3 text-center" style="text-decoration: none; color: #0d3b66;"
+                    href="/UserPages/ContactUs/Contactus.html">تواصل معنا</a>
             </div>
         </div>
 
         <div class="nav-right d-flex gap-3">
             <a href="/UserPages/Login/login.html" class="btn btn-outline btnloginhome">تسجيل الدخول</a>
+            <button class="btn btn-danger" id="logoutBtn" style="display:none;" onclick="logoutUser()">تسجيل
+                الخروج</button>
             <a href="/UserPages/RequestService/Requestservice.html" class="btn btn-primary">اطلب المساعدة</a>
         </div>
     </div>
 
-    
 
-   
+
+
 
     <!-- ==================== HERO SECTION ==================== -->
     <section class="hero">
         <div class="container hero-inner">
-            
+
 
             <!-- Hero Content -->
             <div class="hero-content">
@@ -73,11 +73,11 @@
                 <p class="hero-text">
                     أكبر شبكة لإنقاذ السيارات في المملكة. نصل إليك أينما كنت في أقل من ٢٠ دقيقة في المتوسط.
                 </p>
-                
+
                 <div class="hero-actions">
                     <a href="../RequestService/Requestservice.html" class="btn btn-primary">اطلب مساعدة الآن *</a>
                 </div>
-                
+
                 <p class="hero-footnote">
                     * أكثر من ١٠٠ ألف عملية إنقاذ ناجحة
                 </p>
@@ -85,8 +85,7 @@
 
             <!-- Hero Image -->
             <div class="hero-card-image">
-                <img src="/assets/Gemini_Generated_Image_pl1s2cpl1s2cpl1s 1.png" 
-                     alt="تعطل سيارة على الطريق">
+                <img src="/assets/Gemini_Generated_Image_pl1s2cpl1s2cpl1s 1.png" alt="تعطل سيارة على الطريق">
                 <div class="hero-badge">
                     متوسط وقت الوصول
                     <strong>١٥ دقيقة</strong>
@@ -96,7 +95,7 @@
     </section>
 
 
-     <!-- ==================== SERVICES SECTION ==================== -->
+    <!-- ==================== SERVICES SECTION ==================== -->
     <section class="section">
         <div class="container">
             <div class="section-header">
@@ -166,7 +165,7 @@
     <footer>
         <div class="container">
             <div class="footer-top">
-                <h6>المُنقِذ للسيارات</h6>
+                <h6>المنقذ للسيارات</h6>
                 <div class="footer-links">
                     <a href="/UserPages/ContactUs/Contactus.html">تواصل معنا</a>
                     <a href="#">مركز المساعدة</a>
@@ -176,11 +175,13 @@
             </div>
 
             <div class="footer-bottom">
-                <p>جميع الحقوق محفوظة لدى المنقذ للسيارات © ٢٠٢٤</p>
+                <p>جميع الحقوق محفوظة لدى المنقذ للسيارات © ٢٠٢٦</p>
             </div>
         </div>
     </footer>
 
     <script src="home.js"></script>
+    <script src="/Userlogout.js"></script>
 </body>
+
 </html>
