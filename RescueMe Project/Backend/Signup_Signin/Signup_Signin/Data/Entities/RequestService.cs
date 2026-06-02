@@ -2,7 +2,7 @@
 
 namespace Signup_Signin.Data.Entities
 {
-    public class Order
+    public class RequestService
     {
         [Key]
         public int Id { get; set; }

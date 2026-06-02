@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Migrations",
+    "\\obj"
   ],
   "PreviewInSolutionExplorer": false
 }

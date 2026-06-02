@@ -54,6 +54,7 @@ namespace Signup_Signin.Controllers
             {
                 return Unauthorized("Invalid email or password.");
             }
+            user.Password = "";
             return Ok(user);
         }
 
@@ -69,6 +70,7 @@ namespace Signup_Signin.Controllers
             {
                 return Unauthorized("Invalid name or password.");
             }
+            provider.Password = "";
             return Ok(provider);
         }
     }

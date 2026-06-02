@@ -132,17 +132,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Order"
+                "$ref": "#/components/schemas/RequestService"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Order"
+                "$ref": "#/components/schemas/RequestService"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Order"
+                "$ref": "#/components/schemas/RequestService"
               }
             }
           }
@@ -317,7 +317,7 @@
   },
   "components": {
     "schemas": {
-      "Order": {
+      "RequestService": {
         "type": "object",
         "properties": {
           "id": {

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Signup_Signin.Data.Entities;
 
@@ -11,9 +12,11 @@ using Signup_Signin.Data.Entities;
 namespace Signup_Signin.Migrations
 {
     [DbContext(typeof(MainContext))]
-    partial class MainContextModelSnapshot : ModelSnapshot
+    [Migration("20260602195641_hashpassword")]
+    partial class hashpassword
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -93,7 +96,7 @@ namespace Signup_Signin.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("RequestServices");
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("Signup_Signin.Data.Entities.ServiceProviderx", b =>

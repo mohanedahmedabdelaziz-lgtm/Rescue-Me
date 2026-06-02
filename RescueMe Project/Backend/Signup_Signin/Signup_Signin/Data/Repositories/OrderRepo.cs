@@ -12,24 +12,24 @@ namespace Signup_Signin.Data.Repositories
         }
 
         
-        public async Task<Order> CreateOrder(Order order)
+        public async Task<RequestService> CreateOrder(RequestService order)
         {
-            _context.Orders.Add(order);
+            _context.RequestServices.Add(order);
             await _context.SaveChangesAsync();
             return order;
         }
 
-        public async Task<List<Order>> GetOrders()
+        public async Task<List<RequestService>> GetOrders()
         {
-            return await _context.Orders
+            return await _context.RequestServices
                 .OrderByDescending(o => o.CreatedAt)
                 .ToListAsync();
         }
 
         
-        public async Task<Order?> GetOrder(int id)
+        public async Task<RequestService?> GetOrder(int id)
         {
-            return await _context.Orders
+            return await _context.RequestServices
                 .FirstOrDefaultAsync(o => o.Id == id);
         }
 
@@ -40,7 +40,7 @@ namespace Signup_Signin.Data.Repositories
             string providerPhone
         )
         {
-            var order = await _context.Orders.FindAsync(orderId);
+            var order = await _context.RequestServices.FindAsync(orderId);
 
             if (order == null)
                 return false;
@@ -57,7 +57,7 @@ namespace Signup_Signin.Data.Repositories
 
         public async Task<bool> RejectOrder(int orderId)
         {
-            var order = await _context.Orders.FindAsync(orderId);
+            var order = await _context.RequestServices.FindAsync(orderId);
 
             if (order == null)
                 return false;
@@ -71,12 +71,12 @@ namespace Signup_Signin.Data.Repositories
 
         public async Task<bool> DeleteOrder(int orderId)
         {
-            var order = await _context.Orders.FindAsync(orderId);
+            var order = await _context.RequestServices.FindAsync(orderId);
 
             if (order == null)
                 return false;
 
-            _context.Orders.Remove(order);
+            _context.RequestServices.Remove(order);
 
             await _context.SaveChangesAsync();
 
@@ -85,7 +85,7 @@ namespace Signup_Signin.Data.Repositories
 
         public async Task<bool> DoneOrder(int orderId, int? userRate, string? userComment)
         {
-            var order = await _context.Orders.FindAsync(orderId);
+            var order = await _context.RequestServices.FindAsync(orderId);
             if (order == null) return false;
             order.Status = "done";
             order.UserRate = userRate;

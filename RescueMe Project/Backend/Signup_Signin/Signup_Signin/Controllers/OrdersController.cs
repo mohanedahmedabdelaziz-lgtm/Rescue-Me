@@ -15,7 +15,7 @@ namespace Signup_Signin.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateOrder(Order order)
+        public async Task<IActionResult> CreateOrder(RequestService order)
         {
             var created = await _orderRepo.CreateOrder(order);
 

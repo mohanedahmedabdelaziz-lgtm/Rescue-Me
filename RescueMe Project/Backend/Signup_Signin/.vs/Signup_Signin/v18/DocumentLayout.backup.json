@@ -3,28 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\DELL\\OneDrive\\Desktop\\Rescue-Me Github\\RescueMe Project\\Backend\\Signup_Signin\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{87C8E775-F376-41DA-B61D-EE8B973A6118}|Signup_Signin\\Signup_Signin.csproj|c:\\users\\dell\\onedrive\\desktop\\rescue-me github\\rescueme project\\backend\\signup_signin\\signup_signin\\migrations\\20260529211449_addorderstables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{87C8E775-F376-41DA-B61D-EE8B973A6118}|Signup_Signin\\Signup_Signin.csproj|solutionrelative:signup_signin\\migrations\\20260529211449_addorderstables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DELL\\OneDrive\\Desktop\\Rescue-Me Github\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Migrations\\20260602200239_renameordertable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Signup_Signin\\Migrations\\20260602200239_renameordertable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{87C8E775-F376-41DA-B61D-EE8B973A6118}|Signup_Signin\\Signup_Signin.csproj|c:\\users\\dell\\onedrive\\desktop\\rescue-me github\\rescueme project\\backend\\signup_signin\\signup_signin\\data\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{87C8E775-F376-41DA-B61D-EE8B973A6118}|Signup_Signin\\Signup_Signin.csproj|solutionrelative:signup_signin\\data\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{87C8E775-F376-41DA-B61D-EE8B973A6118}|Signup_Signin\\Signup_Signin.csproj|c:\\users\\dell\\onedrive\\desktop\\rescue-me github\\rescueme project\\backend\\signup_signin\\signup_signin\\data\\entities\\maincontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{87C8E775-F376-41DA-B61D-EE8B973A6118}|Signup_Signin\\Signup_Signin.csproj|solutionrelative:signup_signin\\data\\entities\\maincontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{87C8E775-F376-41DA-B61D-EE8B973A6118}|Signup_Signin\\Signup_Signin.csproj|c:\\users\\dell\\onedrive\\desktop\\rescue-me github\\rescueme project\\backend\\signup_signin\\signup_signin\\data\\repositories\\orderrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{87C8E775-F376-41DA-B61D-EE8B973A6118}|Signup_Signin\\Signup_Signin.csproj|solutionrelative:signup_signin\\data\\repositories\\orderrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DELL\\OneDrive\\Desktop\\Rescue-Me Github\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Migrations\\20260602195641_hashpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Signup_Signin\\Migrations\\20260602195641_hashpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{87C8E775-F376-41DA-B61D-EE8B973A6118}|Signup_Signin\\Signup_Signin.csproj|c:\\users\\dell\\onedrive\\desktop\\rescue-me github\\rescueme project\\backend\\signup_signin\\signup_signin\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{87C8E775-F376-41DA-B61D-EE8B973A6118}|Signup_Signin\\Signup_Signin.csproj|solutionrelative:signup_signin\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{87C8E775-F376-41DA-B61D-EE8B973A6118}|Signup_Signin\\Signup_Signin.csproj|c:\\users\\dell\\onedrive\\desktop\\rescue-me github\\rescueme project\\backend\\signup_signin\\signup_signin\\data\\entities\\requestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87C8E775-F376-41DA-B61D-EE8B973A6118}|Signup_Signin\\Signup_Signin.csproj|solutionrelative:signup_signin\\data\\entities\\requestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87C8E775-F376-41DA-B61D-EE8B973A6118}|Signup_Signin\\Signup_Signin.csproj|c:\\users\\dell\\onedrive\\desktop\\rescue-me github\\rescueme project\\backend\\signup_signin\\signup_signin\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87C8E775-F376-41DA-B61D-EE8B973A6118}|Signup_Signin\\Signup_Signin.csproj|solutionrelative:signup_signin\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87C8E775-F376-41DA-B61D-EE8B973A6118}|Signup_Signin\\Signup_Signin.csproj|c:\\users\\dell\\onedrive\\desktop\\rescue-me github\\rescueme project\\backend\\signup_signin\\signup_signin\\data\\repositories\\authrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87C8E775-F376-41DA-B61D-EE8B973A6118}|Signup_Signin\\Signup_Signin.csproj|solutionrelative:signup_signin\\data\\repositories\\authrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87C8E775-F376-41DA-B61D-EE8B973A6118}|Signup_Signin\\Signup_Signin.csproj|c:\\users\\dell\\onedrive\\desktop\\rescue-me github\\rescueme project\\backend\\signup_signin\\signup_signin\\data\\repositories\\orderrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87C8E775-F376-41DA-B61D-EE8B973A6118}|Signup_Signin\\Signup_Signin.csproj|solutionrelative:signup_signin\\data\\repositories\\orderrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87C8E775-F376-41DA-B61D-EE8B973A6118}|Signup_Signin\\Signup_Signin.csproj|c:\\users\\dell\\onedrive\\desktop\\rescue-me github\\rescueme project\\backend\\signup_signin\\signup_signin\\data\\entities\\maincontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87C8E775-F376-41DA-B61D-EE8B973A6118}|Signup_Signin\\Signup_Signin.csproj|solutionrelative:signup_signin\\data\\entities\\maincontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{87C8E775-F376-41DA-B61D-EE8B973A6118}|Signup_Signin\\Signup_Signin.csproj|c:\\users\\dell\\onedrive\\desktop\\rescue-me github\\rescueme project\\backend\\signup_signin\\signup_signin\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{87C8E775-F376-41DA-B61D-EE8B973A6118}|Signup_Signin\\Signup_Signin.csproj|solutionrelative:signup_signin\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87C8E775-F376-41DA-B61D-EE8B973A6118}|Signup_Signin\\Signup_Signin.csproj|c:\\users\\dell\\onedrive\\desktop\\rescue-me github\\rescueme project\\backend\\signup_signin\\signup_signin\\migrations\\20260529211449_addorderstables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87C8E775-F376-41DA-B61D-EE8B973A6118}|Signup_Signin\\Signup_Signin.csproj|solutionrelative:signup_signin\\migrations\\20260529211449_addorderstables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,6 +55,58 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "20260602200239_renameordertable.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\Rescue-Me Github\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Migrations\\20260602200239_renameordertable.cs",
+              "RelativeDocumentMoniker": "Signup_Signin\\Migrations\\20260602200239_renameordertable.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\Rescue-Me Github\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Migrations\\20260602200239_renameordertable.cs",
+              "RelativeToolTip": "Signup_Signin\\Migrations\\20260602200239_renameordertable.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-02T20:02:39.859Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "20260602195641_hashpassword.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\Rescue-Me Github\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Migrations\\20260602195641_hashpassword.cs",
+              "RelativeDocumentMoniker": "Signup_Signin\\Migrations\\20260602195641_hashpassword.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\Rescue-Me Github\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Migrations\\20260602195641_hashpassword.cs",
+              "RelativeToolTip": "Signup_Signin\\Migrations\\20260602195641_hashpassword.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-02T19:56:42.07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AuthRepo.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\Rescue-Me Github\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Data\\Repositories\\AuthRepo.cs",
+              "RelativeDocumentMoniker": "Signup_Signin\\Data\\Repositories\\AuthRepo.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\Rescue-Me Github\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Data\\Repositories\\AuthRepo.cs",
+              "RelativeToolTip": "Signup_Signin\\Data\\Repositories\\AuthRepo.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAkwBYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-02T19:30:50.156Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\Rescue-Me Github\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Signup_Signin\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\Rescue-Me Github\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Signup_Signin\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-02T19:29:55.781Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "20260529211449_addorderstables.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\Rescue-Me Github\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Migrations\\20260529211449_addorderstables.cs",
               "RelativeDocumentMoniker": "Signup_Signin\\Migrations\\20260529211449_addorderstables.cs",
@@ -46,68 +114,72 @@
               "RelativeToolTip": "Signup_Signin\\Migrations\\20260529211449_addorderstables.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T21:14:49.354Z",
+              "WhenOpened": "2026-05-29T21:14:49.354Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RequestService.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\Rescue-Me Github\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Data\\Entities\\RequestService.cs",
+              "RelativeDocumentMoniker": "Signup_Signin\\Data\\Entities\\RequestService.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\Rescue-Me Github\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Data\\Entities\\RequestService.cs",
+              "RelativeToolTip": "Signup_Signin\\Data\\Entities\\RequestService.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAgwCoAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-29T21:02:41.619Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Order.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\Rescue-Me Github\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Data\\Entities\\Order.cs",
-              "RelativeDocumentMoniker": "Signup_Signin\\Data\\Entities\\Order.cs",
-              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\Rescue-Me Github\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Data\\Entities\\Order.cs",
-              "RelativeToolTip": "Signup_Signin\\Data\\Entities\\Order.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAADwvyoAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T21:02:41.619Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "MainContext.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\Rescue-Me Github\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Data\\Entities\\MainContext.cs",
               "RelativeDocumentMoniker": "Signup_Signin\\Data\\Entities\\MainContext.cs",
               "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\Rescue-Me Github\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Data\\Entities\\MainContext.cs",
               "RelativeToolTip": "Signup_Signin\\Data\\Entities\\MainContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T21:02:41.655Z"
+              "WhenOpened": "2026-05-29T21:02:41.655Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "OrderRepo.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\Rescue-Me Github\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Data\\Repositories\\OrderRepo.cs",
               "RelativeDocumentMoniker": "Signup_Signin\\Data\\Repositories\\OrderRepo.cs",
               "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\Rescue-Me Github\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Data\\Repositories\\OrderRepo.cs",
               "RelativeToolTip": "Signup_Signin\\Data\\Repositories\\OrderRepo.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAgwBUAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF0AAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T21:02:41.666Z"
+              "WhenOpened": "2026-05-29T21:02:41.666Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "OrdersController.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\Rescue-Me Github\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Controllers\\OrdersController.cs",
               "RelativeDocumentMoniker": "Signup_Signin\\Controllers\\OrdersController.cs",
               "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\Rescue-Me Github\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Controllers\\OrdersController.cs",
               "RelativeToolTip": "Signup_Signin\\Controllers\\OrdersController.cs",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAwwEcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAF4AAAAAAAAAAADwv0cAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T21:02:41.969Z"
+              "WhenOpened": "2026-05-29T21:02:41.969Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\Rescue-Me Github\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Program.cs",
               "RelativeDocumentMoniker": "Signup_Signin\\Program.cs",
               "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\Rescue-Me Github\\RescueMe Project\\Backend\\Signup_Signin\\Signup_Signin\\Program.cs",
               "RelativeToolTip": "Signup_Signin\\Program.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAAA0AAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T21:02:41.975Z"
+              "WhenOpened": "2026-05-29T21:02:41.975Z",
+              "EditorCaption": ""
             }
           ]
         }

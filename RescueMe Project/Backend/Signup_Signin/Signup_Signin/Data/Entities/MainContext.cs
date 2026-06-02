@@ -10,7 +10,7 @@ namespace Signup_Signin.Data.Entities
         }
         public DbSet<User> Users { get; set; }
         public DbSet<ServiceProviderx> ServiceProviders { get; set; }
-        public DbSet<Order> Orders { get; set; }
+        public DbSet<RequestService> RequestServices { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

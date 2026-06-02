@@ -5,8 +5,8 @@
     "\\Signup_Signin\\Controllers",
     "\\Signup_Signin\\Data",
     "\\Signup_Signin\\Data\\Entities",
-    "\\Signup_Signin\\Migrations"
+    "\\Signup_Signin\\Data\\Repositories"
   ],
-  "SelectedNode": "\\Signup_Signin\\Migrations\\20260529211449_addorderstables.cs",
+  "SelectedNode": "\\Signup_Signin.sln",
   "PreviewInSolutionExplorer": false
 }

@@ -123,6 +123,9 @@ async function loadOrders() {
                             <div class="meta-value">${order.plateNumber || "—"}</div>
                         </div>
                     </div>
+                    <div class="order-sub" style="font-size:12px; color:#6b7280; margin-top:4px;">
+    <span>📍 ${order.userAddress || "الموقع غير محدد"}</span>
+</div>
                     <div class="order-actions">
                         <button
                             class="btn-outline"

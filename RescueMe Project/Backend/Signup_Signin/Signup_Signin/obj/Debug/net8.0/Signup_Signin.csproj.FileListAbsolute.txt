@@ -838,3 +838,4 @@ C:\Users\DELL\OneDrive\Desktop\Rescue-Me Github\RescueMe Project\Backend\Signup_
 C:\Users\DELL\OneDrive\Desktop\Rescue-Me Github\RescueMe Project\Backend\Signup_Signin\Signup_Signin\obj\Debug\net8.0\Signup_Signin.pdb
 C:\Users\DELL\OneDrive\Desktop\Rescue-Me Github\RescueMe Project\Backend\Signup_Signin\Signup_Signin\obj\Debug\net8.0\Signup_Signin.genruntimeconfig.cache
 C:\Users\DELL\OneDrive\Desktop\Rescue-Me Github\RescueMe Project\Backend\Signup_Signin\Signup_Signin\obj\Debug\net8.0\ref\Signup_Signin.dll
+C:\Users\DELL\OneDrive\Desktop\Rescue-Me Github\RescueMe Project\Backend\Signup_Signin\Signup_Signin\bin\Debug\net8.0\BCrypt-Net-Next.dll

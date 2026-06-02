@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Signup_Signin")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+44bd46b04dc6caef0316529e0fe1656ef05e2344")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e7320220351d47c438759167aa0cab53924cbe57")]
 [assembly: System.Reflection.AssemblyProductAttribute("Signup_Signin")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Signup_Signin")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
