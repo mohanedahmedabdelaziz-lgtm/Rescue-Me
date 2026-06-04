@@ -342,12 +342,16 @@ footer {
 }
 
 .footer-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 18px;
-  flex-wrap: wrap;
-  gap: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+    gap: 10px;
+    h6{
+        font-weight: bolder;
+        color: #004a80;
+    }
 }
 
 .footer-links {

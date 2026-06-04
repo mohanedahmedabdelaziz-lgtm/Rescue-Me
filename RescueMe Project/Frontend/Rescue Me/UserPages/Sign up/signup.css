@@ -259,6 +259,16 @@ footer {
     margin-bottom: 18px;
     flex-wrap: wrap;
     gap: 10px;
+
+    h6 {
+        font-weight: bolder;
+        color: #004a80;
+    }
+}
+
+.footer-links{
+    display: flex;
+    gap: 20px;
 }
 
 .footer-links a {

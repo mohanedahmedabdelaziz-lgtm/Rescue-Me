@@ -133,7 +133,8 @@ function saveLoginState(user, serverData) {
             id: serverData.id,
             name: serverData.name || user.value,
             phone: serverData.phone || "—",
-            type: serverData.type !== undefined ? Number(serverData.type) : 0
+            type: serverData.type !== undefined ? Number(serverData.type) : 0,
+            nationalId: serverData.nationalId ?? serverData.NationalId ?? "—"
         };
         localStorage.setItem("currentProvider", JSON.stringify(currentProvider));
         localStorage.setItem("providerType", String(currentProvider.type));

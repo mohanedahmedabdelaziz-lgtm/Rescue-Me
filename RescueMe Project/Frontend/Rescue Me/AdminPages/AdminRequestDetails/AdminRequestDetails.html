@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>تفاصيل الطلب</title>
+    <link rel="icon" type="image/png" href="/assets/logo (9).png">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="AdminRequestDetails.css">
+
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- أعلى الصفحة -->
+        <div class="top-row">
+            <div class="top-right">
+                <div class="title">تفاصيل الطلب</div>
+                <span class="badge-order">#REQ-9281</span>
+                <div class="status-text">تم الإكمال</div>
+            </div>
+            <button class="back-btn"><a href="/AdminPages/AdminHomePage/AdminHome.html">العودة للطلبات</a></button>
+        </div>
+
+        <!-- بطاقات المعلومات -->
+        <section class="cards-row">
+
+
+            <!-- معلومات الطلب -->
+            <div class="info-card">
+                <div class="info-header">
+                    <div class="icon-box"><img style="width: 30px;" src="/assets/Admin Assets/orderinfo.png" alt="">
+                    </div>
+                    <h3>معلومات الطلب</h3>
+                </div>
+
+                <div class="field">
+                    <div class="field-label">تاريخ الطلب</div>
+                    <div class="field-value">2023/10/24</div>
+                </div>
+
+                <div class="field">
+                    <div class="field-label">نوع الخدمة
+                    </div>
+                    <div class="field-value"><img style="width: 30px;margin-left: 8px;" src="/assets/towlogo.png"
+                            alt="">(Tow Truck) ونش
+                        سحب</div>
+                </div>
+
+                <div class="field">
+                    <div class="field-label">الموقع</div>
+                    <div class="field-value" style="background-color: rgb(241, 241, 241);padding: 8px;padding-top: 16px;padding-bottom: 16px;border-radius: 8px;">طريق سقارة - المريوطية، هرم</div>
+                </div>
+            </div>
+
+
+
+            <!-- بيانات العميل -->
+            <div class="info-card">
+                <div class="info-header">
+                    <div class="icon-box"><img style="width: 30px;" src="/assets/Admin Assets/clientdata.png" alt="">
+                    </div>
+                    <h3>بيانات العميل</h3>
+                </div>
+
+                <div class="customer-main">
+                    <div class="cust-name">مهند أحمد</div>
+                    <div>Example@gmail.com</div>
+                </div>
+
+                <div class="field" style="margin-top:6px;">
+                    <div class="field-label">نوع السيارة</div>
+                    <div class="field-value">تويوتا كامري - أبيض</div>
+                </div>
+
+                <div class="problem-box">
+                    <div class="field-label">وصف المشكلة</div>
+                    <div>
+                        تعطل المحرك بشكل مفاجئ أثناء القيادة على الطريق السريع،
+                        لا توجد استجابة عند محاولة التشغيل.
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- بيانات المزود -->
+            <div class="info-card">
+                <div class="info-header">
+                    <div class="icon-box"><img style="width: 30px;" src="/assets/Admin Assets/providerdata.png" alt="">
+                    </div>
+                    <h3>بيانات المزود</h3>
+                </div>
+
+                <div class="field">
+                    <div class="field-label">اسم المزود</div>
+                    <div class="field-value">محمد أحمد</div>
+                </div>
+
+                <div class="field">
+                    <div class="field-label">رقم التواصل</div>
+                    <div class="field-value">01010389248</div>
+                </div>
+
+                <div class="field">
+                    <div class="field-label">التقييم العام</div>
+                    <div class="rating-line">
+                        <h1 style="display: inline;text-align: center;" class="field-value">٤.٨</h1>
+                        <span style="text-align: center;" class="rating-stars">★★★★★</span>
+                        <span style="display: inline;text-align: center;">(١٤٢ تقييم)</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- تقييم العميل -->
+        <section class="review-card">
+            <div class="review-title">تقييم العميل:</div>
+            <div class="review-stars">★★★★★</div>
+            <div class="review-inner">
+                <div class="review-text">
+                    "خدمة سريعة وممتازة، وصل السائق في الموعد المحدد وكان محترفًا جدًا في التعامل مع السيارة."
+                </div>
+            </div>
+        </section>
+
+
+
+    </div>
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <h6>المنقذ للسيارات</h6>
+            </div>
+
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة لدى المنقذ للسيارات © ٢٠٢٦</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

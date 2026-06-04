@@ -39,7 +39,7 @@ namespace Signup_Signin.Data.Entities
         public string? Description { get; set; }
 
 
-
+        public string? PaymentMethod { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
     }
 }

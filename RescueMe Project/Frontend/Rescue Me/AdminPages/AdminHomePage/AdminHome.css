@@ -1,0 +1,237 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+body {
+    font-family: "Cairo", sans-serif;
+    background: #f4f7f7;
+    color: #111827;
+}
+
+a {
+    text-decoration: none;
+    color: #0b4c7c
+}
+
+.page {
+    min-height: 100vh;
+    padding: 26px 40px 28px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* العنوان */
+.header {
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 24px;
+    margin-bottom: 4px;
+    color: #004a80;
+}
+
+.header p {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+/* البطاقات العلوية */
+.stats-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.stat-card {
+    flex: 1;
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+    padding: 16px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stat-left {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.stat-title {
+    margin-top: 6px;
+}
+
+.stat-value {
+    font-size: 20px;
+    font-weight: 700;
+    text-align: left;
+    min-width: 70px;
+}
+
+.badge-tiny {
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 999px;
+    background: #e5e7eb;
+    color: #4b5563;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.stat-icon {
+    font-size: 20px;
+}
+
+.badge-green {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.badge-gold {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+/* جدول العمليات */
+.table-card {
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+    margin-bottom: 22px;
+    overflow: hidden;
+}
+
+.table-head-title {
+    padding: 12px 18px 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.table-header {
+    display: flex;
+    background: #f9fafb;
+    border-top: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 8px 16px;
+    font-size: 12px;
+    color: #6b7280;
+    font-weight: 600;
+}
+
+.th,
+.td {
+    flex: 1;
+    text-align: center;
+}
+
+.th:first-child,
+.td:first-child {
+    flex: 1.1
+}
+
+.th:last-child,
+.td:last-child {
+    flex: 0.8
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 13px;
+}
+
+.status-pill {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.rating-stars {
+    color: #f59e0b;
+    font-size: 12px;
+}
+
+.detail-btn {
+    border: none;
+    background: #004a80;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.service-chip {
+    padding: 3px 8px;
+    border-radius: 999px;
+    background: #f3f4f6;
+    font-size: 11px;
+}
+
+.table-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px 12px;
+    font-size: 11px;
+    color: #6b7280;
+}
+
+.pagination {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.page-btn {
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.page-btn.active {
+    background: #004a80;
+    color: #fff;
+    border-color: #004a80;
+}
+
+
+/* ========== FOOTER ========== */
+footer {
+    background: #ffffff;
+    border-top: 1px solid #e1e5eb;
+    padding: 26px 0 12px;
+    font-size: 11px;
+    color: #7a8699;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+    gap: 10px;
+    h6{
+        font-weight: bolder;
+        color: #004a80;
+    }
+}
+
+.footer-links {
+    display: flex;
+    gap: 16px;
+}

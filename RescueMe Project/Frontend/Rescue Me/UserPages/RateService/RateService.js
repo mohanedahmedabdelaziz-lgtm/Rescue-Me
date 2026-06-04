@@ -47,7 +47,7 @@ function renderOrderInfo(order) {
 
     // Calculate total price with tax
     const price = parseFloat(order.servicePrice) || 0;
-    const total = price + (price * 0.15);
+    const total = price + (price * 0.30);
     
     document.getElementById("servicePrice").textContent = 
         total.toLocaleString("ar-EG", { maximumFractionDigits: 1 });
