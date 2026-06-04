@@ -34,8 +34,9 @@ body {
     gap: 40px;
     font-weight: 600;
     color: #4a5568;
-    
+
 }
+
 .nav-links a {
     color: #0d3b66;
     text-decoration: none;
@@ -218,6 +219,11 @@ footer {
     margin-bottom: 18px;
     flex-wrap: wrap;
     gap: 10px;
+
+    h6 {
+        font-weight: bolder;
+        color: #004a80;
+    }
 }
 
 .footer-links {
@@ -234,6 +240,7 @@ footer {
     .containerv {
         flex-direction: column;
     }
+
     .left-col {
         width: 100%;
     }

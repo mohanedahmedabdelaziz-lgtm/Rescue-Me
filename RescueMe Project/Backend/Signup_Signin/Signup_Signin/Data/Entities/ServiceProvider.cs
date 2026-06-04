@@ -12,7 +12,8 @@ namespace Signup_Signin.Data.Entities
         public ServiceType type { get; set; }
         [Required]
         public string Phone { get; set; }
-
+        [Required]
+        public string NationalId { get; set; }
         public enum ServiceType
         {
             Tow,

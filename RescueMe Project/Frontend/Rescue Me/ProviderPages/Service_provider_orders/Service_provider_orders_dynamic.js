@@ -83,7 +83,9 @@ function renderStats(orders) {
     const done = orders.filter(o => o.status === "done").length;
 
     // Calculate total earnings
-    const earnings =  orders.filter(o => o.status === "done").length;
+    const earnings = orders
+    .filter(o => o.status === "done")
+    .reduce((sum, o) => sum + (parseFloat(o.servicePrice) || 0), 0);
 
     document.getElementById("stat-completed").textContent = done;
     document.getElementById("stat-earnings").textContent =
@@ -156,15 +158,17 @@ function renderTable(orders) {
                 </span>
             </div>
             <div class="td">${price} جنيه</div>
-            <div class="td d-flex gap-2">
+            <div class="td ms-2">
                 <a href="/ProviderPages/Service_provider_orderDetails/Service_provider_orderDetails.html"
                    onclick="localStorage.setItem('viewingOrderId', '${order.id}')">
                     التفاصيل
                 </a>
+                <!--  
                 <button class="btn btn-sm btn-danger"
                         onclick="deleteOrder(${order.id})">
                     حذف
                 </button>
+                -->
             </div>
         </div>`;
     }).join("");
@@ -202,47 +206,47 @@ function changePage(p) {
 // ============================================================
 // Delete Order from API
 // ============================================================
-async function deleteOrder(orderId) {
-    const result = await Swal.fire({
-        title: "هل أنت متأكد من حذف هذا الطلب؟",
-        text: "لا يمكن التراجع بعد الحذف",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#0d3b66",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "نعم، احذف",
-        cancelButtonText: "إلغاء"
-    });
+// async function deleteOrder(orderId) {
+//     const result = await Swal.fire({
+//         title: "هل أنت متأكد من حذف هذا الطلب؟",
+//         text: "لا يمكن التراجع بعد الحذف",
+//         icon: "warning",
+//         showCancelButton: true,
+//         confirmButtonColor: "#0d3b66",
+//         cancelButtonColor: "#d33",
+//         confirmButtonText: "نعم، احذف",
+//         cancelButtonText: "إلغاء"
+//     });
 
-    // User cancelled the action
-    if (!result.isConfirmed) return;
+//     // User cancelled the action
+//     if (!result.isConfirmed) return;
 
-    try {
-        const res = await fetch(`${API_BASE}/${orderId}`, {
-            method: "DELETE"
-        });
+//     try {
+//         const res = await fetch(`${API_BASE}/${orderId}`, {
+//             method: "DELETE"
+//         });
 
-        if (!res.ok) throw new Error("Delete failed");
+//         if (!res.ok) throw new Error("Delete failed");
 
-        await Swal.fire({
-            title: "تم الحذف!",
-            text: "تم حذف الطلب بنجاح",
-            icon: "success",
-            confirmButtonColor: "#0d3b66"
-        });
+//         await Swal.fire({
+//             title: "تم الحذف!",
+//             text: "تم حذف الطلب بنجاح",
+//             icon: "success",
+//             confirmButtonColor: "#0d3b66"
+//         });
 
-        loadOrders();
+//         loadOrders();
 
-    } catch (err) {
-        console.error(err);
-        Swal.fire({
-            icon: "error",
-            title: "خطأ",
-            text: "حدث خطأ أثناء الحذف",
-            confirmButtonColor: "#004471"
-        });
-    }
-}
+//     } catch (err) {
+//         console.error(err);
+//         Swal.fire({
+//             icon: "error",
+//             title: "خطأ",
+//             text: "حدث خطأ أثناء الحذف",
+//             confirmButtonColor: "#004471"
+//         });
+//     }
+// }
 
 // ============================================================
 // Search Handler

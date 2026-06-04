@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Signup_Signin.Data.Entities;
 using Signup_Signin.Data.Repositories;
 namespace Signup_Signin.Controllers
@@ -93,6 +94,17 @@ namespace Signup_Signin.Controllers
             var ok = await _orderRepo.DoneOrder(id, userRate, userComment);
             if (!ok) return NotFound();
             return Ok("done");
+        }
+
+
+        [HttpPut("payment/{orderId}")]
+        public async Task<IActionResult> UpdatePaymentMethod(int orderId, [FromQuery] string paymentMethod)
+        {
+            var result = await _orderRepo.UpdatePaymentMethod(orderId, paymentMethod);
+
+            if (!result) return NotFound();
+
+            return Ok("Payment method updated.");
         }
     }
 }
