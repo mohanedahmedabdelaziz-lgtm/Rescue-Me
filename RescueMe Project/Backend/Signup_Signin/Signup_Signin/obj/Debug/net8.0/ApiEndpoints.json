@@ -190,6 +190,27 @@
   },
   {
     "ContainingType": "Signup_Signin.Controllers.OrdersController",
+    "Method": "UpdatePaymentMethod",
+    "RelativePath": "api/Orders/payment/{orderId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "paymentMethod",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Signup_Signin.Controllers.OrdersController",
     "Method": "Reject",
     "RelativePath": "api/Orders/reject/{id}",
     "HttpMethod": "PUT",

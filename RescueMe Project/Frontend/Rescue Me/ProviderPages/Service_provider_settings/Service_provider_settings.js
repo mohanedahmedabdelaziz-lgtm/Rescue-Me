@@ -36,3 +36,6 @@ document.getElementById("providerType").textContent =
 
 document.getElementById("providerPhone").textContent =
     currentProvider.phone || "—";
+
+document.getElementById("providerNationalId").textContent =
+    currentProvider.nationalId || "—";

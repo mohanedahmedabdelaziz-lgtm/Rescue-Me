@@ -313,6 +313,36 @@
           }
         }
       }
+    },
+    "/api/Orders/payment/{orderId}": {
+      "put": {
+        "tags": [
+          "Orders"
+        ],
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "paymentMethod",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -394,6 +424,10 @@
             "type": "string",
             "nullable": true
           },
+          "paymentMethod": {
+            "type": "string",
+            "nullable": true
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -404,6 +438,7 @@
       "ServiceProviderx": {
         "required": [
           "name",
+          "nationalId",
           "phone"
         ],
         "type": "object",
@@ -426,6 +461,10 @@
           "phone": {
             "minLength": 1,
             "type": "string"
+          },
+          "nationalId": {
+            "minLength": 1,
+            "type": "string"
           }
         },
         "additionalProperties": false
@@ -443,7 +482,8 @@
         "required": [
           "email",
           "name",
-          "password"
+          "password",
+          "phone"
         ],
         "type": "object",
         "properties": {
@@ -460,6 +500,10 @@
             "type": "string"
           },
           "password": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "phone": {
             "minLength": 1,
             "type": "string"
           }

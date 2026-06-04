@@ -93,5 +93,16 @@ namespace Signup_Signin.Data.Repositories
             await _context.SaveChangesAsync();
             return true;
         }
+
+
+        public async Task<bool> UpdatePaymentMethod(int orderId, string paymentMethod)
+        {
+            var order = await _context.RequestServices.FindAsync(orderId);
+            if (order == null) return false;
+
+            order.PaymentMethod = paymentMethod;
+            await _context.SaveChangesAsync();
+            return true;
+        }
     }
 }

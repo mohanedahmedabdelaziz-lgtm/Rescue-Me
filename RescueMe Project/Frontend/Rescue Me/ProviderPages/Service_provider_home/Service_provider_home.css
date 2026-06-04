@@ -334,10 +334,10 @@ footer {
     margin-bottom: 18px;
     flex-wrap: wrap;
     gap: 10px;
-}
-
-.footer-top h6 {
-    color: #0b4c7c;
+    h6{
+        font-weight: bolder;
+        color: #004a80;
+    }
 }
 
 .footer-links {
