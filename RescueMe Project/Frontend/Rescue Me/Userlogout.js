@@ -1,14 +1,14 @@
 
 function logoutUser() {
-    localStorage.removeItem("isLoggedIn");
-    localStorage.removeItem("currentUser");
-    localStorage.removeItem("role");
+    sessionStorage.removeItem("isLoggedIn");
+    sessionStorage.removeItem("currentUser");
+    sessionStorage.removeItem("role");
     window.location.href = "/UserPages/Login/login.html";
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-    const role = localStorage.getItem("role");
+    const isLoggedIn = sessionStorage.getItem("isLoggedIn") === "true";
+    const role = sessionStorage.getItem("role");
 
     const loginBtn = document.getElementById("loginBtn");
     const logoutBtn = document.getElementById("logoutBtn");

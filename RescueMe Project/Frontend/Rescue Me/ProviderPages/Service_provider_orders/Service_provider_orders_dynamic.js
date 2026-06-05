@@ -1,13 +1,13 @@
 // ============================================================
 // Auth Check
 // ============================================================
-const isLoggedIn = localStorage.getItem("isLoggedIn");
-const role = localStorage.getItem("role");
+const isLoggedIn = sessionStorage.getItem("isLoggedIn");
+const role = sessionStorage.getItem("role");
 // if (!isLoggedIn || role !== "provider") {
 //     window.location.href = "/UserPages/Login/login.html";
 // }
 
-const currentProvider = JSON.parse(localStorage.getItem("currentProvider"));
+const currentProvider = JSON.parse(sessionStorage.getItem("currentProvider"));
 if (!currentProvider) {
     window.location.href = "/UserPages/Login/login.html";
 }
@@ -17,7 +17,7 @@ if (!currentProvider) {
 // Logout
 // ============================================================
 document.getElementById("logoutBtn").addEventListener("click", function () {
-    localStorage.clear();
+    sessionStorage.clear();
     window.location.href = "/UserPages/Login/login.html";
 });
 
@@ -25,7 +25,7 @@ document.getElementById("logoutBtn").addEventListener("click", function () {
 // Config
 // ============================================================
 const API_BASE = "http://localhost:5065/api/Orders";
-const currentProviderType = parseInt(localStorage.getItem("providerType") ?? "0");
+const currentProviderType = parseInt(sessionStorage.getItem("providerType") ?? "0");
 
 const STATUS_MAP = {
     pending: { label: "قيد الانتظار", cls: "status-pending" },
@@ -160,7 +160,7 @@ function renderTable(orders) {
             <div class="td">${price} جنيه</div>
             <div class="td ms-2">
                 <a href="/ProviderPages/Service_provider_orderDetails/Service_provider_orderDetails.html"
-                   onclick="localStorage.setItem('viewingOrderId', '${order.id}')">
+                   onclick="sessionStorage.setItem('viewingOrderId', '${order.id}')">
                     التفاصيل
                 </a>
                 <!--  

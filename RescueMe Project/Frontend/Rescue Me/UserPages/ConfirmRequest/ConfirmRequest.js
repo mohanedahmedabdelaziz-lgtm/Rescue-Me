@@ -1,15 +1,15 @@
 /* =========================
    CONFIRM REQUEST PAGE SCRIPT
-   - Reads location + order data from localStorage
+   - Reads location + order data from sessionStorage
    - Renders Leaflet map + reverse geocoding address
    - Fills service and cost UI
    - Handles "Confirm" button
    ========================= */
 
-/* ---------- 1) Load user location from localStorage ---------- */
-// localStorage stores values as strings, so we convert them to numbers.
-const lat = parseFloat(localStorage.getItem("userLat"));
-const lng = parseFloat(localStorage.getItem("userLng"));
+/* ---------- 1) Load user location from sessionStorage ---------- */
+// sessionStorage stores values as strings, so we convert them to numbers.
+const lat = parseFloat(sessionStorage.getItem("userLat"));
+const lng = parseFloat(sessionStorage.getItem("userLng"));
 
 // Use a safe check: lat/lng must be real finite numbers.
 const hasValidCoords = Number.isFinite(lat) && Number.isFinite(lng);
@@ -50,10 +50,10 @@ if (!hasValidCoords) {
   setTimeout(() => confirmMap.invalidateSize(), 200);
 }
 
-/* ---------- 5) Load order info from localStorage ---------- */
+/* ---------- 5) Load order info from sessionStorage ---------- */
 // "currentOrder" is expected to be saved from the previous page.
 // If not found, we use an empty object so the page doesn't crash.
-const order = JSON.parse(localStorage.getItem("currentOrder") || "{}");
+const order = JSON.parse(sessionStorage.getItem("currentOrder") || "{}");
 
 /* ---------- 6) Service image ---------- */
 const imgEl = document.getElementById("serviceImage");
@@ -84,7 +84,7 @@ const price = parseFloat(order.servicePrice) || 0;
 const tax = price * 0.15;
 const total = price + tax;
 
-// Format numbers in Arabic locale and append currency text.
+// Format numbers in Arabic sessione and append currency text.
 const fmt = (n) =>
   n.toLocaleString("ar-EG", { maximumFractionDigits: 1 }) + " جنيه";
 
@@ -96,8 +96,8 @@ document.getElementById("cost-total").textContent = fmt(total);
 // This function is called from HTML onclick="confirmRequest()"
 function confirmRequest() {
   // Save status so the next page can display it.
-  localStorage.setItem("requestStatus", "في الطريق");
-  localStorage.setItem("requestETA", "15 دقيقة");
+  sessionStorage.setItem("requestStatus", "في الطريق");
+  sessionStorage.setItem("requestETA", "15 دقيقة");
 
   // Navigate to request status page.
   window.location.href = "/UserPages/RequestStatus/RequestStatus.html";

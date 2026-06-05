@@ -15,7 +15,7 @@ builder.Services.AddScoped<OrderRepo>();
 
 builder.Services.AddDbContext<MainContext>(options =>
     options.UseSqlServer(
-        "Data Source=MOHANEDAHMED;Initial Catalog=RescueME;Integrated Security=True;Encrypt=False;TrustServerCertificate=True"
+        "Data Source=localhost;Initial Catalog=RescueME;Integrated Security=True;Encrypt=False;TrustServerCertificate=True"
     ));
 
 // ? ?? CORS ??? ??? build

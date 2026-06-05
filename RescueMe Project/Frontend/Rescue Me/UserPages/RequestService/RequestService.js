@@ -4,8 +4,8 @@
 
 const map = L.map('egyptMap').setView([30.0444, 31.2357], 6);
 
-localStorage.removeItem("userLat");
-localStorage.removeItem("userLng");
+sessionStorage.removeItem("userLat");
+sessionStorage.removeItem("userLng");
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap'
@@ -23,8 +23,8 @@ map.on('click', async (e) => {
     if (marker) map.removeLayer(marker);
     marker = L.marker([lat, lng]).addTo(map);
 
-    localStorage.setItem("userLat", lat);
-    localStorage.setItem("userLng", lng);
+    sessionStorage.setItem("userLat", lat);
+    sessionStorage.setItem("userLng", lng);
 
     await updateAddress(lat, lng);
 
@@ -50,8 +50,8 @@ document.querySelector(".gps-btn").addEventListener("click", () => {
         if (marker) map.removeLayer(marker);
         marker = L.marker([lat, lng]).addTo(map);
 
-        localStorage.setItem("userLat", lat);
-        localStorage.setItem("userLng", lng);
+        sessionStorage.setItem("userLat", lat);
+        sessionStorage.setItem("userLng", lng);
 
         await updateAddress(lat, lng);
 
@@ -112,14 +112,14 @@ async function updateAddress(lat, lng) {
 // ============================
 async function selectService(serviceName, serviceImage, servicePrice, serviceTitle, providerType) {
 
-    const currentUser = JSON.parse(localStorage.getItem("currentUser") || "null");
+    const currentUser = JSON.parse(sessionStorage.getItem("currentUser") || "null");
     if (!currentUser) {
         Swal.fire({ title: "يجب تسجيل الدخول أولاً", icon: "question", confirmButtonText: "حسناً", confirmButtonColor: "#004471" });
         return;
     }
 
-    const lat = localStorage.getItem("userLat");
-    const lng = localStorage.getItem("userLng");
+    const lat = sessionStorage.getItem("userLat");
+    const lng = sessionStorage.getItem("userLng");
     if (!lat || !lng) {
         Swal.fire({ title: "من فضلك حدد موقعك على الخريطة أولاً", icon: "question", confirmButtonText: "حسناً", confirmButtonColor: "#004471" });
         return;
@@ -171,7 +171,7 @@ async function selectService(serviceName, serviceImage, servicePrice, serviceTit
 
         const result = await response.json();
 
-        localStorage.setItem("activeOrderId", result.id);
+        sessionStorage.setItem("activeOrderId", result.id);
         window.location.href = `../RequestStatus/RequestStatus.html?id=${result.id}`;
 
     } catch (err) {

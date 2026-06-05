@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,17 +18,20 @@
             margin-top: 16px;
             border: 1px solid #e5e7eb;
         }
+
         .payment-section h5 {
             font-size: 14px;
             font-weight: 700;
             color: #374151;
             margin-bottom: 12px;
         }
+
         .payment-options {
             display: flex;
             flex-direction: column;
             gap: 10px;
         }
+
         .payment-option {
             display: flex;
             align-items: center;
@@ -43,10 +47,27 @@
             width: 100%;
             text-align: right;
         }
-        .payment-option:hover { border-color: #004471; background: #f0f7ff; }
-        .payment-option.selected { border-color: #004471; background: #e8f4fd; }
-        .payment-option input[type="radio"] { accent-color: #004471; width: 16px; height: 16px; }
-        .payment-option .pay-icon { font-size: 20px; }
+
+        .payment-option:hover {
+            border-color: #004471;
+            background: #f0f7ff;
+        }
+
+        .payment-option.selected {
+            border-color: #004471;
+            background: #e8f4fd;
+        }
+
+        .payment-option input[type="radio"] {
+            accent-color: #004471;
+            width: 16px;
+            height: 16px;
+        }
+
+        .payment-option .pay-icon {
+            font-size: 20px;
+        }
+
         .payment-info-box {
             background: #f0f9ff;
             border: 1px solid #bae6fd;
@@ -56,7 +77,11 @@
             display: none;
             text-align: center;
         }
-        .payment-info-box.show { display: block; }
+
+        .payment-info-box.show {
+            display: block;
+        }
+
         .payment-number {
             font-size: 22px;
             font-weight: 800;
@@ -64,11 +89,13 @@
             letter-spacing: 2px;
             direction: ltr;
         }
+
         .payment-info-box p {
             font-size: 12px;
             color: #6b7280;
             margin: 6px 0 0;
         }
+
         .confirm-payment-btn {
             width: 100%;
             background: #004471;
@@ -83,8 +110,15 @@
             cursor: pointer;
             display: none;
         }
-        .confirm-payment-btn:hover { background: #003358; }
-        .confirm-payment-btn.show { display: block; }
+
+        .confirm-payment-btn:hover {
+            background: #003358;
+        }
+
+        .confirm-payment-btn.show {
+            display: block;
+        }
+
         .payment-confirmed-badge {
             background: #dcfce7;
             color: #16a34a;
@@ -96,9 +130,13 @@
             margin-top: 10px;
             display: none;
         }
-        .payment-confirmed-badge.show { display: block; }
+
+        .payment-confirmed-badge.show {
+            display: block;
+        }
     </style>
 </head>
+
 <body>
 
     <div class="navbar">
@@ -107,13 +145,18 @@
             المنقذ للسيارات
         </div>
         <div class="nav-links">
-            <div class="link-3"><a style="text-decoration:none;color:#0d3b66;" href="../Home/Home.html">الرئيسية</a></div>
-            <div class="link-2"><a style="text-decoration:none;color:#0d3b66;" href="../RequestService/Requestservice.html">الخدمات</a></div>
-            <div class="text-wrapper-2"><a style="text-decoration:none;color:#0d3b66;" href="/UserPages/OrdersHistory/myOrders.html">طلباتي</a></div>
-            <div class="text-wrapper-2"><a style="text-decoration:none;color:#0d3b66;" href="../ContactUs/Contactus.html">تواصل معنا</a></div>
+            <div class="link-3"><a style="text-decoration:none;color:#0d3b66;" href="../Home/Home.html">الرئيسية</a>
+            </div>
+            <div class="link-2"><a style="text-decoration:none;color:#0d3b66;"
+                    href="../RequestService/Requestservice.html">الخدمات</a></div>
+            <div class="text-wrapper-2"><a style="text-decoration:none;color:#0d3b66;"
+                    href="/UserPages/OrdersHistory/myOrders.html">طلباتي</a></div>
+            <div class="text-wrapper-2"><a style="text-decoration:none;color:#0d3b66;"
+                    href="../ContactUs/Contactus.html">تواصل معنا</a></div>
         </div>
         <div class="nav-icons">
-            <button class="btn btn-sm btn-danger" id="logoutBtn" style="display:none;" onclick="logoutUser()">تسجيل الخروج</button>
+            <button class="btn btn-sm btn-danger" id="logoutBtn" style="display:none;" onclick="logoutUser()">تسجيل
+                الخروج</button>
         </div>
     </div>
 
@@ -170,6 +213,13 @@
                         <span>محفظة إلكترونية</span>
                     </label>
 
+
+                    <label class="payment-option" id="opt-paymob">
+                        <input type="radio" name="payMethod" value="paymob" onchange="selectPayment('paymob')">
+                        <span class="pay-icon">💳</span>
+                        <span>PayMob</span>
+                    </label>
+
                 </div>
 
                 <!-- رقم الدفع يظهر لما يختار instapay أو محفظة -->
@@ -214,7 +264,7 @@
                 <b>العنوان الحالي</b><span id="userAddress">جاري التحميل...</span>
             </div>
 
-            
+
 
             <button class="btn btn-success mt-3">
                 <a style="text-decoration:none;color:white;" href="../RateService/RateService.html">انهاء وتقييم</a>
@@ -239,7 +289,9 @@
                     <a href="/conditions_and_privacy.html">سياسة الخصوصية</a>
                 </div>
             </div>
-            <div class="footer-bottom"><p>جميع الحقوق محفوظة لدى المنقذ للسيارات © ٢٠٢٦</p></div>
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة لدى المنقذ للسيارات © ٢٠٢٦</p>
+            </div>
         </div>
     </footer>
 
@@ -247,4 +299,5 @@
     <script src="RequestStatus.js"></script>
     <script src="/Userlogout.js"></script>
 </body>
+
 </html>

@@ -2,21 +2,21 @@
 // Service Provider Dashboard - Home Page
 // ================================================
 
-const currentProvider = JSON.parse(localStorage.getItem("currentProvider") || "null");
+const currentProvider = JSON.parse(sessionStorage.getItem("currentProvider") || "null");
 if (!currentProvider) {
     window.location.href = "/UserPages/Login/login.html";
 }
 
 document.getElementById("logoutBtn").addEventListener("click", () => {
-    localStorage.removeItem("currentProvider");
-    localStorage.removeItem("providerType");
-    localStorage.removeItem("isLoggedIn");
-    localStorage.removeItem("role");
+    sessionStorage.removeItem("currentProvider");
+    sessionStorage.removeItem("providerType");
+    sessionStorage.removeItem("isLoggedIn");
+    sessionStorage.removeItem("role");
     window.location.href = "/UserPages/Login/login.html";
 });
 
 const API_BASE = "http://localhost:5065/api/Orders";
-const currentProviderType = Number(localStorage.getItem("providerType") || 0);
+const currentProviderType = Number(sessionStorage.getItem("providerType") || 0);
 const ordersContainer = document.getElementById("ordersContainer");
 
 const map = L.map("egyptMap").setView([30.0444, 31.2357], 6);
@@ -32,7 +32,7 @@ const SERVICE_ICONS = {
 
 // ✅ Helper: ترجمة طريقة الدفع
 function getPaymentLabel(method) {
-    const labels = { cash: "💵 كاش", instapay: "📱 InstaPay", wallet: "👛 محفظة إلكترونية" };
+    const labels = { cash: "💵 كاش", instapay: "📱 InstaPay", wallet: "👛 محفظة إلكترونية",paymob: "💳 Paymob" };
     return labels[method] || "—";
 }
 
@@ -137,7 +137,7 @@ async function loadOrders() {
 
 async function acceptOrder(orderId) {
     if (!currentProvider) {
-        Swal.fire({ icon:"error", title:"خطأ", text:"بيانات المزود غير موجودة", confirmButtonText:"حسناً", confirmButtonColor:"#004471" });
+        Swal.fire({ icon: "error", title: "خطأ", text: "بيانات المزود غير موجودة", confirmButtonText: "حسناً", confirmButtonColor: "#004471" });
         return;
     }
     try {
@@ -149,11 +149,11 @@ async function acceptOrder(orderId) {
         const res = await fetch(url, { method: "PUT" });
         if (!res.ok) throw new Error("Accept failed");
 
-        Swal.fire({ title:"تم", text:"تم قبول الطلب", icon:"success", confirmButtonText:"حسناً", confirmButtonColor:"#004471" });
+        Swal.fire({ title: "تم", text: "تم قبول الطلب", icon: "success", confirmButtonText: "حسناً", confirmButtonColor: "#004471" });
         loadOrders();
     } catch (err) {
         console.error(err);
-        Swal.fire({ icon:"error", title:"خطأ", text:"حدث خطأ أثناء قبول الطلب", confirmButtonText:"حسناً", confirmButtonColor:"#004471" });
+        Swal.fire({ icon: "error", title: "خطأ", text: "حدث خطأ أثناء قبول الطلب", confirmButtonText: "حسناً", confirmButtonColor: "#004471" });
     }
 }
 
@@ -162,11 +162,11 @@ async function rejectOrder(orderId) {
         const res = await fetch(`${API_BASE}/reject/${orderId}`, { method: "PUT" });
         if (!res.ok) throw new Error("Reject failed");
 
-        Swal.fire({ icon:"info", title:"تم الرفض", text:"تم رفض الطلب بنجاح", confirmButtonText:"حسناً", confirmButtonColor:"#004471" });
+        Swal.fire({ icon: "info", title: "تم الرفض", text: "تم رفض الطلب بنجاح", confirmButtonText: "حسناً", confirmButtonColor: "#004471" });
         loadOrders();
     } catch (err) {
         console.error(err);
-        Swal.fire({ icon:"error", title:"خطأ", text:"حدث خطأ أثناء الرفض", confirmButtonText:"حسناً", confirmButtonColor:"#004471" });
+        Swal.fire({ icon: "error", title: "خطأ", text: "حدث خطأ أثناء الرفض", confirmButtonText: "حسناً", confirmButtonColor: "#004471" });
     }
 }
 

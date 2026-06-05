@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnLoginHome = document.querySelector('.btnloginhome');
     const logoutBtn = document.getElementById("logoutBtn");
     
-    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-    const role = localStorage.getItem("role");
+    const isLoggedIn = sessionStorage.getItem("isLoggedIn") === "true";
+    const role = sessionStorage.getItem("role");
 
     if (isLoggedIn && role === "driver") {
         if (btnLoginHome) btnLoginHome.style.display = "none";

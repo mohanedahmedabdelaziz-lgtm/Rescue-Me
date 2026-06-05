@@ -69,10 +69,10 @@ async function handleGoogleResponse(response) {
 
         const serverData = await res.json();
 
-        localStorage.setItem("isLoggedIn", "true");
-        localStorage.setItem("role", "driver");
+        sessionStorage.setItem("isLoggedIn", "true");
+        sessionStorage.setItem("role", "driver");
 
-        localStorage.setItem("currentUser", JSON.stringify({
+        sessionStorage.setItem("currentUser", JSON.stringify({
             id: serverData.id,
             name: serverData.name,
             email: serverData.email,
@@ -204,8 +204,8 @@ async function login(user) {
 // ============================================================
 
 function saveLoginState(user, serverData) {
-    localStorage.setItem("isLoggedIn", "true");
-    localStorage.setItem("role", user.role);
+    sessionStorage.setItem("isLoggedIn", "true");
+    sessionStorage.setItem("role", user.role);
 
     if (user.role === "driver") {
         const currentUser = {
@@ -214,7 +214,7 @@ function saveLoginState(user, serverData) {
             email: serverData.email || "",
             phone: serverData.phone || ""
         };
-        localStorage.setItem("currentUser", JSON.stringify(currentUser));
+        sessionStorage.setItem("currentUser", JSON.stringify(currentUser));
     }
     else { // Provider
         const currentProvider = {
@@ -224,8 +224,8 @@ function saveLoginState(user, serverData) {
             type: serverData.type !== undefined ? Number(serverData.type) : 0,
             nationalId: serverData.nationalId ?? serverData.NationalId ?? "—"
         };
-        localStorage.setItem("currentProvider", JSON.stringify(currentProvider));
-        localStorage.setItem("providerType", String(currentProvider.type));
+        sessionStorage.setItem("currentProvider", JSON.stringify(currentProvider));
+        sessionStorage.setItem("providerType", String(currentProvider.type));
     }
 
     // Success Message + Redirect

@@ -33,14 +33,14 @@ loginBtn.addEventListener("click", () => {
         password === ADMIN_PASSWORD
     ) {
 
-        localStorage.setItem("isAdminLoggedIn", "true");
+        sessionStorageStorage.setItem("isAdminLoggedIn", "true");
 
         const adminData = {
             name: "Admin",
             email: ADMIN_EMAIL
         };
 
-        localStorage.setItem(
+        sessionStorageStorage.setItem(
             "currentAdmin",
             JSON.stringify(adminData)
         );
@@ -82,8 +82,8 @@ document.addEventListener("keydown", function (e) {
 
 function logout() {
 
-    localStorage.removeItem("isAdminLoggedIn");
-    localStorage.removeItem("currentAdmin");
+    sessionStorageStorage.removeItem("isAdminLoggedIn");
+    sessionStorageStorage.removeItem("currentAdmin");
 
     window.location.href =
         "/AdminPages/AdminLogin/AdminLogin.html";

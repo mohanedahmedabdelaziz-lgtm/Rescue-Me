@@ -1,8 +1,8 @@
 // ============================================================
 // Auth Check
 // ============================================================
-const isLoggedIn = localStorage.getItem("isLoggedIn");
-const role = localStorage.getItem("role");
+const isLoggedIn = sessionStorage.getItem("isLoggedIn");
+const role = sessionStorage.getItem("role");
 if (!isLoggedIn || role !== "provider") {
     window.location.href = "/UserPages/Login/login.html";
 }
@@ -11,7 +11,7 @@ if (!isLoggedIn || role !== "provider") {
 // Logout
 // ============================================================
 document.getElementById("logoutBtn").addEventListener("click", function () {
-    localStorage.clear();
+    sessionStorage.clear();
     window.location.href = "/UserPages/Login/login.html";
 });
 
@@ -19,7 +19,7 @@ document.getElementById("logoutBtn").addEventListener("click", function () {
 // Load Provider Data
 // ============================================================
 const currentProvider = JSON.parse(
-    localStorage.getItem("currentProvider") || "{}"
+    sessionStorage.getItem("currentProvider") || "{}"
 );
 
 const typeLabels = {

@@ -4,8 +4,8 @@
 
 const API_BASE = "http://localhost:5065/api/Orders";
 
-// Get Order ID from localStorage (set after service completion)
-const orderId = localStorage.getItem("activeOrderId");
+// Get Order ID from sessionStorage (set after service completion)
+const orderId = sessionStorage.getItem("activeOrderId");
 
 // =========================
 // Load Order Data
@@ -119,7 +119,7 @@ async function submitRate() {
         if (!res.ok) throw new Error("Failed to submit rating");
 
         // Clear active order
-        localStorage.removeItem("activeOrderId");
+        sessionStorage.removeItem("activeOrderId");
 
         await Swal.fire({
             title: "شكراً لك!",
@@ -130,11 +130,14 @@ async function submitRate() {
 
 
 
-        console.log("========== BEFORE REDIRECT ==========");
-        console.log("isLoggedIn =", localStorage.getItem("isLoggedIn"));
-        console.log("role =", localStorage.getItem("role"));
-        console.log("currentUser =", localStorage.getItem("currentUser"));
-        console.log("activeOrderId =", localStorage.getItem("activeOrderId"));
+        console.log("BEFORE REDIRECT");
+        console.log(sessionStorage.getItem("isLoggedIn"));
+        console.log(sessionStorage.getItem("role"));
+        console.log(sessionStorage.getItem("currentUser"));
+
+
+
+
         window.location.href = "../Home/Home.html";
 
     } catch (err) {

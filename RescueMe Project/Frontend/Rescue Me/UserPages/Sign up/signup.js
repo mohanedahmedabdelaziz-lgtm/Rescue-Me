@@ -69,10 +69,10 @@ async function handleGoogleResponse(response) {
 
     const serverData = await res.json();
 
-    localStorage.setItem("isLoggedIn", "true");
-    localStorage.setItem("role", "driver");
+    sessionStorage.setItem("isLoggedIn", "true");
+    sessionStorage.setItem("role", "driver");
 
-    localStorage.setItem("currentUser", JSON.stringify({
+    sessionStorage.setItem("currentUser", JSON.stringify({
         id: serverData.id,
         name: serverData.name,
         email: serverData.email,
@@ -206,10 +206,10 @@ async function AddUsertoDatabase() {
                     nationalId: nationalIdInput.value,
                     type: parseInt(typeInput?.value || "0")
                 };
-                const providers = JSON.parse(localStorage.getItem("_providers") || "[]");
+                const providers = JSON.parse(sessionStorage.getItem("_providers") || "[]");
                 const filtered = providers.filter(p => p.name !== newProv.name);
                 filtered.push(newProv);
-                localStorage.setItem("_providers", JSON.stringify(filtered));
+                sessionStorage.setItem("_providers", JSON.stringify(filtered));
             }
 
             Swal.fire({ title: "تم", text: "تم إنشاء الحساب بنجاح", icon: "success", confirmButtonText: "حسناً", confirmButtonColor: "#004471" })
