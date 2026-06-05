@@ -21,8 +21,8 @@
         <div class="top-row">
             <div class="top-right">
                 <div class="title">تفاصيل الطلب</div>
-                <span class="badge-order">#REQ-9281</span>
-                <div class="status-text">تم الإكمال</div>
+                <span class="badge-order" id="d_orderNo">#REQ-</span>
+                <div class="status-text" id="d_statusText"></div>
             </div>
             <button class="back-btn"><a href="/AdminPages/AdminHomePage/AdminHome.html">العودة للطلبات</a></button>
         </div>
@@ -41,20 +41,30 @@
 
                 <div class="field">
                     <div class="field-label">تاريخ الطلب</div>
-                    <div class="field-value">2023/10/24</div>
+                    <div class="field-value" id="d_createdAt"></div>
                 </div>
 
                 <div class="field">
                     <div class="field-label">نوع الخدمة
                     </div>
-                    <div class="field-value"><img style="width: 30px;margin-left: 8px;" src="/assets/towlogo.png"
-                            alt="">(Tow Truck) ونش
-                        سحب</div>
+                    <div class="field-value" id="d_serviceType"></div>
+                </div>
+
+                <div class="field">
+                    <div class="field-label">
+                        سعر الخدمه
+                    </div>
+                    
+                    <div style="display: inline;" class="field-value" id="d_servicePrice">
+                    </div>
+                    <span>جنيه</span>
                 </div>
 
                 <div class="field">
                     <div class="field-label">الموقع</div>
-                    <div class="field-value" style="background-color: rgb(241, 241, 241);padding: 8px;padding-top: 16px;padding-bottom: 16px;border-radius: 8px;">طريق سقارة - المريوطية، هرم</div>
+                    <div class="field-value" id="d_address"
+                        style="background-color: rgb(241, 241, 241);padding: 8px;padding-top: 16px;padding-bottom: 16px;border-radius: 8px;">
+                    </div>
                 </div>
             </div>
 
@@ -68,27 +78,32 @@
                     <h3>بيانات العميل</h3>
                 </div>
 
-                <div class="customer-main">
-                    <div class="cust-name">مهند أحمد</div>
-                    <div>Example@gmail.com</div>
+                <div class="field">
+                    <div class="field-label">اسم العميل</div>
+                    <div class="cust-name" id="d_userName"></div>
                 </div>
 
-                <div class="field" style="margin-top:6px;">
+                <div class="field">
+                    <div class="field-label">رقم التواصل</div>
+                    <div id="d_userPhone"></div>
+                </div>
+
+
+                <div class="field">
                     <div class="field-label">نوع السيارة</div>
-                    <div class="field-value">تويوتا كامري - أبيض</div>
+                    <div class="field-value" id="d_carName"></div>
                 </div>
+                
 
-                <div class="problem-box">
+                <div class="field">
                     <div class="field-label">وصف المشكلة</div>
-                    <div>
-                        تعطل المحرك بشكل مفاجئ أثناء القيادة على الطريق السريع،
-                        لا توجد استجابة عند محاولة التشغيل.
-                    </div>
+                    <div id="d_description"></div>
                 </div>
             </div>
 
 
-            <!-- بيانات المزود -->
+
+
             <div class="info-card">
                 <div class="info-header">
                     <div class="icon-box"><img style="width: 30px;" src="/assets/Admin Assets/providerdata.png" alt="">
@@ -98,21 +113,17 @@
 
                 <div class="field">
                     <div class="field-label">اسم المزود</div>
-                    <div class="field-value">محمد أحمد</div>
+                    <div class="field-value" id="d_providerName"></div>
                 </div>
 
                 <div class="field">
                     <div class="field-label">رقم التواصل</div>
-                    <div class="field-value">01010389248</div>
+                    <div class="field-value" id="d_providerPhone"></div>
                 </div>
 
                 <div class="field">
-                    <div class="field-label">التقييم العام</div>
-                    <div class="rating-line">
-                        <h1 style="display: inline;text-align: center;" class="field-value">٤.٨</h1>
-                        <span style="text-align: center;" class="rating-stars">★★★★★</span>
-                        <span style="display: inline;text-align: center;">(١٤٢ تقييم)</span>
-                    </div>
+                    <div class="field-label">نوع الخدمه</div>
+                    <div class="field-value" id="d_providertype"></div>
                 </div>
             </div>
 
@@ -121,11 +132,9 @@
         <!-- تقييم العميل -->
         <section class="review-card">
             <div class="review-title">تقييم العميل:</div>
-            <div class="review-stars">★★★★★</div>
+            <div class="review-stars" id="d_rateStars"></div>
             <div class="review-inner">
-                <div class="review-text">
-                    "خدمة سريعة وممتازة، وصل السائق في الموعد المحدد وكان محترفًا جدًا في التعامل مع السيارة."
-                </div>
+                <div class="review-text" id="d_comment"></div>
             </div>
         </section>
 
@@ -144,6 +153,7 @@
             </div>
         </div>
     </footer>
+    <script src="AdminRequestDetails.js"></script>
 </body>
 
 </html>

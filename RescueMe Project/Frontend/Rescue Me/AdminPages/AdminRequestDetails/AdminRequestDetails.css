@@ -130,7 +130,8 @@ a {
     display: flex;
     align-items: center;
     gap: 8px;
-    h1{
+
+    h1 {
         color: #004a80;
     }
 }
@@ -227,7 +228,8 @@ footer {
     margin-bottom: 18px;
     flex-wrap: wrap;
     gap: 10px;
-    h6{
+
+    h6 {
         font-weight: bolder;
         color: #004a80;
     }
@@ -240,4 +242,34 @@ footer {
 
 .footer-links a {
     color: #7a8699;
+}
+
+
+
+.status-pending {
+    background: #dbeafe;
+    color: #2563eb;
+    padding: 8px;
+    border-radius: 16px;
+}
+
+.status-accepted {
+    background: #dbeafe;
+    color: #2563eb;
+    padding: 8px;
+    border-radius: 16px;
+}
+
+.status-rejected {
+    background: #fee2e2;
+    color: #dc2626;
+    padding: 8px;
+    border-radius: 16px;
+}
+
+.status-done {
+    background: #dcfce7;
+    color: #16a34a;
+    padding: 8px;
+    border-radius: 16px;
 }

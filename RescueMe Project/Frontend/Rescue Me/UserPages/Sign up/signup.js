@@ -17,29 +17,60 @@ const typeInput = document.querySelector('.typeInput');
 const providerFields = document.querySelector('.provider-fields');
 const emailGroup = document.querySelector('.email-group');
 const driverPhoneGroup = document.querySelector('.driver-phone-group');
+
+
+
 const termsCheckbox = document.getElementById('termsCheckbox');
 
 
 const GOOGLE_CLIENT_ID = "472546212630-4ksm564n2bre7keqpk4nigev1q7sku0p.apps.googleusercontent.com";
 
 function signInWithGoogle() {
+
+    if (selectedRole === "provider") {
+        Swal.fire({
+            icon: "warning",
+            title: "غير متاح",
+            text: "تسجيل مزود الخدمة بواسطة Google غير مدعوم حالياً",
+            confirmButtonColor: "#004471"
+        });
+        return;
+    }
+
     google.accounts.id.initialize({
         client_id: GOOGLE_CLIENT_ID,
         callback: handleGoogleResponse
     });
+
     google.accounts.id.prompt();
 }
 
 async function handleGoogleResponse(response) {
+
     const base64 = response.credential.split('.')[1];
     const userData = JSON.parse(atob(base64));
 
     const res = await fetch(
         `http://localhost:5065/api/Auth/signin/google?googleId=${userData.sub}&name=${encodeURIComponent(userData.name)}&email=${encodeURIComponent(userData.email)}`,
-        { method: "POST" }
+        {
+            method: "POST"
+        }
     );
 
+    if (!res.ok) {
+        Swal.fire({
+            icon: "error",
+            title: "خطأ",
+            text: "فشل تسجيل الدخول بواسطة Google",
+            confirmButtonColor: "#004471"
+        });
+        return;
+    }
+
     const serverData = await res.json();
+
+    localStorage.setItem("isLoggedIn", "true");
+    localStorage.setItem("role", "driver");
 
     localStorage.setItem("currentUser", JSON.stringify({
         id: serverData.id,
@@ -47,16 +78,21 @@ async function handleGoogleResponse(response) {
         email: serverData.email,
         phone: serverData.phone || ""
     }));
-    localStorage.setItem("isLoggedIn", "true");
-    localStorage.setItem("role", "driver");
 
-    Swal.fire({ icon: "success", title: "تم تسجيل الدخول بنجاح", confirmButtonColor: "#004471" })
-        .then(() => { window.location.href = "/UserPages/Home/Home.html"; });
+    Swal.fire({
+        icon: "success",
+        title: "تم تسجيل الدخول بنجاح",
+        confirmButtonColor: "#004471"
+    }).then(() => {
+        window.location.href = "/UserPages/Home/Home.html";
+    });
 }
+
 
 // =========================
 // Role Selection
 // =========================
+const signwithgoogle_btn=document.querySelector(".social-btn");
 roles.forEach(role => {
     role.addEventListener("click", function () {
         roles.forEach(r => r.classList.remove("active"));
@@ -67,10 +103,12 @@ roles.forEach(role => {
             providerFields.style.display = "block";
             emailGroup.style.display = "none";
             driverPhoneGroup.style.display = "none";
+            signwithgoogle_btn.style.display="none"
         } else {
             providerFields.style.display = "none";
             emailGroup.style.display = "block";
             driverPhoneGroup.style.display = "block";
+            signwithgoogle_btn.style.display="block"
         }
     });
 });

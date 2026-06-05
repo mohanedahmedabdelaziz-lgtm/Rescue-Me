@@ -27,9 +27,9 @@
             <div class="stat-card">
                 <div class="stat-left">
                     <span class="badge-tiny badge-green">٪١٠+</span>
-                    <div class="stat-title">إجمالي المكتمل</div>
+                    <div class="stat-title">إجمالي الطلبات</div>
                 </div>
-                <div class="stat-value">١,٨٤٥</div>
+                <div class="stat-value" id="totalOrders">0</div>
             </div>
 
             <div class="stat-card">
@@ -37,7 +37,7 @@
                     <span class="badge-tiny badge-gold">★</span>
                     <div class="stat-title">تقييم الخدمة العام</div>
                 </div>
-                <div class="stat-value">٤.٨/٥</div>
+                <div class="stat-value" id="avgRating">0/5</div>
             </div>
 
             <div class="stat-card">
@@ -45,7 +45,7 @@
                     <span class="badge-tiny">شهري</span>
                     <div class="stat-title">إجمالي الإيرادات</div>
                 </div>
-                <div class="stat-value">١٤.٥ ألف</div>
+                <div class="stat-value" id="totalRevenue">0</div>
             </div>
         </section>
 
@@ -65,78 +65,8 @@
                 <div class="th">الإجراء</div>
             </div>
 
-            <!-- صفوف متكررة مثالاً -->
-            <div class="row">
-                <div class="td"><a href="#">#REG-9281</a></div>
-                <div class="td">مهند أحمد</div>
-                <div class="td">01150150278</div>
-                <div class="td">
-                    <span style="padding: 8px;" class="service-chip">
-                        <img style="width: 20px;margin-left: 8px;" src="/assets/towlogo.png" alt="">سحب
-                        مركبة</span>
-                </div>
-                <div class="td">محمد أحمد</div>
-                <div class="td">2023/10/24<br>14:20</div>
-                <div class="td"><span class="status-pill">مكتمل</span></div>
-                <div class="td"><span class="rating-stars">★★★★★</span></div>
-                <div class="td"><button class="detail-btn">تفاصيل</button></div>
-            </div>
-
-            <div class="row">
-                <div class="td"><a href="#">#REG-9281</a></div>
-                <div class="td">مهند أحمد</div>
-                <div class="td">01150150278</div>
-                <div class="td"><span style="padding: 8px;" class="service-chip"><img
-                            style="width: 20px;margin-left: 8px;" src="/assets/towlogo.png" alt="">سحب مركبة</span>
-                </div>
-                <div class="td">محمد أحمد</div>
-                <div class="td">2023/10/24<br>14:20</div>
-                <div class="td"><span class="status-pill">مكتمل</span></div>
-                <div class="td"><span class="rating-stars">★★★★★</span></div>
-                <div class="td"><button class="detail-btn">تفاصيل</button></div>
-            </div>
-
-            <div class="row">
-                <div class="td"><a href="#">#REG-9281</a></div>
-                <div class="td">مهند أحمد</div>
-                <div class="td">01150150278</div>
-                <div class="td"><span style="padding: 8px;" class="service-chip"><img
-                            style="width: 20px;margin-left: 8px;" src="/assets/towlogo.png" alt="">سحب مركبة</span>
-                </div>
-                <div class="td">محمد أحمد</div>
-                <div class="td">2023/10/24<br>14:20</div>
-                <div class="td"><span class="status-pill">مكتمل</span></div>
-                <div class="td"><span class="rating-stars">★★★★★</span></div>
-                <div class="td"><button class="detail-btn">تفاصيل</button></div>
-            </div>
-
-            <div class="row">
-                <div class="td"><a href="#">#REG-9281</a></div>
-                <div class="td">مهند أحمد</div>
-                <div class="td">01150150278</div>
-                <div class="td"><span style="padding: 8px;" class="service-chip"><img
-                            style="width: 20px;margin-left: 8px;" src="/assets/towlogo.png" alt="">سحب مركبة</span>
-                </div>
-                <div class="td">محمد أحمد</div>
-                <div class="td">2023/10/24<br>14:20</div>
-                <div class="td"><span class="status-pill">مكتمل</span></div>
-                <div class="td"><span class="rating-stars">★★★★★</span></div>
-                <div class="td"><button class="detail-btn">تفاصيل</button></div>
-            </div>
-
-            <div class="row">
-                <div class="td"><a href="#">#REG-9281</a></div>
-                <div class="td">مهند أحمد</div>
-                <div class="td">01150150278</div>
-                <div class="td"><span style="padding: 8px;" class="service-chip"><img
-                            style="width: 20px;margin-left: 8px;" src="/assets/towlogo.png" alt="">سحب مركبة</span>
-                </div>
-                <div class="td">محمد أحمد</div>
-                <div class="td">2023/10/24<br>14:20</div>
-                <div class="td"><span class="status-pill">مكتمل</span></div>
-                <div class="td"><span class="rating-stars">★★★★★</span></div>
-                <div class="td"><button class="detail-btn">تفاصيل</button></div>
-            </div>
+            <!-- dynamic rows will be injected here -->
+            <div id="ordersRows"></div>
 
             <!-- footer table -->
             <div class="table-footer">
@@ -164,6 +94,7 @@
             </div>
         </div>
     </footer>
+    <script src="AdminHome.js"></script>
 </body>
 
 </html>

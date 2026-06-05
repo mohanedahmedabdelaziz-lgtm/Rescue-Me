@@ -35,21 +35,21 @@ function renderOrderInfo(order) {
         1: "/assets/Mechanical.png",
         2: "/assets/Electrical.png"
     };
-    
-    document.getElementById("serviceImage").src = 
+
+    document.getElementById("serviceImage").src =
         icons[order.providerType] || "/assets/towlogo.png";
 
-    document.getElementById("serviceTitle").textContent = 
+    document.getElementById("serviceTitle").textContent =
         order.serviceName || "خدمة غير محددة";
 
-    document.getElementById("providerName").textContent = 
+    document.getElementById("providerName").textContent =
         order.providerName || "—";
 
     // Calculate total price with tax
     const price = parseFloat(order.servicePrice) || 0;
     const total = price + (price * 0.30);
-    
-    document.getElementById("servicePrice").textContent = 
+
+    document.getElementById("servicePrice").textContent =
         total.toLocaleString("ar-EG", { maximumFractionDigits: 1 });
 }
 
@@ -123,11 +123,18 @@ async function submitRate() {
 
         await Swal.fire({
             title: "شكراً لك!",
-            text: "تم استلام تقييمك بنجاح ❤️",
+            text: "تم استلام تقييمك بنجاح ",
             icon: "success",
             confirmButtonColor: "#004471"
         });
 
+
+
+        console.log("========== BEFORE REDIRECT ==========");
+        console.log("isLoggedIn =", localStorage.getItem("isLoggedIn"));
+        console.log("role =", localStorage.getItem("role"));
+        console.log("currentUser =", localStorage.getItem("currentUser"));
+        console.log("activeOrderId =", localStorage.getItem("activeOrderId"));
         window.location.href = "../Home/Home.html";
 
     } catch (err) {
