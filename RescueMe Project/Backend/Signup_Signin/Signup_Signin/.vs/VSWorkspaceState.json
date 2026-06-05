@@ -1,8 +1,12 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Controllers",
+    "\\Data",
+    "\\Data\\Repositories",
     "\\Migrations",
     "\\obj"
   ],
+  "SelectedNode": "\\Data\\Repositories\\AuthRepo.cs",
   "PreviewInSolutionExplorer": false
 }

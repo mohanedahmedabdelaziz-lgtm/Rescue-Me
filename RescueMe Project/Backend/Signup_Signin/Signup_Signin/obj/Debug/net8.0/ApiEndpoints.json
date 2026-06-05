@@ -1,6 +1,32 @@
 [
   {
     "ContainingType": "Signup_Signin.Controllers.AuthController",
+    "Method": "GoogleSignIn",
+    "RelativePath": "api/Auth/signin/google",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "googleId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Signup_Signin.Controllers.AuthController",
     "Method": "SignInProvider",
     "RelativePath": "api/Auth/signin/provider",
     "HttpMethod": "GET",

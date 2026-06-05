@@ -14,6 +14,41 @@ const inputLabel = document.querySelector('.input-label');
 // Backend URL
 const BACKEND = "http://localhost:5065";
 
+
+const GOOGLE_CLIENT_ID = "472546212630-4ksm564n2bre7keqpk4nigev1q7sku0p.apps.googleusercontent.com";
+
+function signInWithGoogle() {
+    google.accounts.id.initialize({
+        client_id: GOOGLE_CLIENT_ID,
+        callback: handleGoogleResponse
+    });
+    google.accounts.id.prompt();
+}
+
+async function handleGoogleResponse(response) {
+    const base64 = response.credential.split('.')[1];
+    const userData = JSON.parse(atob(base64));
+
+    const res = await fetch(
+        `http://localhost:5065/api/Auth/signin/google?googleId=${userData.sub}&name=${encodeURIComponent(userData.name)}&email=${encodeURIComponent(userData.email)}`,
+        { method: "POST" }
+    );
+
+    const serverData = await res.json();
+
+    localStorage.setItem("currentUser", JSON.stringify({
+        id: serverData.id,
+        name: serverData.name,
+        email: serverData.email,
+        phone: serverData.phone || ""
+    }));
+    localStorage.setItem("isLoggedIn", "true");
+    localStorage.setItem("role", "driver");
+
+    Swal.fire({ icon: "success", title: "تم تسجيل الدخول بنجاح", confirmButtonColor: "#004471" })
+        .then(() => { window.location.href = "/UserPages/Home/Home.html"; });
+}
+
 // ============================================================
 // Role Selection (Driver / Service Provider)
 // ============================================================
@@ -22,10 +57,10 @@ roles.forEach(role => {
     role.addEventListener("click", function () {
         // Remove active class from all roles
         roles.forEach(r => r.classList.remove("active"));
-        
+
         // Activate clicked role
         this.classList.add("active");
-        
+
         selectedRole = this.dataset.role;
 
         // Change placeholder and label based on role
@@ -127,7 +162,7 @@ function saveLoginState(user, serverData) {
             phone: serverData.phone || ""
         };
         localStorage.setItem("currentUser", JSON.stringify(currentUser));
-    } 
+    }
     else { // Provider
         const currentProvider = {
             id: serverData.id,
