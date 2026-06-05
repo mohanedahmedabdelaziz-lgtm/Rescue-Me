@@ -73,5 +73,12 @@ namespace Signup_Signin.Controllers
             provider.Password = "";
             return Ok(provider);
         }
+        [HttpPost("signin/google")]
+        public async Task<IActionResult> GoogleSignIn([FromQuery] string googleId, [FromQuery] string name, [FromQuery] string email)
+        {
+            var user = await _authRepo.GoogleSignIn(googleId, name, email);
+            user.Password = "";
+            return Ok(user);
+        }
     }
 }

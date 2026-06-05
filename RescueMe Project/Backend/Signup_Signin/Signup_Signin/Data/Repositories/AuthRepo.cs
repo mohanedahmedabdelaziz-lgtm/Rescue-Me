@@ -62,5 +62,22 @@ namespace Signup_Signin.Data.Repositories
 
             return isValid ? provider : null;
         }
+        public async Task<User> GoogleSignIn(string googleId, string name, string email)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+            if (user == null)
+            {
+                user = new User
+                {
+                    Name = name,
+                    Email = email,
+                    Phone = "",
+                    Password = BCrypt.Net.BCrypt.HashPassword(googleId)
+                };
+                _context.Users.Add(user);
+                await _context.SaveChangesAsync();
+            }
+            return user;
+        }
     }
 }
