@@ -282,3 +282,23 @@ footer {
     flex-wrap: wrap;
     gap: 10px;
 }
+
+
+
+.social-btn {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.social-btn img {
+    width: 22px;
+}
