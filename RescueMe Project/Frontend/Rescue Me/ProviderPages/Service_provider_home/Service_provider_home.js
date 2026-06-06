@@ -30,11 +30,6 @@ const SERVICE_ICONS = {
     2: "/assets/Electrical.png",
 };
 
-// ✅ Helper: ترجمة طريقة الدفع
-function getPaymentLabel(method) {
-    const labels = { cash: "💵 كاش", instapay: "📱 InstaPay", wallet: "👛 محفظة إلكترونية",paymob: "💳 Paymob" };
-    return labels[method] || "—";
-}
 
 async function loadOrders() {
     try {
@@ -67,8 +62,6 @@ async function loadOrders() {
         filteredOrders.forEach(order => {
             const serviceIcon = SERVICE_ICONS[order.providerType] || "/assets/towlogo.png";
 
-            // ✅ طريقة الدفع من الـ DB
-            const paymentLabel = getPaymentLabel(order.paymentMethod);
 
             ordersContainer.innerHTML += `
                 <article class="order-card">
@@ -98,10 +91,6 @@ async function loadOrders() {
                     <div class="order-sub" style="font-size:12px;color:#6b7280;margin-top:4px;">
                         <span>📞 ${order.userPhone || "رقم الهاتف غير محدد"}</span>
                     </div>
-                    <!-- ✅ طريقة الدفع -->
-                    <div class="order-sub" style="font-size:12px;color:#0f4c75;margin-top:4px;font-weight:600;">
-                        <span>طريقة الدفع: ${paymentLabel}</span>
-                    </div>
                     <div class="order-actions">
                         <button class="btn-outline" onclick="rejectOrder(${order.id})">رفض</button>
                         <button class="btn-primary" onclick="acceptOrder(${order.id})">قبول الطلب</button>
@@ -115,7 +104,6 @@ async function loadOrders() {
                         <b>${order.userName || "عميل"}</b><br>
                         ${order.serviceTitle || order.serviceName || "خدمة"}<br>
                         ${order.carName || "—"}<br>
-                        ${paymentLabel}
                     `);
                 markers.push(marker);
             }

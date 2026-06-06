@@ -39,6 +39,19 @@ namespace Signup_Signin.Controllers
             return Ok(order);
         }
 
+
+
+        [HttpGet("user/{userName}")]
+        public async Task<IActionResult> GetOrdersByUser(string userName)
+        {
+            if (string.IsNullOrEmpty(userName))
+                return BadRequest("userName is required");
+
+            var orders = await _orderRepo.GetOrdersByUser(userName);
+            return Ok(orders);
+        }
+
+
         [HttpPut("accept/{id}")]
         public async Task<IActionResult> Accept(
             int id,

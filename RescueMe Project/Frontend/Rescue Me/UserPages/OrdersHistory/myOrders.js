@@ -1,44 +1,60 @@
 // ================================================
-// My Orders Page - Fetch, Display & Manage Orders
+// My Orders Page - Fixed
 // ================================================
 
 const API_BASE = "http://localhost:5065";
 
-// Status Mapping (Text + Color Class)
+// ✅ الـ status map صح
 const STATUS_MAP = {
-    pending:  { text: "قيد الانتظار", class: "pending" },
-    accepted: { text: "في الطريق",   class: "completed" },
-    done:     { text: "مكتمل",       class: "completed" },
-    rejected: { text: "مرفوض",       class: "pending" }   // You can change color if needed
+    pending:  { text: "قيد الانتظار", class: "pending"   },
+    accepted: { text: "في الطريق",    class: "completed" },
+    done:     { text: "مكتمل",        class: "completed" },
+    rejected: { text: "مرفوض",        class: "rejected"  }
+};
+
+const SERVICE_ICONS = {
+    0: "/assets/towlogo.png",
+    1: "/assets/Mechanical.png",
+    2: "/assets/Electrical.png",
 };
 
 const ordersContainer = document.getElementById("ordersContainer");
-let ordersCache = [];
+
+// ✅ جيب اسم المستخدم الحالي من sessionSorage
+function getCurrentUserName() {
+    const currentUser = JSON.parse(sessionStorage.getItem("currentUser") || "null");
+    return currentUser?.name || null;
+}
 
 // =========================
-// Load All Orders from Backend
+// Load Orders — بطلبات المستخدم الحالي فقط
 // =========================
 async function loadOrders() {
+    const userName = getCurrentUserName();
+
+    if (!userName) {
+        ordersContainer.innerHTML = `
+            <div style="background:white;padding:50px;border-radius:20px;text-align:center;color:#666;">
+                يجب تسجيل الدخول أولاً لعرض طلباتك
+            </div>`;
+        return;
+    }
+
     try {
-        const res = await fetch(`${API_BASE}/api/Orders`);
+        // ✅ استخدم الـ endpoint الجديد
+        const res = await fetch(`${API_BASE}/api/Orders/user/${encodeURIComponent(userName)}`);
 
         if (!res.ok) throw new Error("Failed to fetch orders");
 
         const orders = await res.json();
-        
-        // Reverse to show newest first
-        ordersCache = orders.reverse();
-        
-        renderOrders(ordersCache);
+        renderOrders(orders);
 
     } catch (err) {
         console.error("Error loading orders:", err);
-        
         ordersContainer.innerHTML = `
-            <div style="background:white; padding:50px; border-radius:20px; text-align:center; color:#ef4444; font-size:18px;">
-                فشل تحميل الطلبات<br>تأكد من تشغيل السيرفر
-            </div>
-        `;
+            <div style="background:white;padding:50px;border-radius:20px;text-align:center;color:#ef4444;">
+                فشل تحميل الطلبات — تأكد من تشغيل السيرفر
+            </div>`;
     }
 }
 
@@ -61,14 +77,14 @@ async function deleteOrder(orderId) {
 
     try {
         await fetch(`${API_BASE}/api/Orders/${orderId}`, { method: "DELETE" });
-        await loadOrders(); // Refresh list
+        await loadOrders();
     } catch (err) {
         Swal.fire("خطأ", "حدث خطأ أثناء الحذف", "error");
     }
 }
 
 // =========================
-// Go to Order Details
+// Go to Details
 // =========================
 function goToDetails(id) {
     window.location.href = `/UserPages/OrderDetails/orderDetails.html?id=${id}`;
@@ -80,26 +96,32 @@ function goToDetails(id) {
 function renderOrders(orders) {
     if (!orders || orders.length === 0) {
         ordersContainer.innerHTML = `
-            <div style="background:white; padding:50px; border-radius:20px; text-align:center; color:#666;">
+            <div style="background:white;padding:50px;border-radius:20px;text-align:center;color:#666;">
                 لا توجد طلبات حالياً
-            </div>
-        `;
+            </div>`;
         return;
     }
 
     ordersContainer.innerHTML = orders.map(order => {
-        const status = STATUS_MAP[order.status] || STATUS_MAP.pending;
+        // ✅ الـ status صح — بيقرأ من order.status مباشرة
+        const statusKey  = order.status?.toLowerCase() || "pending";
+        const status     = STATUS_MAP[statusKey] || STATUS_MAP.pending;
+        const serviceIcon = SERVICE_ICONS[order.providerType] || "/assets/towlogo.png";
+
+        const price = parseFloat(order.servicePrice) || 0;
+        const total = (price * 1.30).toLocaleString("ar-EG", { maximumFractionDigits: 1 });
 
         return `
             <div class="order-card">
                 <div class="order-info">
-                    <div class="icon-box">
-                        <img src="${order.serviceImage || '/assets/towlogo.png'}" style="width:50px;" alt="">
+                    <div class="order-title">
+                        <img style="width:40px;margin-left:10px;" src="${serviceIcon}" alt="service icon">
+                        ${order.serviceTitle || order.serviceName || "خدمة"}
                     </div>
-                    
                     <div class="order-text">
                         <div class="order-id">#RC-${String(order.id).slice(-4)}</div>
                         <h3>${order.serviceTitle || order.serviceName || "خدمة غير محددة"}</h3>
+                        <!-- ✅ الحالة صح -->
                         <span class="status ${status.class}">${status.text}</span>
                     </div>
                 </div>
@@ -115,11 +137,7 @@ function renderOrders(orders) {
                     </div>
                     <div class="detail">
                         <span>التكلفة</span>
-                        <strong>
-                            ${order.servicePrice 
-                                ? (parseFloat(order.servicePrice) * 1.15).toLocaleString("ar-EG") + " جنيه" 
-                                : "—"}
-                        </strong>
+                        <strong>${price > 0 ? total + " جنيه" : "—"}</strong>
                     </div>
                     <div class="detail">
                         <span>رقم المزود</span>
@@ -127,31 +145,20 @@ function renderOrders(orders) {
                     </div>
                     <div class="detail">
                         <span>التاريخ</span>
-                        <strong>
-                            ${order.createdAt 
-                                ? new Date(order.createdAt).toLocaleDateString("ar-EG") 
-                                : "—"}
-                        </strong>
+                        <strong>${order.createdAt ? new Date(order.createdAt).toLocaleDateString("ar-EG") : "—"}</strong>
                     </div>
                 </div>
 
                 <div class="order-actions">
-                    <button class="btn details-btn" onclick="goToDetails(${order.id})">
-                        التفاصيل
-                    </button>
-                    <button class="btn delete-btn" onclick="deleteOrder(${order.id})">
-                        حذف
-                    </button>
+                    <button class="btn details-btn" onclick="goToDetails(${order.id})">التفاصيل</button>
+                    <button class="btn delete-btn" onclick="deleteOrder(${order.id})">حذف</button>
                 </div>
-            </div>
-        `;
+            </div>`;
     }).join("");
 }
 
 // =========================
-// Initialize Page
+// Initialize
 // =========================
 loadOrders();
-
-// Auto refresh every 10 seconds (optional)
 setInterval(loadOrders, 10000);

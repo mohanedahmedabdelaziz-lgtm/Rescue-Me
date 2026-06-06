@@ -26,7 +26,17 @@ namespace Signup_Signin.Data.Repositories
                 .ToListAsync();
         }
 
-        
+
+        // get orders by user name
+        public async Task<List<RequestService>> GetOrdersByUser(string userName)
+        {
+            return await _context.RequestServices
+                .Where(o => o.UserName == userName)
+                .OrderByDescending(o => o.CreatedAt)
+                .ToListAsync();
+        }
+
+
         public async Task<RequestService?> GetOrder(int id)
         {
             return await _context.RequestServices

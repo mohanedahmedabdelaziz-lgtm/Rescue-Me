@@ -191,7 +191,7 @@
 
 
             <!-- ✅ Payment Section -->
-            <div class="payment-section">
+            <div id="paymentSection" style="display:none;" class="payment-section">
                 <h5>💳 طريقة الدفع</h5>
                 <div class="payment-options">
 
@@ -213,7 +213,6 @@
                         <span>محفظة إلكترونية</span>
                     </label>
 
-
                     <label class="payment-option" id="opt-paymob">
                         <input type="radio" name="payMethod" value="paymob" onchange="selectPayment('paymob')">
                         <span class="pay-icon">💳</span>
@@ -222,7 +221,6 @@
 
                 </div>
 
-                <!-- رقم الدفع يظهر لما يختار instapay أو محفظة -->
                 <div class="payment-info-box" id="paymentInfoBox">
                     <p id="paymentInfoLabel">ادفع على رقم المنقذ</p>
                     <div class="payment-number">01119463672</div>
@@ -266,15 +264,28 @@
 
 
 
-            <button class="btn btn-success mt-3">
+            <!-- الأزرار — كل واحد بـ id للتحكم فيه من الـ JS -->
+            <button class="btn btn-success mt-3" id="doneBtn" style="display:none;">
                 <a style="text-decoration:none;color:white;" href="../RateService/RateService.html">انهاء وتقييم</a>
             </button>
-            <button class="btn my-3" style="background-color:red;">
+
+            <button class="btn my-3" id="cancelBtn" style="background-color:red; display:none;">
                 <a style="text-decoration:none;color:white;" href="../RequestService/Requestservice.html">
                     <img style="width:20px;margin-left:10px;" src="/assets/cancellogo.png">
                     إلغاء الطلب
                 </a>
             </button>
+
+            <!-- رسالة الرفض -->
+            <div id="rejectedMsg"
+                style="display:none; background:#fee2e2; color:#dc2626; padding:16px; border-radius:12px; text-align:center; margin-top:16px; font-weight:700;">
+                ❌ تم رفض طلبك من قِبَل المزود
+                <div style="font-size:13px; font-weight:400; margin-top:6px;">يمكنك إنشاء طلب جديد</div>
+                <a href="../RequestService/Requestservice.html"
+                    style="display:inline-block; margin-top:10px; background:#dc2626; color:white; padding:8px 20px; border-radius:8px; text-decoration:none; font-size:13px;">
+                    طلب جديد
+                </a>
+            </div>
         </div>
     </div>
 
