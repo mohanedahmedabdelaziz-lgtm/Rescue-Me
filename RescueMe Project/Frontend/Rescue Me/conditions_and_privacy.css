@@ -17,7 +17,6 @@ body {
     flex-direction: column;
 }
 
-/* العنوان الرئيسي */
 .main-title {
     text-align: start;
     font-size: 28px;
@@ -39,7 +38,6 @@ body {
     margin-bottom: 22px;
 }
 
-/* عناوين الأقسام */
 .section-title-row {
     display: flex;
     align-items: center;
@@ -54,7 +52,6 @@ body {
     color: #0b74b8;
 }
 
-/* شروط المستخدم */
 .bullets {
     margin-top: 6px;
     font-size: 13px;
@@ -65,7 +62,6 @@ body {
     margin-bottom: 4px;
 }
 
-/* شروط مزود الخدمة: عمودين باستخدام flex */
 .two-cols {
     display: flex;
     gap: 16px;
@@ -87,7 +83,6 @@ body {
     margin-bottom: 6px;
 }
 
-/* إخلاء المسؤولية */
 .warning-card {
     background: #fee2e2;
     border-radius: 16px;
@@ -135,7 +130,6 @@ body {
     color: #7f1d1d;
 }
 
-/* كيف نحمي بياناتك */
 .protect-card {
     background: #fff;
     border-radius: 16px;

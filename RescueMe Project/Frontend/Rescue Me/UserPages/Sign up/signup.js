@@ -178,14 +178,14 @@ async function AddUsertoDatabase() {
         ? {
             name: nameInput.value,
             email: emailInput.value,
-            phone: driverPhoneInput.value,   // ✅
+            phone: driverPhoneInput.value,   
             password: passwordInput.value
         }
         : {
             name: nameInput.value,
             password: passwordInput.value,
             phone: phoneInput.value,
-            nationalId: nationalIdInput.value,  // ✅
+            nationalId: nationalIdInput.value,  
             type: parseInt(typeInput?.value || "0")
         };
 

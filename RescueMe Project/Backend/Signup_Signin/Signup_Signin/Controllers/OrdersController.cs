@@ -110,10 +110,9 @@ namespace Signup_Signin.Controllers
                 var order = await _orderRepo.GetOrder(orderId);
                 if (order == null) return NotFound("الطلب غير موجود");
 
-                // ⚠️ استبدل القيم دي بالأرقام الحقيقية من لوحة تحكم Paymob
                 string apiKey = "ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmpiR0Z6Y3lJNklrMWxjbU5vWVc1MElpd2ljSEp2Wm1sc1pWOXdheUk2TVRFM05USTJOaXdpYm1GdFpTSTZJbWx1YVhScFlXd2lmUS5uZjU2aW5wd0xqY1l6ZVI3ZTh3d3ExOHJLbjZWUzJPZmtqR2lRTFNfWEFkTGtuajBwVmJTU1BEVktIeUQ0RWxUci15YUcxWHJjSWFXaW1BNXdNZ0NxZw==";
-                string integrationId = "5707262";   // ← من قسم Payment Integrations
-                string iframeId = "1049990";             // ← من قسم Iframes
+                string integrationId = "5707262";   
+                string iframeId = "1049990";             
 
                 int amountCents = (int)((order.ServicePrice > 0 ? order.ServicePrice : 100) * 100);
 

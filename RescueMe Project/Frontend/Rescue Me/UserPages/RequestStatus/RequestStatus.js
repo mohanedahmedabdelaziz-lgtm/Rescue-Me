@@ -58,7 +58,6 @@ function renderOrderData(data) {
     document.getElementById("requestStatus").textContent =
         statusMap[data.status] || "قيد الانتظار";
 
-    // ✅ قسم الدفع — يظهر بس لو accepted أو done
     const paymentSection = document.getElementById("paymentSection");
     if (paymentSection) {
         if (data.status === "accepted" || data.status === "done") {
@@ -69,13 +68,11 @@ function renderOrderData(data) {
         }
     }
 
-    // ✅ زرار الإنهاء والتقييم — يظهر بس لو accepted
     const doneBtn = document.getElementById("doneBtn");
     if (doneBtn) {
         doneBtn.style.display = data.status === "accepted" ? "block" : "none";
     }
 
-    // ✅ لو مرفوض — اعرض رسالة واخفي كل حاجة
     const rejectedMsg = document.getElementById("rejectedMsg");
     if (rejectedMsg) {
         rejectedMsg.style.display = data.status === "rejected" ? "block" : "none";
@@ -147,11 +144,7 @@ function initMap(order) {
     L.marker([lat, lng]).addTo(trackingMap).bindPopup("موقع العميل").openPopup();
 }
 
-// =========================
-// ✅ Payment Logic (معدل بالكامل)
-// =========================
 
-// ✅ دالة الـ UI فقط (مش بتعمل حاجة تانية)
 function setPaymentUI(method) {
     document.querySelectorAll(".payment-option").forEach(el => el.classList.remove("selected"));
     const opt = document.getElementById("opt-" + method);
@@ -174,11 +167,9 @@ function setPaymentUI(method) {
     confirmedBadge.classList.remove("show");
 }
 
-// ✅ الدالة الرئيسية اللي بتتنفذ لما المستخدم يختار طريقة دفع
 async function selectPayment(method) {
     setPaymentUI(method);
 
-    // ✅ لو اختار paymob، افتح له رابط الدفع فوراً ووقف
     if (method === "paymob") {
         await openPaymobPayment();
         return;
@@ -220,20 +211,17 @@ function savePaymentMethod(method) {
     sessionStorage.setItem(key, method);
 }
 
-// ✅ استعادة الحالة عند تحميل الصفحة (مش هتفتح نافذة Paymob تلقائياً)
 function restorePaymentMethod(id) {
     const method = sessionStorage.getItem("paymentMethod_" + id);
     const confirmed = sessionStorage.getItem("paymentConfirmed_" + id);
 
     if (method) {
-        // حدد الراديو بس
+
         const radio = document.querySelector(`input[name="payMethod"][value="${method}"]`);
         if (radio) radio.checked = true;
 
-        // حدث الـ UI من غير ما تفتح رابط الدفع
         setPaymentUI(method);
 
-        // لو كان الدفع مؤكد (للـ cash / instapay / wallet)
         if (confirmed === "true" && method !== "paymob") {
             document.getElementById("confirmPayBtn").classList.remove("show");
             document.getElementById("paymentConfirmedBadge").classList.add("show");
@@ -250,7 +238,6 @@ async function openPaymobPayment() {
         
         if (data.paymentUrl) {
             window.open(data.paymentUrl, "_blank");
-            // ✅ احفظ انه اختار paymob بعد مايفتح الرابط
             savePaymentMethod("paymob");
             updatePaymentMethodOnServer("paymob");
         } else {

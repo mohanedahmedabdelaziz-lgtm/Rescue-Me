@@ -69,7 +69,6 @@ a {
     margin-top: 4px;
 }
 
-/* بطاقات المعلومات الثلاثة */
 .cards-row {
     display: flex;
     gap: 18px;
@@ -170,7 +169,6 @@ a {
     line-height: 1.7;
 }
 
-/* تقييم العميل */
 .review-card {
     background: #fff;
     border-radius: 16px;

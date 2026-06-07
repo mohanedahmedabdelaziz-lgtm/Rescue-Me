@@ -108,12 +108,13 @@
                     <span>قيمة الخدمة الأساسية</span>
                     <span id="costBase">—</span>
                 </div>
-                <div class="cost-row">
-                    <span>رسوم المسافة الإضافية</span>
-                    <span id="costExtra">0 جنيه</span>
+                <div id="costExtraRow" class="cost-row d-flex justify-content-between">
+
+                    <span>رسوم المسافة الإضافية (20جنيه / كم)</span>
+                    <span id="costExtra">20 جنيه / كم </span>
                 </div>
                 <div class="cost-row">
-                    <span>ضريبة القيمة المضافة (15%)</span>
+                    <span>ضريبة الخدمة (30%)</span>
                     <span id="costTax">—</span>
                 </div>
                 <div class="total" id="totalPrice"></div>
@@ -123,7 +124,7 @@
             <div class="help-box">
                 <h4>هل تحتاج لمساعدة؟</h4>
                 <p>إذا واجهتك أي مشكلة في الطلب أو لديك استفسار بخصوص التكلفة، فريقنا جاهز لمساعدتك.</p>
-                <div class="help-btn">تحدث مع الدعم الفني</div>
+                <div class="help-btn"><a href="/UserPages/ContactUs/Contactus.html">تحدث مع الدعم الفني</a></div>
             </div>
         </div>
     </div>
@@ -134,7 +135,7 @@
             <div class="footer-top">
                 <h6>المنقذ للسيارات</h6>
                 <div class="footer-links">
-                    <a href="#">اتصل بنا</a>
+                    <a href="/UserPages/ContactUs/Contactus.html">اتصل بنا</a>
                     <a href="#">مركز المساعدة</a>
                     <a href="/conditions_and_privacy.html">الشروط والأحكام</a>
                     <a href="/conditions_and_privacy.html">سياسة الخصوصية</a>
@@ -150,7 +151,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="orderDetails.js"></script>
-   <script src="/Userlogout.js"></script>
+    <script src="/Userlogout.js"></script>
 </body>
 
 </html>

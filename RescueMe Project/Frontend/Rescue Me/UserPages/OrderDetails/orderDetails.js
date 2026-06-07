@@ -40,7 +40,7 @@ async function loadOrder() {
         }
 
         const order = await res.json();
-        
+
         renderOrder(order);   // Fill HTML with data
         initMap(order);       // Initialize map
 
@@ -62,48 +62,53 @@ async function loadOrder() {
 function renderOrder(order) {
 
     // Order Header
-    document.getElementById("orderNumber").textContent = 
+    document.getElementById("orderNumber").textContent =
         `طلب رقم #RC-${String(order.id).slice(-4)}`;
 
-    document.getElementById("orderDate").textContent = 
-        order.createdAt 
-            ? `تاريخ الطلب: ${new Date(order.createdAt).toLocaleString("ar-EG")}` 
+    document.getElementById("orderDate").textContent =
+        order.createdAt
+            ? `تاريخ الطلب: ${new Date(order.createdAt).toLocaleString("ar-EG")}`
             : "تاريخ غير معروف";
 
     // Status
-    document.getElementById("orderStatus").textContent = 
+    document.getElementById("orderStatus").textContent =
         STATUS_MAP[order.status] || "قيد الانتظار";
 
     // Service Info
-    document.getElementById("serviceTitle").textContent = 
+    document.getElementById("serviceTitle").textContent =
         order.serviceTitle || order.serviceName || "خدمة غير محددة";
 
-    document.getElementById("serviceDescription").textContent = 
+    document.getElementById("serviceDescription").textContent =
         order.description || "لا يوجد وصف للخدمة";
 
     // Provider Info
-    document.getElementById("providerName").textContent = 
+    document.getElementById("providerName").textContent =
         order.providerName || "في انتظار القبول";
 
-    document.getElementById("providerPhone").textContent = 
+    document.getElementById("providerPhone").textContent =
         order.providerPhone || "—";
 
     // Car Info
-    document.getElementById("carName").textContent = 
+    document.getElementById("carName").textContent =
         order.carName || "—";
 
-    document.getElementById("plateNumber").textContent = 
+    document.getElementById("plateNumber").textContent =
         order.plateNumber || "—";
 
     // Cost Calculation
     const price = parseFloat(order.servicePrice) || 0;
-    const tax = price * 0.15;
+    const tax = price * 0.30;
     const total = price + tax;
+    if (Number(order.providerType) === 0) {
+        document.getElementById("costExtraRow").style.display = "block";
+    } else {
+        document.getElementById("costExtraRow").style.display = "none";
+    }
 
     const fmt = (num) => num.toLocaleString("ar-EG", { maximumFractionDigits: 1 }) + " جنيه";
 
     document.getElementById("costBase").textContent = fmt(price);
-    document.getElementById("costExtra").textContent = "0 جنيه";
+    document.getElementById("costExtra").textContent = "٠ جنيه";
     document.getElementById("costTax").textContent = fmt(tax);
     document.getElementById("totalPrice").textContent = `الإجمالي: ${fmt(total)}`;
 }

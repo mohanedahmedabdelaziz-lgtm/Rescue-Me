@@ -69,11 +69,12 @@ async function loadOrders() {
     document.getElementById("avgRating").textContent =
       `${avgRating}/5.0`;
 
-    const totalRevenue =
-      allOrders.reduce(
-        (sum, o) => sum + Number(o.servicePrice || 0),
-        0
-      );
+    const totalRevenue = allOrders
+      .filter(o => o.status === "done")
+      .reduce((sum, o) => {
+        const price = parseFloat(o.servicePrice) || 0;
+        return sum + (price * 0.30);
+      }, 0);
 
     document.getElementById("totalRevenue").textContent =
       `${totalRevenue.toLocaleString()} جنيه`;
@@ -225,13 +226,11 @@ function renderPagination() {
   document.querySelector(
     ".table-footer div:first-child"
   ).textContent =
-    `عرض ${
-      Math.min(
-        currentPage * PAGE_SIZE,
-        allOrders.length
-      )
-    } من أصل ${
+    `عرض ${Math.min(
+      currentPage * PAGE_SIZE,
       allOrders.length
+    )
+    } من أصل ${allOrders.length
     } عملية`;
 }
 

@@ -18,7 +18,7 @@ const API_BASE = "http://localhost:5065/api/Orders";
 
 // ✅ Helper
 function getPaymentLabel(method) {
-    const labels = { cash: "💵 كاش", instapay: "📱 InstaPay", wallet: "👛 محفظة إلكترونية",paymob: "💳 Paymob" };
+    const labels = { cash: "💵 كاش", instapay: "📱 InstaPay", wallet: "👛 محفظة إلكترونية", paymob: "💳 Paymob" };
     return labels[method] || "—";
 }
 
@@ -47,9 +47,13 @@ function renderOrder(order) {
         order.description || order.serviceName || "—";
 
     const subEl = document.querySelector(".header-row .sub");
-    if (subEl) subEl.textContent =
-        "تم الإنشاء: " + new Date(order.createdAt).toLocaleString("ar-EG");
-
+    if (subEl) {
+        const date = new Date(order.createdAt);
+        const formatted = date.toLocaleDateString("en-EG")
+            + " — "
+            + date.toLocaleTimeString("en-EG", { hour: "2-digit", minute: "2-digit", hour12: true });
+        subEl.textContent = "تم الإنشاء: " + formatted;
+    }
     const statusMap = { pending: "قيد الانتظار", accepted: "قيد التنفيذ", done: "مكتمل", rejected: "ملغي" };
     document.querySelector(".status-chip").textContent =
         statusMap[order.status?.toLowerCase()] || order.status;
@@ -59,10 +63,15 @@ function renderOrder(order) {
     const tax = price * 0.30;
     const total = price + tax;
     const fmt = n => n.toLocaleString("ar-EG", { maximumFractionDigits: 1 }) + " جنيه";
+    if (Number(order.providerType) === 0) {
+        document.getElementById("costExtraRow").style.display = "block";
+    } else {
+        document.getElementById("costExtraRow").style.display = "none";
+    }
 
     document.getElementById("payBase").textContent = fmt(price);
-    document.getElementById("payExtra").textContent = "0 جنيه";
-    document.getElementById("payTax").textContent = fmt(tax);
+    document.getElementById("payExtra").textContent = ". جنيه";
+    document.getElementById("costTax").textContent = fmt(tax);
     document.getElementById("payTotal").textContent = fmt(total);
 
     // ✅ طريقة الدفع الحقيقية من الـ DB

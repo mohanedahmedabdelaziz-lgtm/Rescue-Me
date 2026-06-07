@@ -157,7 +157,7 @@ async function selectService(serviceName, serviceImage, servicePrice, serviceTit
         userAddress,           // ✅ real address saved here
         description,
         status: "pending",
-        createdAt: new Date().toISOString()
+        createdAt: new Date(new Date().getTime() + (3 * 60 * 60 * 1000)).toISOString()
     };
 
     try {

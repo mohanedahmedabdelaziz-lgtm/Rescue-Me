@@ -4,7 +4,6 @@
 
 const API_BASE = "http://localhost:5065";
 
-// ✅ الـ status map صح
 const STATUS_MAP = {
     pending:  { text: "قيد الانتظار", class: "pending"   },
     accepted: { text: "في الطريق",    class: "completed" },
@@ -20,15 +19,12 @@ const SERVICE_ICONS = {
 
 const ordersContainer = document.getElementById("ordersContainer");
 
-// ✅ جيب اسم المستخدم الحالي من sessionSorage
 function getCurrentUserName() {
     const currentUser = JSON.parse(sessionStorage.getItem("currentUser") || "null");
     return currentUser?.name || null;
 }
 
-// =========================
-// Load Orders — بطلبات المستخدم الحالي فقط
-// =========================
+
 async function loadOrders() {
     const userName = getCurrentUserName();
 
@@ -41,7 +37,6 @@ async function loadOrders() {
     }
 
     try {
-        // ✅ استخدم الـ endpoint الجديد
         const res = await fetch(`${API_BASE}/api/Orders/user/${encodeURIComponent(userName)}`);
 
         if (!res.ok) throw new Error("Failed to fetch orders");
@@ -103,7 +98,6 @@ function renderOrders(orders) {
     }
 
     ordersContainer.innerHTML = orders.map(order => {
-        // ✅ الـ status صح — بيقرأ من order.status مباشرة
         const statusKey  = order.status?.toLowerCase() || "pending";
         const status     = STATUS_MAP[statusKey] || STATUS_MAP.pending;
         const serviceIcon = SERVICE_ICONS[order.providerType] || "/assets/towlogo.png";
@@ -121,7 +115,6 @@ function renderOrders(orders) {
                     <div class="order-text">
                         <div class="order-id">#RC-${String(order.id).slice(-4)}</div>
                         <h3>${order.serviceTitle || order.serviceName || "خدمة غير محددة"}</h3>
-                        <!-- ✅ الحالة صح -->
                         <span class="status ${status.class}">${status.text}</span>
                     </div>
                 </div>
